@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/RetoGithub/static/js/main.55daee02.js",
+    "main.js": "/RetoGithub/static/js/main.0eeb500d.js",
     "index.html": "/RetoGithub/index.html",
-    "main.55daee02.js.map": "/RetoGithub/static/js/main.55daee02.js.map"
+    "main.0eeb500d.js.map": "/RetoGithub/static/js/main.0eeb500d.js.map"
   },
   "entrypoints": [
-    "static/js/main.55daee02.js"
+    "static/js/main.0eeb500d.js"
   ]
 }
