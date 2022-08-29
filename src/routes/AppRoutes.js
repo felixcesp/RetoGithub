@@ -7,17 +7,18 @@ import Register from '../components/Register';
 
 export default function AppRoutes() {
   return (
-    <div>
+    
     <BrowserRouter>
        <Routes>
         <Route path='/' element={<Landing/>}/>
         <Route path='/land' element={<Landing/>}/>
         <Route path='/phone' element={<PhoneRegister/>}/>
         <Route path='/pag1' element={<Login/>}/>
-        <Route path='*' element={<Navigate to="/pag1"/>}/>
         <Route path='/register' element={<Register/>}/>
+        <Route path='*' element={<Navigate to="/Land"/>}/>
+       
        </Routes>
     </BrowserRouter>
-    </div>
+  
   )
 }
