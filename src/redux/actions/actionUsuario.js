@@ -10,10 +10,10 @@ export const registrarUserAsync =(email, pass, nombre)=>{
                 
                 await updateProfile(auth.currentUser, {displayName: nombre})
                 dispatch(registrarUserSync(email, pass, nombre))
-                console.log(user, 'registrado')
+                alert('felicitaciones    '+ nombre + '    estas ya registrado')
         })
         .catch(err=>{
-            console.warn(err, 'usuario No registrado')
+            alert(err, 'usuario No registrado')
         })
 
     }

@@ -18,10 +18,10 @@ export const actionLogPhoneSync = (phone)=>{
                     
                     await updateProfile(auth.currentUser, { phoneNumber: phone})
                     dispatch(actionLogPhoneSync(phone))
-                    console.log(user, 'registrado')
+                    alert(user, 'registrado')
             })
             .catch(err=>{
-                console.warn(err, 'usuario No registrado')
+                alert.warn(err, 'usuario No registrado')
             })
     
         }

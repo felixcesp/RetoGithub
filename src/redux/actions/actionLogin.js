@@ -9,10 +9,10 @@ export const actionLoginAsync = (email, pass)=>{
     signInWithEmailAndPassword(auth, email, pass)
     .then(({user})=>{
             dispatch(actionLoginSync(email, pass))
-            console.log(user.displayName, 'Bienvenido')
+            alert(user.displayName + '   Bienvenido')
     })
     .catch(error =>{
-        console.warn('NO encontrado')
+        alert('Usuario no encontrado, por verifica tus datos')
     })
 
 }
@@ -29,30 +29,30 @@ return {
 //--------------Ingresar con Google-----------------------/
 export const loginGoogle = ()=>{
 return (dispatch)=> {
-        console.log("estoy dentro de google")
+        alert("estoy dentro de google")
        const auth = getAuth()
       signInWithPopup(auth, google)
       .then(({user})=>{
-        console.log(user, 'Bienvenido')
+        alert('gracias   ' + user + '    Bienvenido')
          dispatch(actionLoginSync(user.email))
       })
       .catch(({error})=>{
-        console.warn(error, 'No autorizado')
+        alert(error, 'No autorizado')
       })
 }
 }
 // ingresar con face
 export const loginFace = ()=>{
     return (dispatch)=> {
-            console.log("estoy dentro de face")
+            alert("estoy dentro de face")
            const auth = getAuth()
           signInWithPopup(auth, face)
           .then(({user})=>{
-            console.log(user, 'Bienvenido')
+            alert('gracias   ' + user + '   Bienvenido')
              dispatch(actionLoginSync(user.email))
           })
           .catch(({error})=>{
-            console.warn(error, 'No autorizado')
+            alert(error, 'No autorizado')
           })
     }
     }

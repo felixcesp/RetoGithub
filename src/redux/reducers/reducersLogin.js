@@ -8,10 +8,10 @@ export const reducersLogin = (state = {}, action)=>{
                 pass: action.payload.pass,
             }
             
-       /* case typesLogin.Logout:
+        case typesLogin.Logout:
             return {
 
-            }*/
+            }
             case typesUsuario.register:
                 return {
                     email: action.payload.email,

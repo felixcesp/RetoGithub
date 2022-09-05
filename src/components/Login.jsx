@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import useForm from "../hooks/useForm";
 import { actionLoginAsync, loginFace, loginGoogle } from "../redux/actions/actionLogin";
 import { Boton, BotonAll, BotonF, BotonImg, BotonR, FaceImg, Firstdiv, FormAll, FormIn, Frase, IconGit, LabeName, LettersR, Seconddiv, TitleMain } from "../styled/StyledComponents";
 
 const Login = () => {
-
+ 
     const dispatch =useDispatch()
 
 const [formValue, handleInputChange, reset] = useForm({
@@ -43,6 +43,7 @@ return (
             <BotonAll>
             <Boton type="submit"  >
             <BotonImg  src="https://res.cloudinary.com/felixces/image/upload/v1661617127/Retogithub/login_zsoqxp.png" alt="" />
+            
             </Boton>
 
             <Boton type="submit"  >

@@ -1,10 +1,8 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Firstdiv3, ImgLand, Mediumdiv, TitleLand} from '../styled/StyledComponents'
+import { useNavigate } from "react-router-dom"
+import { Firstdiv3, ImgLand, Mediumdiv, TitleLand } from "../styled/StyledComponents"
 
-export default function Landing() {
-    
-  const navigation = useNavigate()
+const Landing=()=>{
+const navigation = useNavigate()
 
   setTimeout(() => navigation('/phone'), 6000)
 
@@ -19,3 +17,4 @@ export default function Landing() {
     
   )
 }
+export default Landing

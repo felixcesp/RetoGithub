@@ -347,5 +347,26 @@ font-weight:bold;
 position:absolute;
 bottom:-8px;
 left:25px;
+`
+export const TableInfo=styled.div`
+
+height:645px;
+width:1250px;
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661709975/Retogithub/fondo22_zheuk7.jpg");
+background-size:cover;
+align-items:center;
+justify-content: center;
+position: relative;
+
+`
+export const Table2=styled.table`
+color:white;
+padding-left:0px;
+padding-top:250px;
+width:1000px;
+height:500px;
+font-size:18px;
+
 
 `

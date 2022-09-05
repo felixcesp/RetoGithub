@@ -7,6 +7,7 @@ import { BotonImg, ButLogin, Firstdiv2, FormAll2, FormIn2, Frase2,IconGit2, Labe
 const Register = () => {
     
     const dispatch = useDispatch()
+    
        const [formValue, handleInputChange, reset] = useForm({
         nombre: '',
         email: '',
