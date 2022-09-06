@@ -370,3 +370,41 @@ font-size:18px;
 
 
 `
+export const RegisterButton2=styled.button`
+width:250px;
+height:40px;
+margin-top:-200px;
+margin-left:680px;
+border-radius:30px;
+background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
+z-index:20;
+transition:0.4s;
+
+:hover{
+    transform:scale(1.1, 1.1); 
+   
+    background-color:  rgba(162, 195, 252, 1);
+}`
+export const Cambio=styled.h2`
+color:white;
+margin-top:5px;
+`
+export const RegisterButton3=styled.button`
+width:250px;
+height:40px;
+margin-top:-500px;
+margin-left:500px;
+border-radius:30px;
+background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
+z-index:20;
+transition:0.4s;
+
+:hover{
+    transform:scale(1.1, 1.1); 
+   
+    background-color:  rgba(162, 195, 252, 1);
+}`
+export const Cambio2=styled.h2`
+color:white;
+margin-top:5px;
+`

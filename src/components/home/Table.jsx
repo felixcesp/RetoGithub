@@ -1,8 +1,9 @@
 
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 import { deleteUserData, readInfoUser } from '../../redux/actions/userSave';
-import { Table2, TableInfo } from '../../styled/StyledComponents';
+import { Cambio2, RegisterButton3, Table2, TableInfo } from '../../styled/StyledComponents';
 
 
 //import { deleteDate, readDate } from '../../Redux/Actions/citasAction';
@@ -71,6 +72,9 @@ const Table = ({ setEdit }) => {
     }  
     </tbody>
   </Table2>
+  <RegisterButton3>
+                  <Link to='/saveuser'><Cambio2>pasar salvar datos</Cambio2></Link>  
+              </RegisterButton3>
 </TableInfo>
   )
 }

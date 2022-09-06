@@ -67,6 +67,7 @@ const Register = () => {
                <Link to="/pag1"><BotonImg  src="https://res.cloudinary.com/felixces/image/upload/v1661617127/Retogithub/login_zsoqxp.png" alt="" /></Link> 
                 </ButLogin>
             </LoginConte>
+       
     </Firstdiv2>
     );
 };
