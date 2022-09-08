@@ -37,7 +37,7 @@ height:31.25rem;
 width:25rem;
 margin:auto;
 box-sizing: border-box;
-background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661607887/Retogithub/fondo2_imstyc.jpg");
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661709843/Retogithub/fondo21_vloiql.jpg");
 background-repeat:no-repeat;
 background-size:cover;
 background-color:transparent;
@@ -89,6 +89,10 @@ border-radius:50%;
 background-color:transparent;
 margin-left:-0.875rem;
 margin-top:-0.5rem;
+transition:0.2s linear;
+:hover{
+    transform:scale(1.2, 1.2); 
+}
 `
 //botones GOOGLE Y LOG IN
 export const Boton=styled.button`
@@ -119,6 +123,10 @@ border-radius:50%;
 z-index:20;
 cursor:pointer;
 border:none;
+transition:0.2s linear;
+:hover{
+    transform:scale(1.2, 1.2); 
+}
 `
 //boton y texto registrate
 export const BotonR=styled.button`
@@ -128,6 +136,12 @@ background-color:transparent;
 z-index:20;
 border:none;
 cursor:pointer;
+:hover{
+   // transform:scale(1.05, 1.05); 
+    border-radius: 25px;
+    background-color:  #001a57;
+    
+}
 `
 //titulo registrar
 export const LettersR=styled.p`
@@ -137,7 +151,7 @@ height:1.25rem;
 font-size:1.0625rem;
 justify-content:center;
 text-align:center;
-margin-top:-0px;
+margin-top:5px;
 font-weight:bold;
 `
 
@@ -146,23 +160,26 @@ font-weight:bold;
 
 //CONTENEDOR PRINCIPAL REGISTRO
 export const Firstdiv2= styled.div`
-height:100%;
+height:645px;
 width:1250px;
 box-sizing: border-box;
-background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661640970/Retogithub/metal1_x8zv1w.jpg");
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661610913/Retogithub/fondo8_j9xsia.jpg");
 background-repeat:no-repeat;
 background-size:cover;
 align-items:center;
 justify-content: center;
 position: relative;
+
 `
 //contenedor del registro
 export const Seconddiv2= styled.div`
-height:645px;
+position:absolute;
+height:500px;
 width:25rem;
-margin:auto;
+top:80px;
+left:400px;
 box-sizing: border-box;
-background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661642403/Retogithub/fondo12_v3bwzv.jpg");
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1662591043/Retogithub/oto4_ptw4jf.jpg");
 background-repeat:no-repeat;
 background-size:cover;
 background-color: yellowgreen;
@@ -178,8 +195,8 @@ row-gap:10px;
 `
 //titulo registro
 export const TitleMain2=styled.h1`
-color:white;
-margin-top:10px;
+color:whitesmoke;
+margin-top:60px;
 `
 export const LabeName2=styled.label`
 color:whitesmoke;
@@ -194,26 +211,28 @@ padding-left:0.625rem;
 margin-bottom:32px;
 border-radius: 0.875rem;
 margin-left:0.9063rem;  
-border: 1px solid rgba(100, 100, 100, 0.5);
+border: 1.5px solid rgba(100, 100, 100, 0.5);
 `
 export const RegisterButton=styled.button`
 width:150px;
 height:40px;
-margin-top:-25px;
+margin-top:25px;
 border-radius:30px;
-background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
+background-color:#929292;
+//background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
 z-index:20;
 transition:0.4s;
 cursor:pointer;
 :hover{
-    transform:scale(1.2, 1.2); 
-    border-radius: 30%;
-    background-color:  rgba(162, 195, 252, 1);
+    transform:scale(1.05, 1.05); 
+    color:darkblue;
+    //background-color:  rgba(162, 195, 252, 1);
+    background-color:#7f7f7f;
 }
 
 `
 export const LettersR2=styled.p`
-color :white;
+color :black;
 width:80px;
 height:20px;
 font-size:1.0625rem;
@@ -224,14 +243,17 @@ font-weight:bold;
 
 `
 export const ButLogin=styled.button`
+position:absolute;
+top:-70px;
+left:-20px;
 width:50px;
 height:50px;
 border-radius:50%;
 transition:0.5s;
 :hover{
-    transform:scale(1.2, 1.2); 
+    transform:scale(1.02, 1.02); 
     
-    background-color:  rgba(162, 195, 252, 1);
+    
 }
 `
 export const LoginConte=styled.div`
@@ -348,6 +370,10 @@ position:absolute;
 bottom:-8px;
 left:25px;
 `
+
+
+
+//tabla
 export const TableInfo=styled.div`
 
 height:645px;
@@ -408,3 +434,124 @@ export const Cambio2=styled.h2`
 color:white;
 margin-top:5px;
 `
+
+
+
+
+
+
+
+
+//llenar datos para la tabla
+export const Firstdiv5= styled.div`
+height:645px;
+width:1250px;
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661610913/Retogithub/fondo8_j9xsia.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+align-items:center;
+justify-content: center;
+position: relative;
+
+`
+//div interno del fromulario
+export const Seconddiv6= styled.div`
+position:absolute;
+height:450px;
+width:1100px;
+top:115px;
+left:80px;
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1662591043/Retogithub/oto4_ptw4jf.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+background-color: yellowgreen;
+border-radius:1.875rem;
+
+`
+//icono github
+export const IconGit5=styled.img`
+position:absolute;
+width:70px;
+height:70px;
+left:5rem;
+top:10px;
+border-radius:50%;
+`
+//encabezado
+export const Frase6=styled.h2`
+position:absolute;
+width:500px;
+height:1.25rem;
+top:0px;
+left:400px;
+color:white;
+font-size:30px;
+font-weight:lighter;
+`
+//formulario horizontal
+export const FormAllH=styled.form`
+display:grid;
+grid-template-columns:repeat(4, 270px);
+column-gap:20px;
+margin-top:50px;
+`
+//inputs 
+export const FormIn6=styled.input`
+height:35px;
+width: 260px;
+padding-left:10px;
+margin-bottom:45px;
+margin-top:5px;
+border-radius: 14px;
+margin-left:-160px;  
+border: 1px solid rgba(100, 100, 100, 0.5);
+`
+export const LabeName6=styled.label`
+color:whitesmoke;
+font-size:20px;
+font-weight:bolder;
+margin-top:-30px;
+margin-left:200px;
+background-color:transparent;
+width:180px;
+`
+export const TitleMain6=styled.h1`
+color:whitesmoke;
+margin-top:5px;
+margin-left:450px;
+font-weight:lighter;
+`
+export const RegisterButton6=styled.button`
+width:250px;
+height:40px;
+margin-top:5px;
+margin-left:150px;
+border-radius:30px;
+background-color:#929292;
+//background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
+z-index:20;
+transition:0.4s;
+cursor:pointer;
+:hover{
+    transform:scale(1.05, 1.05); 
+    color:darkblue;
+    //background-color:  rgba(162, 195, 252, 1);
+    background-color:#7f7f7f;
+}`
+export const RegisterButton8=styled.button`
+width:250px;
+height:40px;
+margin-top:0px;
+margin-left:680px;
+border-radius:30px;
+background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
+z-index:20;
+transition:0.4s;
+
+:hover{
+    transform:scale(1.1, 1.1); 
+   
+    background-color:  rgba(162, 195, 252, 1);
+}`

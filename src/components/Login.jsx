@@ -31,7 +31,7 @@ return (
 
         <Seconddiv>
         <FormAll onSubmit ={handleSubmit}>
-        <TitleMain>Iniciar Sesion</TitleMain>
+        <TitleMain>sign in</TitleMain>
         <hr/>
             
                 <LabeName>Email </LabeName>
@@ -57,7 +57,7 @@ return (
             </BotonAll>
             <div >
             <BotonR type="submit">
-                 <Link  to="/register"><LettersR>Nuevo Usuario - Registrate</LettersR></Link> 
+                 <Link  to="/register"><LettersR>New user - Register</LettersR></Link> 
             </BotonR>
             </div>
               
