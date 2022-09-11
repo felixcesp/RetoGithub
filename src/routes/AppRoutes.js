@@ -9,6 +9,7 @@ import PhoneRegister from '../components/PhoneRegister';
 import Register from '../components/Register';
 import RegisterSave from '../components/RegisterSave';
 import ShortRegister from '../components/ShortRegister';
+import Repos from '../components/Repos';
 
 
 export default function AppRoutes() {
@@ -26,6 +27,7 @@ export default function AppRoutes() {
         <Route path='/verinfo' element={< Table setEdit={ setEdit }/>}/>
         <Route path='/regisformik' element={<BigForm/>}/>
         <Route path='/register2' element={<Register/>}/>
+        <Route path='/repos' element={<Repos/>}/>
         <Route path='*' element={<Navigate to="/"/>}/>
        </Routes>
     </BrowserRouter>

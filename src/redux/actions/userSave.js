@@ -1,4 +1,5 @@
 
+
 import { addDoc, collection, deleteDoc, doc, getDocs, query, where} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
 import { saveUserTypes } from "../types/storeUser"
@@ -7,7 +8,7 @@ import { saveUserTypes } from "../types/storeUser"
 
 export const addUser = ( userNew ) => {
     
-       console.log(userNew)
+   
        return (dispatch) => {
         addDoc(collection(db, "estadisticUser"), userNew)
         .then((resp)=>{

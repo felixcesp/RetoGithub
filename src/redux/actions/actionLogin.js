@@ -2,6 +2,8 @@ import { getAuth, signInWithEmailAndPassword, signInWithPopup } from "firebase/a
 import { face, google} from "../../firebase/firebaseConfig"
 import { typesLogin } from "../types/types"
 
+
+
 //--------------Login con email y pass-----------------------/
 export const actionLoginAsync = (email, pass)=>{
     return (dispatch)=>{
@@ -9,10 +11,14 @@ export const actionLoginAsync = (email, pass)=>{
     signInWithEmailAndPassword(auth, email, pass)
     .then(({user})=>{
             dispatch(actionLoginSync(email, pass))
-            alert(user.displayName + '   Bienvenido')
+            alert(user.displayName + '   Welcome')
+            window.location="/saveuser";
     })
     .catch(error =>{
-        alert('Usuario no encontrado, por verifica tus datos')
+        
+        alert(error, ' User not found, please verify your data, or click on register')
+        window.location="/register";
+
     })
 
 }
@@ -29,15 +35,17 @@ return {
 //--------------Ingresar con Google-----------------------/
 export const loginGoogle = ()=>{
 return (dispatch)=> {
-        alert("estoy dentro de google")
+       
        const auth = getAuth()
       signInWithPopup(auth, google)
       .then(({user})=>{
-        alert('gracias   ' + user + '    Bienvenido')
+        
          dispatch(actionLoginSync(user.email))
+       // alert('thanks   ' + user.displayName + '    Welcome')
+        window.location="/saveuser";
       })
       .catch(({error})=>{
-        alert(error, 'No autorizado')
+       // alert(error,"please, register")
       })
 }
 }
@@ -48,8 +56,9 @@ export const loginFace = ()=>{
            const auth = getAuth()
           signInWithPopup(auth, face)
           .then(({user})=>{
-            alert('gracias   ' + user + '   Bienvenido')
+         
              dispatch(actionLoginSync(user.email))
+             alert('gracias   ' + user + '   Bienvenido')
           })
           .catch(({error})=>{
             alert(error, 'No autorizado')

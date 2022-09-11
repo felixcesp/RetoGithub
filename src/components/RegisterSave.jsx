@@ -1,15 +1,15 @@
 
 import { useFormik } from 'formik';
-import { useDispatch} from 'react-redux';
-import { Cambio, Firstdiv2, Firstdiv5, FormAll2, FormAllH, FormIn2, FormIn6, Frase2,Frase6,IconGit2, IconGit5, LabeName2, LabeName6, LettersR2, RegisterButton, RegisterButton2, RegisterButton6, RegisterButton8, Seconddiv2, Seconddiv6, TitleMain2, TitleMain6 } from "../styled/StyledComponents";
+import { useDispatch, useSelector} from 'react-redux';
+import { Cambio, Firstdiv5, FormAllH, FormIn6, Frase6,IconGit5, LabeName6, LettersR2, RegisterButton6, RegisterButton8, Seconddiv6, TitleMain6 } from "../styled/StyledComponents";
 import { addUser } from "../redux/actions/userSave";
 import { Link } from 'react-router-dom';
-import { Row } from 'react-bootstrap';
+
 
 //import { useEffect } from "react";
 //import { Table } from "../components/home/Table";
 
-const RegisterSave = ({ edit }) => {
+const RegisterSave = ({ edit}) => {
    // const {saveUser} = useSelector( state => state)
    //const datos = useSelector( state => state.saveUser)
 
@@ -18,6 +18,7 @@ const RegisterSave = ({ edit }) => {
      console.log(dato)
    },[edit])*/
    
+   const usuarioName= useSelector(state => state.login);
   
     
     const dispatch = useDispatch();
@@ -46,7 +47,7 @@ const RegisterSave = ({ edit }) => {
         <Firstdiv5>
     
         <IconGit5 src="https://res.cloudinary.com/felixces/image/upload/v1661614263/Retogithub/icono2_ubwqaw.png" alt="" />
-        <Frase6>Your information closes Github to you</Frase6>
+        <Frase6>{usuarioName.nombre}Your information closes Github to you</Frase6>
         <Seconddiv6>
         <TitleMain6>User information</TitleMain6>
         <FormAllH onSubmit={formik.handleSubmit} >

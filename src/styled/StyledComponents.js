@@ -2,8 +2,8 @@ import styled from 'styled-components';
 //contenedor total login
 export const Firstdiv= styled.div`
 padding-top:2.5rem;
-height:645px;
-width:1250px;
+height:655px;
+width:1280px;
 box-sizing: border-box;
 background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661610913/Retogithub/fondo8_j9xsia.jpg");
 background-repeat:no-repeat;
@@ -15,8 +15,8 @@ position: relative;
 //icono github
 export const IconGit=styled.img`
 position:absolute;
-width:6.25rem;
-height:6.25rem;
+width:80px;
+height:80px;
 left:5rem;
 border-radius:50%;
 `
@@ -28,12 +28,12 @@ height:1.25rem;
 top:8.125rem;
 left:5rem;
 color:white;
-font-size:24px;
-font-weight:lighter;
+font-size:20px;
+font-weight:1.8px;
 `
 //contenedor del login
 export const Seconddiv= styled.div`
-height:31.25rem;
+height:520px;
 width:25rem;
 margin:auto;
 box-sizing: border-box;
@@ -56,6 +56,8 @@ row-gap:0.9375rem;
 export const TitleMain=styled.h1`
 color:white;
 margin-top:1.25rem;
+font-weight:1.8px;
+font-size:36px;
 `
 export const LabeName=styled.label`
 color:whitesmoke;
@@ -88,10 +90,10 @@ height:4.375rem;
 border-radius:50%;
 background-color:transparent;
 margin-left:-0.875rem;
-margin-top:-0.5rem;
+margin-top:-7px;
 transition:0.2s linear;
 :hover{
-    transform:scale(1.2, 1.2); 
+    transform:scale(1.1, 1.1); 
 }
 `
 //botones GOOGLE Y LOG IN
@@ -125,17 +127,18 @@ cursor:pointer;
 border:none;
 transition:0.2s linear;
 :hover{
-    transform:scale(1.2, 1.2); 
+    transform:scale(1.1, 1.1); 
 }
 `
 //boton y texto registrate
 export const BotonR=styled.button`
 width:18.125rem;
 height:1.875rem;
-background-color:transparent;
 z-index:20;
 border:none;
+text-decoration:none;
 cursor:pointer;
+border-style:none;
 :hover{
    // transform:scale(1.05, 1.05); 
     border-radius: 25px;
@@ -143,16 +146,21 @@ cursor:pointer;
     
 }
 `
+
 //titulo registrar
 export const LettersR=styled.p`
 color :white;
 width:17.5rem;
 height:1.25rem;
-font-size:1.0625rem;
+font-size:19px;
 justify-content:center;
 text-align:center;
-margin-top:5px;
+margin-top:-5px;
 font-weight:bold;
+text-decoration:none;
+border-style:none;
+border-color:black;
+
 `
 
 
@@ -197,6 +205,8 @@ row-gap:10px;
 export const TitleMain2=styled.h1`
 color:whitesmoke;
 margin-top:60px;
+font-size:30px;
+font-weight:1.8px;
 `
 export const LabeName2=styled.label`
 color:whitesmoke;
@@ -236,9 +246,8 @@ color :black;
 width:80px;
 height:20px;
 font-size:1.0625rem;
-justify-content:center;
-text-align:center;
-margin:auto;
+margin-top: 3px;
+margin-left:24px;
 font-weight:bold;
 
 `
@@ -278,16 +287,16 @@ export const Frase2=styled.h2`
 position:absolute;
 width:15.625rem;
 height:1.25rem;
-top:150px;
+top:170px;
 left:5rem;
 color:white;
-font-size:23px;
-font-weight:lighter;
+font-size:20px;
+font-weight:1.8px;
 `
 //landing
 export const Firstdiv3= styled.div`
-height:640px;
-width:1250px;
+height:650px;
+width:1280px;
 box-sizing: border-box;
 background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661691382/Retogithub/metal3_abta2f.jpg");
 background-repeat:no-repeat;
@@ -299,31 +308,33 @@ position:relative;
 `
 export const Mediumdiv= styled.div`
 position:absolute;
-width: 260px;
-height:260px;
+width: 250px;
+height:250px;
 top:130px;
-left:480px;
+left:500px;
 animation: rotation 5s infinite linear;
 @keyframes rotation {
     from{transform: rotate3d(0, 500, 0, 360deg);}
 }
 `
 export const ImgLand=styled.img`
-width:250px;
-height:250px;
+width:230px;
+height:230px;
 `
 //TITLE LANDING
 export const TitleLand=styled.h1`
+position:absolute;
 color:whitesmoke;
 position:absolute;
-top:400px;
-left:40px;
+top:430px;
+left:100px;
+font-size:30px;
 
 `
 //registracion telefono
 export const Firstdiv4= styled.div`
-height:645px;
-width:1250px;
+height:655px;
+width:1280px;
 box-sizing: border-box;
 background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661709975/Retogithub/fondo22_zheuk7.jpg");
 background-size:cover;
@@ -332,7 +343,7 @@ justify-content: center;
 position: relative;
 `
 export const Seconddiv3= styled.div`
-height:80%;
+height:75%;
 width:25rem;
 left:460px;
 box-sizing: border-box;
@@ -347,14 +358,14 @@ top:100px;
 export const ButLoNext=styled.button`
 position:absolute;
 left:-175px;
-bottom:60px;
+bottom:110px;
 width:150px;
 height:40px;
 border-radius:20px;
 transition:0.5s;
 background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
 :hover{
-    transform:scale(1.2, 1.2); 
+    transform:scale(1.05, 1.05); 
     
     background-color:  rgba(162, 195, 252, 1);
 }
@@ -364,38 +375,67 @@ color :whitesmoke;
 width:80px;
 height:20px;
 font-size:1.0625rem;
-
 font-weight:bold;
 position:absolute;
-bottom:-8px;
+bottom:-5px;
 left:25px;
 `
 
 
 
-//tabla
-export const TableInfo=styled.div`
 
-height:645px;
-width:1250px;
+
+//tabla contenedor
+export const TableInfo=styled.div`
+height:550px;
+width:auto;
+background-color:whitesmoke;
 box-sizing: border-box;
-background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661709975/Retogithub/fondo22_zheuk7.jpg");
-background-size:cover;
-align-items:center;
-justify-content: center;
-position: relative;
+text-align:center;
 
 `
 export const Table2=styled.table`
-color:white;
-padding-left:0px;
-padding-top:250px;
-width:1000px;
-height:500px;
+color:black;
+margin:auto;
+width:90%;
+height:auto;
 font-size:18px;
-
+border: solid 1px black;
+border-collapse: collapse;
+background-color:#9f90ea;
 
 `
+export const TableTd=styled.td`
+border: solid 1px black;
+text-align:center;
+`
+export const TableTh=styled.td`
+border: solid 1px black;
+text-align:center;
+height:40px;
+`
+
+//botones imagenes
+export const ImgTables= styled.button`
+background-color:lightblue;
+border:none;
+width:30px;
+border-radius:50%;
+height:20px;
+cursor: pointer;
+`
+export const ImgTables2= styled.button`
+background-color:red;
+border:none;
+width:30px;
+border-radius:50%;
+height:20px;
+cursor: pointer;
+`
+
+
+
+
 export const RegisterButton2=styled.button`
 width:250px;
 height:40px;
@@ -418,7 +458,7 @@ margin-top:5px;
 export const RegisterButton3=styled.button`
 width:250px;
 height:40px;
-margin-top:-500px;
+margin-top:00px;
 margin-left:500px;
 border-radius:30px;
 background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
@@ -442,7 +482,7 @@ margin-top:5px;
 
 
 
-//llenar datos para la tabla
+//formulario para llenar datos de la tabla
 export const Firstdiv5= styled.div`
 height:645px;
 width:1250px;
@@ -555,3 +595,14 @@ transition:0.4s;
    
     background-color:  rgba(162, 195, 252, 1);
 }`
+
+
+
+
+//paginacion
+
+export const PaginationConte= styled.div`
+background:transparent;
+display:flex;
+justify-content:center;
+`

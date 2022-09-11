@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import { Link} from "react-router-dom";
 import useForm from "../hooks/useForm";
 import { actionLoginAsync, loginFace, loginGoogle } from "../redux/actions/actionLogin";
-import { Boton, BotonAll, BotonF, BotonImg, BotonR, FaceImg, Firstdiv, FormAll, FormIn, Frase, IconGit, LabeName, LettersR, Seconddiv, TitleMain } from "../styled/StyledComponents";
+import { Boton, BotonAll, BotonF, BotonImg, BotonR, Cambio, FaceImg, Firstdiv, FormAll, FormIn, Frase, IconGit, LabeName, LettersR, RegisterButton8, Seconddiv, TitleMain } from "../styled/StyledComponents";
 
 const Login = () => {
  
@@ -26,6 +26,7 @@ const handleSubmit=(e)=>{
 return (
     
     <Firstdiv>
+     
         <IconGit src="https://res.cloudinary.com/felixces/image/upload/v1661614263/Retogithub/icono2_ubwqaw.png" alt="" />
         <Frase>We want to know more about you, you are very impontant for us</Frase>
 
@@ -60,9 +61,14 @@ return (
                  <Link  to="/register"><LettersR>New user - Register</LettersR></Link> 
             </BotonR>
             </div>
+      
               
         </FormAll>
+     
         </Seconddiv>
+        <RegisterButton8  >
+            <Link to='/phone'>  <Cambio>pasar a phone</Cambio></Link>  
+                </RegisterButton8>
     </Firstdiv>
 );
 };

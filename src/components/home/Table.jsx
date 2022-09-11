@@ -1,9 +1,14 @@
 
 import { useEffect } from 'react';
+import  Navbar  from '../home/NavBar';
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { deleteUserData, readInfoUser } from '../../redux/actions/userSave';
-import { Cambio2, RegisterButton3, Table2, TableInfo } from '../../styled/StyledComponents';
+import { Cambio2, ImgTables, ImgTables2, RegisterButton3, Table2, TableInfo, TableTd, TableTh } from '../../styled/StyledComponents';
+import { BsFillTrashFill } from 'react-icons/bs';
+import { AiOutlineEdit } from 'react-icons/ai';
+import { actionRepoSync } from '../../redux/actions/actionRepo';
+            
 
 
 //import { deleteDate, readDate } from '../../Redux/Actions/citasAction';
@@ -16,6 +21,13 @@ const Table = ({ setEdit }) => {
  // console.log(usardatos)
  //forma desestructurada
  const {saveUser} = useSelector( state => state)
+ const navigate=useNavigate();
+
+ const getRepos=(gitUser)=>{
+   dispatch(actionRepoSync(gitUser))
+    navigate('/repos')
+
+ }
 
 
 
@@ -36,7 +48,12 @@ const Table = ({ setEdit }) => {
    
 
   return (
+    <>
+ 
     <TableInfo>
+    <Navbar/>
+      <h1>Bienvenido nombre admin</h1>
+ 
   <Table2>
     {/* <!-- head --> */}
     <thead>
@@ -54,17 +71,17 @@ const Table = ({ setEdit }) => {
     {
         
       saveUser.map( ({ name, email,phone, gituser, idcard, date}, idx) => (
-        <tr key={ idx }>
-          <th>{ name }</th>
-          <td>{ email }</td>
-          <td>{ phone }</td>
-          <td>{ gituser }</td>
-          <td>{ idcard }</td>
-          <td>{ date }</td>
-          <th>
-              <button /*onClick={()=> actionEdit(email)}*/  className="btn btn-outline btn-warning">Edit</button>
-              <button onClick={() => actionDelete(email) }  className="btn btn-outline btn-error">Delete</button>
-          </th>
+        <tr onClick={()=>{getRepos(gituser)}} key={ idx }>
+          <TableTd>{ name }</TableTd>
+          <TableTd>{ email }</TableTd>
+          <TableTd>{ phone }</TableTd>
+          <TableTd>{ gituser }</TableTd>
+          <TableTd>{ idcard }</TableTd>
+          <TableTd>{ date }</TableTd>
+          <TableTh>
+              <ImgTables /*onClick={()=> actionEdit(email)}*/><AiOutlineEdit/></ImgTables>
+              <ImgTables2  onClick={() => actionDelete(email) }><BsFillTrashFill/></ImgTables2>
+          </TableTh>
           
         </tr>
       ))
@@ -72,10 +89,12 @@ const Table = ({ setEdit }) => {
     }  
     </tbody>
   </Table2>
-  <RegisterButton3>
+  
+</TableInfo>
+              <RegisterButton3>
                   <Link to='/saveuser'><Cambio2>pasar salvar datos</Cambio2></Link>  
               </RegisterButton3>
-</TableInfo>
+</>
   )
 }
 

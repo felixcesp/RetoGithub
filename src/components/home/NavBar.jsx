@@ -11,7 +11,7 @@ function NavBar() {
        <div className='navmenu'>
             <ul>
                 <li><a href="#apagina">Herramientas</a></li>
-                <li class="submenu"><a href="#menu">Soluciones</a>
+                <li className="submenu"><a href="#menu">Soluciones</a>
                     <ul>
                         <li>Voz Datos</li>
                         <li>Electricas</li>
