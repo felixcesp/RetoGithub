@@ -1,10 +1,13 @@
 {
   "files": {
-    "main.js": "/RetoGithub/static/js/main.ac501cd8.js",
+    "main.css": "/RetoGithub/static/css/main.407d64f8.css",
+    "main.js": "/RetoGithub/static/js/main.a820781f.js",
     "index.html": "/RetoGithub/index.html",
-    "main.ac501cd8.js.map": "/RetoGithub/static/js/main.ac501cd8.js.map"
+    "main.407d64f8.css.map": "/RetoGithub/static/css/main.407d64f8.css.map",
+    "main.a820781f.js.map": "/RetoGithub/static/js/main.a820781f.js.map"
   },
   "entrypoints": [
-    "static/js/main.ac501cd8.js"
+    "static/css/main.407d64f8.css",
+    "static/js/main.a820781f.js"
   ]
 }
