@@ -1,4 +1,4 @@
-*{
+/**{
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
@@ -18,4 +18,7 @@ body{
     margin: auto;
     background-color: white;
 
+}*/
+.boton55{
+    margin-top: 50px;
 }

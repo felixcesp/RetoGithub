@@ -92,6 +92,7 @@ background-color:transparent;
 margin-left:-0.875rem;
 margin-top:-7px;
 transition:0.2s linear;
+cursor:pointer;
 :hover{
     transform:scale(1.1, 1.1); 
 }
@@ -114,6 +115,11 @@ height:3.125rem;
 background-color:transparent;
 object-fit:cover;
 margin-left:-1.25rem;
+transition:0.2s linear;
+cursor:pointer;
+:hover{
+    transform:scale(1.1, 1.1); 
+}
 `
 
 //BOTON FACE
@@ -126,21 +132,25 @@ z-index:20;
 cursor:pointer;
 border:none;
 transition:0.2s linear;
+
 :hover{
     transform:scale(1.1, 1.1); 
 }
 `
 //boton y texto registrate
-export const BotonR=styled.button`
+export const BotonR35=styled.button`
 width:18.125rem;
 height:1.875rem;
 z-index:20;
+background-color:transparent;
 border:none;
 text-decoration:none;
-cursor:pointer;
 border-style:none;
+cursor:pointer;
+transition: linear 0.3s;
+
 :hover{
-   // transform:scale(1.05, 1.05); 
+    transform:scale(1.05, 1.05); 
     border-radius: 25px;
     background-color:  #001a57;
     
@@ -155,11 +165,9 @@ height:1.25rem;
 font-size:19px;
 justify-content:center;
 text-align:center;
-margin-top:-5px;
+margin-top:0px;
 font-weight:bold;
-text-decoration:none;
-border-style:none;
-border-color:black;
+
 
 `
 
@@ -168,7 +176,7 @@ border-color:black;
 
 //CONTENEDOR PRINCIPAL REGISTRO
 export const Firstdiv2= styled.div`
-height:645px;
+height:655px;
 width:1250px;
 box-sizing: border-box;
 background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661610913/Retogithub/fondo8_j9xsia.jpg");
@@ -295,7 +303,7 @@ font-weight:1.8px;
 `
 //landing
 export const Firstdiv3= styled.div`
-height:650px;
+height:655px;
 width:1280px;
 box-sizing: border-box;
 background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661691382/Retogithub/metal3_abta2f.jpg");
@@ -327,7 +335,7 @@ position:absolute;
 color:whitesmoke;
 position:absolute;
 top:430px;
-left:100px;
+left:157px;
 font-size:30px;
 
 `
@@ -414,6 +422,12 @@ border: solid 1px black;
 text-align:center;
 height:40px;
 `
+export const TableT25=styled.td`
+border: solid 1px black;
+text-align:center;
+height:40px;
+cursor: pointer;
+`
 
 //botones imagenes
 export const ImgTables= styled.button`
@@ -421,16 +435,24 @@ background-color:lightblue;
 border:none;
 width:30px;
 border-radius:50%;
-height:20px;
+height:30px;
 cursor: pointer;
+:hover{
+    transform:scale(1.1, 1.1);   
+    background-color:  rgba(162, 195, 252, 1);
+}
 `
 export const ImgTables2= styled.button`
-background-color:red;
+background-color:#ff4040;
 border:none;
 width:30px;
 border-radius:50%;
-height:20px;
+height:30px;
 cursor: pointer;
+:hover{
+    transform:scale(1.1, 1.1);   
+    background-color:  rgba(162, 195, 252, 1);
+}
 `
 
 
@@ -484,7 +506,7 @@ margin-top:5px;
 
 //formulario para llenar datos de la tabla
 export const Firstdiv5= styled.div`
-height:645px;
+height:655px;
 width:1250px;
 box-sizing: border-box;
 background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661610913/Retogithub/fondo8_j9xsia.jpg");
@@ -522,7 +544,7 @@ border-radius:50%;
 //encabezado
 export const Frase6=styled.h2`
 position:absolute;
-width:500px;
+width:auto;
 height:1.25rem;
 top:0px;
 left:400px;
@@ -567,7 +589,7 @@ export const RegisterButton6=styled.button`
 width:250px;
 height:40px;
 margin-top:5px;
-margin-left:150px;
+margin-left:140px;
 border-radius:30px;
 background-color:#929292;
 //background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
@@ -580,21 +602,79 @@ cursor:pointer;
     //background-color:  rgba(162, 195, 252, 1);
     background-color:#7f7f7f;
 }`
+
+//botones extras de revicion
 export const RegisterButton8=styled.button`
 width:250px;
 height:40px;
 margin-top:0px;
-margin-left:680px;
+margin-left:950px;
 border-radius:30px;
 background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
 z-index:20;
 transition:0.4s;
 
 :hover{
-    transform:scale(1.1, 1.1); 
+    transform:scale(1.08, 1.08); 
    
     background-color:  rgba(162, 195, 252, 1);
 }`
+
+export const RegisterButton9=styled.button`
+width:240px;
+height:40px;
+margin-top:25px;
+margin-left:732px;
+border-radius:30px;
+background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
+z-index:20;
+transition:0.4s;
+
+:hover{
+    transform:scale(1.08, 1.08); 
+   
+    background-color:  rgba(162, 195, 252, 1);
+}`
+
+export const RegisterButton10=styled.button`
+position:absolute;
+width:250px;
+height:40px;
+top:470px;
+left:130px;
+border-radius:30px;
+background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
+z-index:20;
+transition:0.4s;
+
+:hover{
+    transform:scale(1.08, 1.08); 
+   
+    background-color:  rgba(162, 195, 252, 1);
+}`
+
+
+export const Cambio9=styled.h2`
+color:white;
+margin-top:2px;
+font-size:20px;
+`
+
+export const LettersR22=styled.p`
+color :black;
+width:80px;
+height:20px;
+font-size:1.0625rem;
+margin-top: 3px;
+margin-left:74px;
+font-weight:bold;
+
+`
+
+
+
+
+
 
 
 
@@ -605,4 +685,22 @@ export const PaginationConte= styled.div`
 background:transparent;
 display:flex;
 justify-content:center;
+`
+//titulo tabla
+//tabla titulo nueva edicion
+export const TitleTable55= styled.h1`
+margin-top:80px;
+margin-bottom:30px;
+`
+export const InsearchR= styled.input`
+margin-top:15px;
+margin-bottom:25px;
+`
+export const LapaSearch= styled.div`
+width:20px;
+height:20px;
+position:absolute;
+left:704px;
+top:222px;
+background-color:transparent;
 `

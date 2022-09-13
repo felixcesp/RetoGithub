@@ -1,11 +1,11 @@
 import { useDispatch } from "react-redux";
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import useForm from "../hooks/useForm";
 import { actionLoginAsync, loginFace, loginGoogle } from "../redux/actions/actionLogin";
-import { Boton, BotonAll, BotonF, BotonImg, BotonR, Cambio, FaceImg, Firstdiv, FormAll, FormIn, Frase, IconGit, LabeName, LettersR, RegisterButton8, Seconddiv, TitleMain } from "../styled/StyledComponents";
+import { Boton, BotonAll, BotonImg, BotonR35, Cambio9, FaceImg, Firstdiv, FormAll, FormIn, Frase, IconGit, LabeName, LettersR, RegisterButton8, Seconddiv, TitleMain } from "../styled/StyledComponents";
 
 const Login = () => {
- 
+ const navigation = useNavigate();
     const dispatch =useDispatch()
 
 const [formValue, handleInputChange, reset] = useForm({
@@ -18,8 +18,7 @@ const {email, pass}= formValue
 
 const handleSubmit=(e)=>{
     e.preventDefault()
-   console.log(formValue)
-   dispatch(actionLoginAsync(email, pass))
+   actionLoginAsync(dispatch,navigation,email, pass)
     reset()
 }
 
@@ -47,19 +46,19 @@ return (
             
             </Boton>
 
-            <Boton type="submit"  >
-            <BotonImg src="https://res.cloudinary.com/felixces/image/upload/v1661617120/Retogithub/google_plros1.png" alt="" onClick={()=> dispatch(loginGoogle())}/>
-            </Boton>
+       
+            <BotonImg src="https://res.cloudinary.com/felixces/image/upload/v1661617120/Retogithub/google_plros1.png" alt="" onClick={()=> loginGoogle(dispatch ,navigation)}/>
+          
 
-            <BotonF type="submit" >
-            <FaceImg src="https://res.cloudinary.com/felixces/image/upload/v1661617116/Retogithub/face_ussxn0.png" alt="" onClick={()=> dispatch(loginFace
-            ())} />
-            </BotonF>
+       
+            <FaceImg src="https://res.cloudinary.com/felixces/image/upload/v1661617116/Retogithub/face_ussxn0.png" alt="" onClick={()=> loginFace(dispatch, navigation)} />
+           
             </BotonAll>
-            <div >
-            <BotonR type="submit">
-                 <Link  to="/register"><LettersR>New user - Register</LettersR></Link> 
-            </BotonR>
+            <div > 
+                 <BotonR35 type="submit">
+       
+                 <Link  to="/register" style={{ textDecoration: 'none' }}><LettersR>New user - Register</LettersR></Link> 
+                 </BotonR35>
             </div>
       
               
@@ -67,7 +66,7 @@ return (
      
         </Seconddiv>
         <RegisterButton8  >
-            <Link to='/phone'>  <Cambio>pasar a phone</Cambio></Link>  
+            <Link to='/phone' style={{ textDecoration: 'none' }}>  <Cambio9>pasar a phone</Cambio9></Link>  
                 </RegisterButton8>
     </Firstdiv>
 );

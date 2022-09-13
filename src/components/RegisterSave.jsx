@@ -1,24 +1,19 @@
 
 import { useFormik } from 'formik';
 import { useDispatch, useSelector} from 'react-redux';
-import { Cambio, Firstdiv5, FormAllH, FormIn6, Frase6,IconGit5, LabeName6, LettersR2, RegisterButton6, RegisterButton8, Seconddiv6, TitleMain6 } from "../styled/StyledComponents";
+import {Cambio9, Firstdiv5, FormAllH, FormIn6, Frase6,IconGit5, LabeName6, LettersR22, RegisterButton10, RegisterButton6, RegisterButton9, Seconddiv6, TitleMain6 } from "../styled/StyledComponents";
 import { addUser } from "../redux/actions/userSave";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
-//import { useEffect } from "react";
-//import { Table } from "../components/home/Table";
+
 
 const RegisterSave = ({ edit}) => {
-   // const {saveUser} = useSelector( state => state)
-   //const datos = useSelector( state => state.saveUser)
+    const navigation=useNavigate();
 
-  /* useEffect(()=>{
-     const dato =  datos.find((data)=>data.email === edit)
-     console.log(dato)
-   },[edit])*/
    
    const usuarioName= useSelector(state => state.login);
+   //const saverName= useSelector(state => state.saveUser);
   
     
     const dispatch = useDispatch();
@@ -33,7 +28,7 @@ const RegisterSave = ({ edit}) => {
             date:''
         },
         onSubmit: ( data ) => {
-            dispatch(addUser(data))
+            dispatch(addUser(data, navigation))
          
         },
     
@@ -47,9 +42,9 @@ const RegisterSave = ({ edit}) => {
         <Firstdiv5>
     
         <IconGit5 src="https://res.cloudinary.com/felixces/image/upload/v1661614263/Retogithub/icono2_ubwqaw.png" alt="" />
-        <Frase6>{usuarioName.nombre}Your information closes Github to you</Frase6>
+        <Frase6>{usuarioName.nombre}....Your information closes Github to you</Frase6>
         <Seconddiv6>
-        <TitleMain6>User information</TitleMain6>
+        <TitleMain6>{usuarioName.nombre}...information</TitleMain6>
         <FormAllH onSubmit={formik.handleSubmit} >
             
           
@@ -76,20 +71,21 @@ const RegisterSave = ({ edit}) => {
 
             
             <RegisterButton6 type="submit"  >
-              <LettersR2>Save</LettersR2> 
+              <LettersR22>Save</LettersR22> 
                 </RegisterButton6>
 
 
         </FormAllH>
+       
         
-        <RegisterButton8  >
-            <Link to='/verinfo'>  <Cambio>pasar a la tabla</Cambio></Link>  
-        </RegisterButton8>
-                <RegisterButton8  >
-            <Link to='/register'>  <Cambio>pasar a registro</Cambio></Link>  
-                </RegisterButton8>
+        <RegisterButton9  >
+            <Link to='/verinfo' style={{ textDecoration: 'none' }}>  <Cambio9>pasar a la tabla</Cambio9></Link>  
+        </RegisterButton9>
+        <RegisterButton10  >
+            <Link to='/register' style={{ textDecoration: 'none' }}>  <Cambio9>pasar a registro</Cambio9></Link>  
+        </RegisterButton10>
         </Seconddiv6>
-           
+ 
             
     </Firstdiv5>
     </>

@@ -22,7 +22,8 @@ import {
 
 export default function PhoneRegister() {
   const dispatch = useDispatch();
-  const openRegis=useNavigate();
+  //const openRegis=useNavigate();
+  const openuser=useNavigate();
 
   
   const [formValue, handleInputChange, reset] = useForm({
@@ -37,18 +38,23 @@ export default function PhoneRegister() {
         const elegido=element.phone
         const nombre=element.name;
        if (elegido === phone){
-        alert('Welcome   ' + nombre ); 
-
-        window.location="/saveuser";
-      
-      }else{
-        funcion();
+        openuser('/saveuser')
+        alert('Welcome again  ' + nombre ); 
+       //window.location="/saveuser"; 
+      }
+      else{
+         //funcion();
+         
       }
          });
+
      
-        function funcion(){
-        openRegis('/pag1');
-      }
+
+  /*  function funcion(){
+      alert('hola')
+      openuser('/register')
+    }*/
+  
     }
   const { phone } = formValue;
 

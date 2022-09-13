@@ -1,7 +1,16 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { actionLogoutAsyn } from '../../redux/actions/actionLogin';
 import '../../styled/navbar.css'
 
 function NavbarUser() {
+  const dispatch = useDispatch()
+  const navigation =useNavigate();
+  
+  const back=()=>{
+    navigation('/verinfo')
+  }
   return (
     <div className='all2'>
     <nav> 
@@ -10,27 +19,10 @@ function NavbarUser() {
  </div>
  <div className='navmenu'>
       <ul>
-          <li><a href="#apagina">Herramientas</a></li>
-          <li class="submenu"><a href="#menu">Soluciones</a>
+          <li className='submenu2'><a href="##">Usuario</a>
               <ul>
-                  <li>Voz Datos</li>
-                  <li>Electricas</li>
-                  <li>Diseño
-                  </li>
-              </ul>
-          </li>
-          <li className='submenu'><a href="#menu">Consultas</a>
-              <ul>
-                  <li>Telefonica</li>
-                  <li>Correo</li>
-                  <li>Cita online</li>
-              </ul>
-          </li>
-          <li><a href="#apagina">Contactanos</a></li>
-          <li className='submenu2'><a href="#mneu">Registro</a>
-              <ul>
-                  <li>Registro</li>
-                  <li>Inicio secion</li>
+              <li onClick={() => dispatch(actionLogoutAsyn())}><Link to='/login'>Cerra sesion</Link></li>
+                  <li onClick={()=>{back()}}>Volver</li>
               </ul>
           </li>
         </ul>              

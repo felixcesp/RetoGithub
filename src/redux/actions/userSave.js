@@ -6,14 +6,17 @@ import { saveUserTypes } from "../types/storeUser"
 
 
 
-export const addUser = ( userNew ) => {
+export const addUser = ( userNew, navigation ) => {
     
    
        return (dispatch) => {
         addDoc(collection(db, "estadisticUser"), userNew)
         .then((resp)=>{
+        
             dispatch( addUserSync( userNew ) )
            alert('Thanks for your help, your data is saved')
+           navigation('/verinfo');
+
         })
     }
 }

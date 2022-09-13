@@ -6,6 +6,7 @@ export const reducersLogin = (state = {}, action)=>{
             return {
                 email: action.payload.email,
                 pass: action.payload.pass,
+                nombre: action.payload.nombre
             }
             
         case typesLogin.Logout:

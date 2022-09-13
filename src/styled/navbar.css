@@ -38,13 +38,13 @@
         width: 100%;
         display: flex;
         justify-content:auto;  
-        padding-top: 20px;
-        padding-left: 280px;
+        padding-top: 30px;
+        padding-left: 980px;
         color: beige;
       
     }
     .navmenu ul li{  
-        padding-right: 3.125rem;
+        padding-right: 50px;
         list-style: none;
         position: relative; /*para que la linea se posicione en el elmento li que se le hace hover*/ 
         
@@ -61,49 +61,28 @@
     /*LINEA Y ANIMACION DEL MENU NAVBAR*/
     .navmenu ul li::before{
         content: "";
-        height: 3px; /*esta es la altura de la linea o del content*/
+        height: 4px; /*esta es la altura de la linea o del content*/
         width: 0%;/*para que la linea se muestre sin ancho, es decir que no se vea hasta el hover*/
         background-color: yellowgreen;/*color de la linea o el div content*/
         position: absolute; /*se posiciona en la etiqueta li que necesita el hover*/
-        left: 0;/*para que la linea salga desde el inicio de la palabra*/
-        bottom: 73px; /* se posiciona la linea debajo*/
+        left: 4px;/*para que la linea salga desde el inicio de la palabra*/
+        bottom: 43px; /* se posiciona la linea debajo*/
         transition: 0.3s ease-out;/* el tiempo en que se posicona la linea*/
     }
     .navmenu ul li:hover::before{
-        width: 65%;/* para que la linea se muestre al ancho deseado*/
+        width: 60%;/* para que la linea se muestre al ancho deseado*/
     }
     
     /*CONFIGURACION SUBMENUS*/
-    .navmenu .submenu ul {
-        background-color: transparent;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding-left: 5px;
-        height: 150px;
-        width: 180px;
-        padding-top: 0%;
-        margin-top: 20px;
-        list-style: none;
-        text-decoration: none; 
-        position: absolute; /* si no lo hago me descuadra los espacions de las palabras*/ 
-        font-size: 16px;
-        font-family: Fluro,sans-serif;
-        opacity: 0;
-        border-radius: 5px;
-        transition: 1.5s ease-out;
-        
-       background-color:rgba(89, 0, 255, 1);
-    
-    }
+ 
     .navmenu .submenu2 ul {
         background-color: transparent;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-left: 5px;
+        padding-left: 0px;
         height: 150px;
-        width: 180px;
+        width: 160px;
         padding-top: 0%;
         row-gap: 30px;
         margin-top: 20px;
@@ -120,21 +99,13 @@
           border-radius: 5px; 
     }
     /*tamaño de las letras del submenu*/
-    .navmenu .submenu ul li{
-        height: 30px;
-        padding-left: 10px;  
-    }
+ 
     .navmenu .submenu2 ul li{
         height: 30px;  
-        padding-left: 10px;
+        padding-left: 7px;
     }
     /*quitar las lineas del submenu*/
-    .navmenu .submenu ul li:hover::before{
-        width: 4px;/* para que la linea se muestre al ancho deseado*/
-        height: 20px;
-        background-color: yellowgreen;
-        bottom: 10px;
-    }
+  
     .navmenu .submenu2 ul li:hover::before{
         width: 4px;/* para que la linea se muestre al ancho deseado*/
         height: 20px;
@@ -146,18 +117,11 @@
     opacity: 1;
     }
     /*efectos del submenu*/
-    .navmenu .submenu ul li:hover{
-        background-color: rgba(121, 121, 150, 0.7);
-        transform: scale(1.03);
-        /*translate: 0 10;*/
-        cursor: pointer;
-        width: 65%;
-        transition: 0.5s ease-out;
-    }
+   
     .navmenu .submenu2 ul li:hover{
         background-color: rgba(121, 121, 150, 0.7);
         transform: scale(1.03);
-        width: 65%;
+        width: 100%;
         /*translate: 0 10;*/
         cursor: pointer;
         transition: 0.5s ease-out;

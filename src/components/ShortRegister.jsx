@@ -1,11 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import useForm from '../hooks/useForm'
 import { registrarUserAsync } from '../redux/actions/actionUsuario'
-import { BotonImg, ButLogin, Cambio2,Firstdiv2, FormAll2, FormIn2, Frase2, IconGit2, LabeName2, LettersR2, LoginConte, RegisterButton, RegisterButton3, Seconddiv2, TitleMain2 } from '../styled/StyledComponents'
+import { BotonImg, ButLogin, Cambio9,Firstdiv2, FormAll2, FormIn2, Frase2, IconGit2, LabeName2, LettersR2, LoginConte, RegisterButton, RegisterButton3, Seconddiv2, TitleMain2 } from '../styled/StyledComponents'
 
 const ShortRegister=() =>{
+    const navigation = useNavigate();
 
     const dispatch = useDispatch()
     const [formValue, handleInputChange, reset] = useForm({
@@ -19,7 +20,7 @@ const ShortRegister=() =>{
  const handleSubmit = (e) => {
      e.preventDefault()
      console.log(email, pass, nombre)
-     dispatch(registrarUserAsync(email, pass, nombre))
+     dispatch(registrarUserAsync(navigation,email, pass, nombre))
      reset()
  }
 
@@ -47,7 +48,7 @@ const ShortRegister=() =>{
              </RegisterButton>
      </FormAll2>
      <RegisterButton3>
-                  <Link to='/saveuser'><Cambio2>pasar form datos</Cambio2></Link>  
+                  <Link to='/saveuser' style={{ textDecoration: 'none' }}><Cambio9>pasar form datos</Cambio9></Link>  
               </RegisterButton3>
      </Seconddiv2>
           <LoginConte>

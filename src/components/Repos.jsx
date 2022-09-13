@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import  Navbar  from '../components/home/NavBar'
+//import  Navbar  from '../components/home/NavBar'
 import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import {PaginationConte, Table2, TableInfo, TableTd } from '../styled/StyledComponents'
+import '../styled/main.css'
+import {InsearchR, LapaSearch, PaginationConte,Table2, TableInfo, TableTd } from '../styled/StyledComponents'
 import { useSelector } from 'react-redux';
+import axios from 'axios';import NavbarUser from './home/NavbarUser';
+import { BsSearch } from 'react-icons/bs';
 
 function Repos() {
     const [repos, setRepos] = useState([]);
@@ -38,9 +40,12 @@ function Repos() {
 
     
     useEffect(() => {
-        fetch(`https:api.github.com/users/${gitUser}/repos?per_page=100`)
-        .then((resp)=> resp.json())
-        .then(data=>{
+      let api= axios.create(
+        {baseURL:`https:api.github.com/users/${gitUser}/repos?per_page=100` }
+      )
+        api.get()
+        .then(resp=>{
+          let data=resp.data
             setPageNumber(Math.ceil(data.length / 5))
             setRepos(data);
             setFilterRepos(data)
@@ -52,6 +57,7 @@ function Repos() {
 
   //********************************************************************** */
   const searching = (event)=>{
+  
     let userSearch= event.target.value;
     
     if(userSearch.length >= 3 ){
@@ -59,13 +65,14 @@ function Repos() {
         return  element.name.includes(userSearch)
         
         })
+        console.log(temporal)
       setFilterRepos([...temporal])
       setCurrentPagination(1);
     }else{
       
       setFilterRepos([...repos]);
     }
-    console.log(userSearch.length)
+    
     setPageNumber(Math.ceil(filterRepos.length / 5));
     setCurrentPage(filterRepos.slice((currentPagination*5)-5, currentPagination*5 ))
 
@@ -82,11 +89,12 @@ function Repos() {
     <>
  
     <TableInfo>
-   {/*<Navbar/>*/} 
-      <h1>Repositorios de {gitUser}</h1>
+   <NavbarUser/> 
+
+      <h1 className='boton55'>Repositorios de {gitUser}</h1>
+      <InsearchR type='text' name='search' onChange={searching}/>
+      <LapaSearch><BsSearch size='auto' /></LapaSearch>
       
-      
-      <input type='text' name='search' onChange={searching}/>
    
   <Table2>
     {/* <!-- head --> */}
@@ -138,7 +146,8 @@ function Repos() {
     <Pagination.Next onClick={paginationCurrentNext}/>
     
   </Pagination>  
-  </PaginationConte>    
+  </PaginationConte> 
+ 
 </>
   )
 }

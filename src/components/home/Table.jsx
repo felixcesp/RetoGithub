@@ -2,9 +2,9 @@
 import { useEffect } from 'react';
 import  Navbar  from '../home/NavBar';
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { deleteUserData, readInfoUser } from '../../redux/actions/userSave';
-import { Cambio2, ImgTables, ImgTables2, RegisterButton3, Table2, TableInfo, TableTd, TableTh } from '../../styled/StyledComponents';
+import { ImgTables, ImgTables2, Table2, TableInfo, TableT25, TableTd, TableTh, TitleTable55} from '../../styled/StyledComponents';
 import { BsFillTrashFill } from 'react-icons/bs';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { actionRepoSync } from '../../redux/actions/actionRepo';
@@ -15,13 +15,14 @@ import { actionRepoSync } from '../../redux/actions/actionRepo';
 
 const Table = ({ setEdit }) => {
   
-
+  const nombre= useSelector(state => state.login);
   //forma vacana
  // const usardatos = useSelector( state => state.saveUser)
  // console.log(usardatos)
  //forma desestructurada
  const {saveUser} = useSelector( state => state)
  const navigate=useNavigate();
+
 
  const getRepos=(gitUser)=>{
    dispatch(actionRepoSync(gitUser))
@@ -52,8 +53,9 @@ const Table = ({ setEdit }) => {
  
     <TableInfo>
     <Navbar/>
-      <h1>Bienvenido nombre admin</h1>
- 
+    <>
+      <TitleTable55>Bienvenido   {nombre.nombre} </TitleTable55>
+    </>
   <Table2>
     {/* <!-- head --> */}
     <thead>
@@ -71,11 +73,11 @@ const Table = ({ setEdit }) => {
     {
         
       saveUser.map( ({ name, email,phone, gituser, idcard, date}, idx) => (
-        <tr onClick={()=>{getRepos(gituser)}} key={ idx }>
+        <tr  key={ idx }>
           <TableTd>{ name }</TableTd>
           <TableTd>{ email }</TableTd>
           <TableTd>{ phone }</TableTd>
-          <TableTd>{ gituser }</TableTd>
+          <TableT25 onClick={()=>{getRepos(gituser)}}>{ gituser }</TableT25>
           <TableTd>{ idcard }</TableTd>
           <TableTd>{ date }</TableTd>
           <TableTh>
@@ -91,9 +93,7 @@ const Table = ({ setEdit }) => {
   </Table2>
   
 </TableInfo>
-              <RegisterButton3>
-                  <Link to='/saveuser'><Cambio2>pasar salvar datos</Cambio2></Link>  
-              </RegisterButton3>
+            
 </>
   )
 }
