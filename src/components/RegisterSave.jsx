@@ -42,9 +42,9 @@ const RegisterSave = ({ edit}) => {
         <Firstdiv5>
     
         <IconGit5 src="https://res.cloudinary.com/felixces/image/upload/v1661614263/Retogithub/icono2_ubwqaw.png" alt="" />
-        <Frase6>{usuarioName.nombre}....Your information closes Github to you</Frase6>
+        <Frase6>Your information closes Github to you</Frase6>
         <Seconddiv6>
-        <TitleMain6>{usuarioName.nombre}...information</TitleMain6>
+        <TitleMain6>{usuarioName.nombre}&nbsp;&nbsp;information</TitleMain6>
         <FormAllH onSubmit={formik.handleSubmit} >
             
           

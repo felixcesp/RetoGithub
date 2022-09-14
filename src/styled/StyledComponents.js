@@ -546,11 +546,11 @@ export const Frase6=styled.h2`
 position:absolute;
 width:auto;
 height:1.25rem;
-top:0px;
-left:400px;
+top:20px;
+left:330px;
 color:white;
-font-size:30px;
-font-weight:lighter;
+font-size:35px;
+font-weight:1.8px;
 `
 //formulario horizontal
 export const FormAllH=styled.form`
@@ -580,9 +580,10 @@ background-color:transparent;
 width:180px;
 `
 export const TitleMain6=styled.h1`
+width:auto;
 color:whitesmoke;
 margin-top:5px;
-margin-left:450px;
+text-align:center;
 font-weight:lighter;
 `
 export const RegisterButton6=styled.button`
