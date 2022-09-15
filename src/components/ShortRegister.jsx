@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import useForm from '../hooks/useForm'
 import { registrarUserAsync } from '../redux/actions/actionUsuario'
-import { BotonImg, ButLogin, Cambio9,Firstdiv2, FormAll2, FormIn2, Frase2, IconGit2, LabeName2, LettersR2, LoginConte, RegisterButton, RegisterButton3, Seconddiv2, TitleMain2 } from '../styled/StyledComponents'
+import { BotonImg, ButLogin, Firstdiv2, FormAll2, FormIn2, Frase2, IconGit2, LabeName2, LettersR2, LoginConte, RegisterButton, Seconddiv2, TitleMain2 } from '../styled/StyledComponents'
 
 const ShortRegister=() =>{
     const navigation = useNavigate();
@@ -47,9 +47,7 @@ const ShortRegister=() =>{
            <LettersR2>Register</LettersR2> 
              </RegisterButton>
      </FormAll2>
-     <RegisterButton3>
-                  <Link to='/saveuser' style={{ textDecoration: 'none' }}><Cambio9>pasar form datos</Cambio9></Link>  
-              </RegisterButton3>
+    
      </Seconddiv2>
           <LoginConte>
              <ButLogin >

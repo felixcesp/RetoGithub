@@ -1,9 +1,9 @@
 
 import { useFormik } from 'formik';
 import { useDispatch, useSelector} from 'react-redux';
-import {Cambio9, Firstdiv5, FormAllH, FormIn6, Frase6,IconGit5, LabeName6, LettersR22, RegisterButton10, RegisterButton6, RegisterButton9, Seconddiv6, TitleMain6 } from "../styled/StyledComponents";
+import {Firstdiv5, FormAllH, FormIn6, Frase6,IconGit5, LabeName6, LettersR22, RegisterButton6, Seconddiv6, TitleMain6 } from "../styled/StyledComponents";
 import { addUser } from "../redux/actions/userSave";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 
@@ -84,13 +84,7 @@ const RegisterSave = ({ edit }) => {
 
         </FormAllH>
        
-        
-        <RegisterButton9  >
-            <Link to='/verinfo' style={{ textDecoration: 'none' }}>  <Cambio9>pasar a la tabla</Cambio9></Link>  
-        </RegisterButton9>
-        <RegisterButton10  >
-            <Link to='/register' style={{ textDecoration: 'none' }}>  <Cambio9>pasar a registro</Cambio9></Link>  
-        </RegisterButton10>
+     
         </Seconddiv6>
  
             

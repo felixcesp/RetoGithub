@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link, useNavigate} from "react-router-dom";
 import useForm from "../hooks/useForm";
 import { actionLoginAsync, loginFace, loginGoogle } from "../redux/actions/actionLogin";
-import { Boton, BotonAll, BotonImg, BotonR35, Cambio9, FaceImg, Firstdiv, FormAll, FormIn, Frase, IconGit, LabeName, LettersR, RegisterButton8, Seconddiv, TitleMain } from "../styled/StyledComponents";
+import { Boton, BotonAll, BotonImg, BotonR35,FaceImg, Firstdiv, FormAll, FormIn, Frase, IconGit, LabeName, LettersR, Seconddiv, TitleMain } from "../styled/StyledComponents";
 
 const Login = () => {
  
@@ -71,9 +71,7 @@ return (
         </FormAll>
      
         </Seconddiv>
-        <RegisterButton8  >
-            <Link to='/phone' style={{ textDecoration: 'none' }}>  <Cambio9>pasar a phone</Cambio9></Link>  
-                </RegisterButton8>
+      
     </Firstdiv>
 );
 };
