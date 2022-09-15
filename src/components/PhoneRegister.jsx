@@ -3,6 +3,7 @@ import { useDispatch} from "react-redux";
 import { Link, useNavigate} from "react-router-dom";
 import { db } from "../firebase/firebaseConfig";
 import useForm from "../hooks/useForm";
+import { actionLoginSync } from "../redux/actions/actionLogin";
 import { actionLogPhoneSync} from "../redux/actions/actionLogPhone";
 import {
   ButLoNext,
@@ -38,6 +39,7 @@ export default function PhoneRegister() {
         const elegido=element.phone
         const nombre=element.name;
        if (elegido === phone){
+        dispatch(actionLoginSync("","","", true))
         openuser('/saveuser')
         alert('Welcome again  ' + nombre ); 
        //window.location="/saveuser"; 
