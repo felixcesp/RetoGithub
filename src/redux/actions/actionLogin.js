@@ -27,11 +27,11 @@ export const actionLoginAsync = (email, pass)=>{
 }
 }
 */
-export const actionLoginSync = (email, pass, nombre)=>{
+export const actionLoginSync = (email, pass, nombre, isLogged)=>{
 return {
     type: typesLogin.verificarLogin,
     payload:{
-        email, pass, nombre
+        email, pass, nombre, isLogged
     }
 }
 }/*
@@ -79,11 +79,10 @@ export const loginFace = ()=>{
         signInWithEmailAndPassword(auth, email, pass)
         .then(({user})=>{
                 const nombre =user.displayName
-                dispatch(actionLoginSync(email, pass, nombre))
-                
+                dispatch(actionLoginSync(email, pass, nombre, true))             
                 navigation("/saveuser")
                 alert(user.displayName + '   Welcome')
-                //window.location="/saveuser";
+               
         })
         .catch(error =>{ 
           alert("usuario no registrado, por favor registrate")
@@ -104,7 +103,7 @@ export const loginGoogle = (dispatch, navigation)=>{
           .then(({user})=>{
             console.log(user)
             const nombre =user.displayName
-             dispatch(actionLoginSync(user.email,"", nombre))
+             dispatch(actionLoginSync(user.email,"", nombre, true))
             
             // window.location="/saveuser";
             navigation("/saveuser")
@@ -124,7 +123,7 @@ export const loginGoogle = (dispatch, navigation)=>{
               signInWithPopup(auth, face)
               .then(({user})=>{
                 const nombre =user.displayName
-                 dispatch(actionLoginSync(user.email, "", nombre))
+                 dispatch(actionLoginSync(user.email, "", nombre, true))
                  alert('gracias   ' + user + '   Bienvenido')
                  navigation('/saveuser')
               })

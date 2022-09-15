@@ -1,3 +1,4 @@
+
 import { useDispatch } from "react-redux";
 import { Link, useNavigate} from "react-router-dom";
 import useForm from "../hooks/useForm";
@@ -5,6 +6,9 @@ import { actionLoginAsync, loginFace, loginGoogle } from "../redux/actions/actio
 import { Boton, BotonAll, BotonImg, BotonR35, Cambio9, FaceImg, Firstdiv, FormAll, FormIn, Frase, IconGit, LabeName, LettersR, RegisterButton8, Seconddiv, TitleMain } from "../styled/StyledComponents";
 
 const Login = () => {
+ 
+
+
  const navigation = useNavigate();
     const dispatch =useDispatch()
 
@@ -16,9 +20,11 @@ const [formValue, handleInputChange, reset] = useForm({
 
 const {email, pass}= formValue
 
+
 const handleSubmit=(e)=>{
     e.preventDefault()
-   actionLoginAsync(dispatch,navigation,email, pass)
+
+   actionLoginAsync(dispatch,navigation,email, pass,)
     reset()
 }
 

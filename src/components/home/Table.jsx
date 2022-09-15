@@ -8,10 +8,8 @@ import { ImgTables, ImgTables2, Table2, TableInfo, TableT25, TableTd, TableTh, T
 import { BsFillTrashFill } from 'react-icons/bs';
 import { AiOutlineEdit } from 'react-icons/ai';
 import { actionRepoSync } from '../../redux/actions/actionRepo';
-            
 
 
-//import { deleteDate, readDate } from '../../Redux/Actions/citasAction';
 
 const Table = ({ setEdit }) => {
   
@@ -38,10 +36,10 @@ const Table = ({ setEdit }) => {
     dispatch( deleteUserData(email) )
   }
 
-  /*const actionEdit = (email) => {
-    setEdit( email )
+  const actionEdit = (email) => {
+    setEdit( email );
     
-  }*/
+  }
 
   useEffect(() => {
     dispatch(readInfoUser())
@@ -81,7 +79,7 @@ const Table = ({ setEdit }) => {
           <TableTd>{ idcard }</TableTd>
           <TableTd>{ date }</TableTd>
           <TableTh>
-              <ImgTables /*onClick={()=> actionEdit(email)}*/><AiOutlineEdit/></ImgTables>
+              <ImgTables onClick={()=> actionEdit(email)}><AiOutlineEdit/></ImgTables>
               <ImgTables2  onClick={() => actionDelete(email) }><BsFillTrashFill/></ImgTables2>
           </TableTh>
           

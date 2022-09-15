@@ -10,24 +10,33 @@ import Register from '../components/Register';
 import RegisterSave from '../components/RegisterSave';
 import ShortRegister from '../components/ShortRegister';
 import Repos from '../components/Repos';
+import { useSelector } from 'react-redux';
+import { PrivatePath, PublicPath } from '../components/home/isLogged';
 
 
 export default function AppRoutes() {
   const [edit, setEdit] = useState()
+  const logged= useSelector(state=>state.login.isLogged);
+
+
   return (
     <div>
     <BrowserRouter>
        <Routes>
-        <Route path='/' element={<Landing/>}/>
-        <Route path='/land' element={<Landing/>}/>
-        <Route path='/phone' element={<PhoneRegister/>}/>
-        <Route path='/pag1' element={<Login/>}/>
-        <Route path='/register' element={<ShortRegister/>}/>
-        <Route path='/saveuser' element={< RegisterSave edit={ edit }/>}/>
-        <Route path='/verinfo' element={< Table setEdit={ setEdit }/>}/>
-        <Route path='/regisformik' element={<BigForm/>}/>
-        <Route path='/register2' element={<Register/>}/>
-        <Route path='/repos' element={<Repos/>}/>
+
+        <Route path='/' element={<PublicPath auth={logged}><Landing/></PublicPath>}/>
+        <Route path='/land' element={<PublicPath auth={logged}><Landing/></PublicPath>}/>
+        <Route path='/phone' element={<PublicPath auth={logged}><PhoneRegister/></PublicPath>}/>
+        <Route path='/pag1' element={<PublicPath auth={logged}><Login/></PublicPath>}/>
+        <Route path='/register' element={<PublicPath auth={logged}><ShortRegister/></PublicPath>}/>
+
+
+        <Route path='/saveuser' element={<PrivatePath auth={logged}><RegisterSave edit={ edit }/></PrivatePath>}/>
+        <Route path='/verinfo' element={<PrivatePath auth={logged}>< Table setEdit={ setEdit }/></PrivatePath>}/>
+        <Route path='/regisformik' element={<PrivatePath auth={logged}><BigForm/></PrivatePath>}/>
+        <Route path='/register2' element={<PrivatePath auth={logged}><Register/></PrivatePath>}/>
+        <Route path='/repos' element={<PrivatePath auth={logged}><Repos/></PrivatePath>}/>
+        
         <Route path='*' element={<Navigate to="/"/>}/>
        </Routes>
     </BrowserRouter>

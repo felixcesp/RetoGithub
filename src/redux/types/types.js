@@ -10,3 +10,7 @@ export const typesUsuario ={
 export const typesLoginPhone={
     verificarPhone:'login con telefono'
 }
+
+export const typesPaths={
+    iniciarRutas:'rutasPrivadasP'
+}
