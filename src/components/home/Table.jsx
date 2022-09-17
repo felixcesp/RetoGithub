@@ -37,7 +37,8 @@ const Table = ({ setEdit }) => {
   }
 
   const actionEdit = (email) => {
-    setEdit( email );
+    setEdit( email )
+    navigate("/saveuser");
     
   }
 

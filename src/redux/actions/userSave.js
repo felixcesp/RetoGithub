@@ -1,6 +1,6 @@
 
 
-import { addDoc, collection, deleteDoc, doc, getDocs, query, where} from "firebase/firestore"
+import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc, where} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
 import { saveUserTypes } from "../types/storeUser"
 
@@ -65,3 +65,24 @@ const deleteUserDataSync = (email) => ({
     type: saveUserTypes.delete,
     payload: email
 })
+
+//EDITAR O PUT
+
+export const editUserData =(data, edit)=>{
+    return async(dispatch)=>{
+        const q = query( collection(db, 'estadisticUser'), where("email", "==", edit) );
+        const userRaw = await getDocs(q)
+        let id='';
+      
+     
+        userRaw.forEach((info)=>{
+          id= info.id
+    
+        })
+        try{
+        await updateDoc(doc(db, "estadisticUser", id ), data)
+    }catch(error){
+        console.log(error)
+    }
+    }
+}

@@ -587,22 +587,54 @@ text-align:center;
 font-weight:lighter;
 `
 export const RegisterButton6=styled.button`
-width:250px;
+width:120px;
 height:40px;
 margin-top:5px;
-margin-left:140px;
+margin-left:138px;
 border-radius:30px;
 background-color:#929292;
 //background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
 z-index:20;
 transition:0.4s;
 cursor:pointer;
+border:1.5px solid #1c0d02;
+
+:disabled{
+opacity:0.7; 
+pointer-events: none;
+border:none;
+  
+}
+:hover{
+    transform:scale(1.05, 1.05); 
+    color:darkblue;
+    background-color:#7f7f7f;
+}`
+export const RegisterButton7=styled.button`
+width:120px;
+height:40px;
+margin-top:5px;
+margin-left:-14px;
+border-radius:30px;
+background-color:#929292;
+//background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
+z-index:20;
+transition:0.4s;
+cursor:pointer;
+border:1.5px solid #1c0d02;
+
+:disabled{
+opacity:0.7; 
+pointer-events: none;
+border:none;
+};
 :hover{
     transform:scale(1.05, 1.05); 
     color:darkblue;
     //background-color:  rgba(162, 195, 252, 1);
     background-color:#7f7f7f;
 }`
+
 
 //botones extras de revicion
 export const RegisterButton8=styled.button`
@@ -667,7 +699,7 @@ width:80px;
 height:20px;
 font-size:1.0625rem;
 margin-top: 3px;
-margin-left:74px;
+margin-left:11px;
 font-weight:bold;
 
 `

@@ -17,13 +17,13 @@ import { PrivatePath, PublicPath } from '../components/home/isLogged';
 export default function AppRoutes() {
   const [edit, setEdit] = useState()
   const logged= useSelector(state=>state.login.isLogged);
-
+//<Route path='/saveuser' element={<RegisterSave/>}/>
 
   return (
     <div>
     <BrowserRouter>
        <Routes>
-
+       
         <Route path='/' element={<PublicPath auth={logged}><Landing/></PublicPath>}/>
         <Route path='/land' element={<PublicPath auth={logged}><Landing/></PublicPath>}/>
         <Route path='/phone' element={<PublicPath auth={logged}><PhoneRegister/></PublicPath>}/>
