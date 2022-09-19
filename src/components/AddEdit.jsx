@@ -3,7 +3,9 @@ import {useDispatch, useSelector} from 'react-redux'
 import { FileUpload } from '../../src/helpers/FileUpload';
 import useForm from '../hooks/useForm';
 import {addPlantaAsync} from '../redux/actions/actionEdit'
-import { Firstdiv5, FormAllH, FormIn6, Frase6, IconGit5, LabeName6, RegisterButton6, Seconddiv6, TitleMain6 } from '../styled/StyledComponents';
+import { Firstdiv5, FormAllH, FormIn6,Frase6, IconGit5, LabeName6, RegisterButton6, Seconddiv6, TitleMain6 } from '../styled/StyledComponents';
+import '../styled/main.css'
+
 
 const AddEdit = () => {
 
@@ -85,7 +87,7 @@ const AddEdit = () => {
 
 
                      <LabeName6>Imagen</LabeName6>
-                    <FormIn6 type="file" name="foto" placeholder="Ingrese Foto.jpg" onChange={handleFileChange} />
+                    <input    className="cargarImg" type="file" name="foto"  onChange={handleFileChange} />
                 
                 
 

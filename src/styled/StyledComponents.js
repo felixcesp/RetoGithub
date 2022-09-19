@@ -737,3 +737,20 @@ left:704px;
 top:222px;
 background-color:transparent;
 `
+
+// componentes nuevos de editar
+//input imagen
+export const FormIn60=styled.input`
+height:35px;
+width: 260px;
+//padding-left:10px;
+margin-bottom:45px;
+margin-top:5px;
+border-radius: 14px;
+margin-left:-160px;  
+border: 1px solid rgba(100, 100, 100, 0.5);
+background-color:whitesmoke;
+input[type=file] {
+-webkit-appearance:none;
+}
+`
