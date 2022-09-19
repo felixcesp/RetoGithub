@@ -5,6 +5,7 @@ import {Firstdiv5, FormAllH, FormIn6, Frase6,IconGit5, LabeName6, LettersR22, Re
 
 import { useNavigate } from 'react-router-dom';
 import React, { useEffect, useRef, useState } from 'react';
+import { addUser, editUserData } from '../redux/actions/userSave';
 
 
 
@@ -14,7 +15,7 @@ const RegisterSave = ({ edit }) => {
    const usuarioName= useSelector(state => state.login);
    const saveUser = useSelector(state => state.saveUser);
    const [infoGit, setInfoGit] = useState()
-
+   const dispatch = useDispatch();
 
   
 
@@ -22,38 +23,18 @@ const RegisterSave = ({ edit }) => {
    const editBtn = useRef();
    console.log(addBtn)
    console.log(editBtn)
-  
-   //addBtn.current=butdisabled
-   //console.log(addbtn.current)
-   //console.log(editbtn.current)
-  
-   
+
+
    useEffect(() => {
     const datoCambiar = saveUser.find( (datos) => datos.email === edit)
     setInfoGit(datoCambiar);
     if (edit){
-     // addBtn.current='disabled'
-     // editBtn.current='disabled'
-      // addbtn.current('disabled')
-       //editbtn.current('disabled')
-       //addbtn.current='false';
-        //editbtn.current='true';
         addBtn.current.setAttribute('disabled', 'true');
        // editBtn.current.setAttribute('enable','true');
-   
-
     }else{
         //addBtn.current.setAttribute('disabled','true');
-        editBtn.current.setAttribute('disabled','true');
-      // addBtn.current='disabled'
-      // editBtn.current='disabled'
-       // addbtn.current('btn-disabled')
-        //editbtn.current('btn-disabled')
-        //addbtn.current='true';
-        //editbtn.current='false';
-     
-    }
-   
+        editBtn.current.setAttribute('disabled','true');   
+    } 
    },[edit, saveUser, addBtn, editBtn]);
   
     
@@ -70,15 +51,16 @@ const RegisterSave = ({ edit }) => {
         },
         onSubmit: ( data ) => {
             if (edit){
-               // dispatch(editUserData(data, edit))
+                dispatch(editUserData(data, edit))
               //  console.log(edit)
+              //dispatch(addUserSync(data, edit))
            
                 navigation('/verinfo')
-             
+                
             }
             else{
-           // dispatch(addUser(data, navigation))
-          
+           dispatch(addUser(data, navigation))
+           //dispatch(addUserSync(data, edit))
            navigation('/verinfo')
         }
         },
@@ -101,24 +83,24 @@ const RegisterSave = ({ edit }) => {
           
             
                 <LabeName6>Name and last name</LabeName6>
-                <FormIn6 type="text" name="name" onChange={formik.handleChange} defaultValue={infoGit?.name}  />
+                <FormIn6 required type="text" name="name" onChange={formik.handleChange}  defaultValue={infoGit?.name}  />
             
             
                 <LabeName6>Email address</LabeName6>
-                <FormIn6 type="email" placeholder="github user" name="email" onChange={formik.handleChange} defaultValue={infoGit?.email} />
+                <FormIn6 required type="email" placeholder="name@proveedor" name="email" onChange={formik.handleChange} defaultValue={infoGit?.email} />
           
                 <LabeName6>Password</LabeName6>
-                <FormIn6 type="password" name="pass" onChange={formik.handleChange} defaultValue={infoGit?.pass}/>
+                <FormIn6 required type="password" name="pass" onChange={formik.handleChange} defaultValue={infoGit?.pass}/>
             
                 <LabeName6>Phone</LabeName6>
-                <FormIn6 type="tel" name="phone"  onChange={formik.handleChange} defaultValue={infoGit?.phone}/>
+                <FormIn6 required type="tel" name="phone"  onChange={formik.handleChange} defaultValue={infoGit?.phone}/> 
            
                 <LabeName6>Github user</LabeName6>
-                <FormIn6 type="text"  placeholder="@examplename"  name="gituser"  onChange={formik.handleChange} defaultValue={infoGit?.gituser}  />
+                <FormIn6 required type="text"  placeholder="@examplename"  name="gituser"  onChange={formik.handleChange} defaultValue={infoGit?.gituser}  />
                 <LabeName6>Id card</LabeName6>
-                <FormIn6 type="number" name="idcard"  onChange={formik.handleChange} defaultValue={infoGit?.idcard}  />
+                <FormIn6  type="number" name="idcard"  onChange={formik.handleChange} defaultValue={infoGit?.idcard}  />
                 <LabeName6>birthday date</LabeName6>
-                <FormIn6 type="date" name="date"  onChange={formik.handleChange} defaultValue={infoGit?.date}  />
+                <FormIn6 required type="date" name="date"  onChange={formik.handleChange} defaultValue={infoGit?.date}  />
 
             
             <RegisterButton6 type="submit"   ref={addBtn}  >
@@ -129,9 +111,12 @@ const RegisterSave = ({ edit }) => {
                 </RegisterButton7>
 
 
+
+
+
+
+
         </FormAllH>
-       
-     
         </Seconddiv6>
  
             

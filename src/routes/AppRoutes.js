@@ -4,6 +4,7 @@ import { BrowserRouter, Navigate, Route, Routes} from 'react-router-dom';
 import BigForm from '../components/home/BigForm';
 import Landing from '../components/Landing';
 
+
 import Login from '../components/Login';
 import PhoneRegister from '../components/PhoneRegister';
 import Register from '../components/Register';
@@ -12,6 +13,10 @@ import ShortRegister from '../components/ShortRegister';
 import Repos from '../components/Repos';
 import { useSelector } from 'react-redux';
 import { PrivatePath, PublicPath } from '../components/home/isLogged';
+import ListEdit from '../components/ListEdit';
+import EditarNew from '../components/EditarNew';
+import AddEdit from '../components/AddEdit';
+
 
 
 export default function AppRoutes() {
@@ -23,6 +28,7 @@ export default function AppRoutes() {
     <div>
     <BrowserRouter>
        <Routes>
+ 
        
         <Route path='/' element={<PublicPath auth={logged}><Landing/></PublicPath>}/>
         <Route path='/land' element={<PublicPath auth={logged}><Landing/></PublicPath>}/>
@@ -38,6 +44,11 @@ export default function AppRoutes() {
         <Route path='/repos' element={<PrivatePath auth={logged}><Repos/></PrivatePath>}/>
         
         <Route path='*' element={<Navigate to="/"/>}/>
+
+        
+        <Route path='/editar' element={<ListEdit/>}/>
+        <Route path='/editar2' element={<EditarNew/>}/>
+        <Route path='/editar3' element={<AddEdit/>}/>
        </Routes>
     </BrowserRouter>
     </div>

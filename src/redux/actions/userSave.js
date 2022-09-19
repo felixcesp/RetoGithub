@@ -73,8 +73,6 @@ export const editUserData =(data, edit)=>{
         const q = query( collection(db, 'estadisticUser'), where("email", "==", edit) );
         const userRaw = await getDocs(q)
         let id='';
-      
-     
         userRaw.forEach((info)=>{
           id= info.id
     
@@ -86,3 +84,4 @@ export const editUserData =(data, edit)=>{
     }
     }
 }
+
