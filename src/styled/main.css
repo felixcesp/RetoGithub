@@ -23,4 +23,18 @@ body{
     margin-top: 50px;
 }
 /* input file*/
+.custom-file-input{
+  display: inline;
+  margin-left: -165px;
+  height: 35px;
+  border-radius: 15px;
+  margin-top: 5px;
+  padding-top: 4px;
+  color: grey;
+  }
 
+  .custom-file-input:hover::before {
+    border-color: black;
+    color: gray;
+    
+  }

@@ -740,17 +740,27 @@ background-color:transparent;
 
 // componentes nuevos de editar
 //input imagen
-export const FormIn60=styled.input`
-height:35px;
-width: 260px;
-//padding-left:10px;
-margin-bottom:45px;
-margin-top:5px;
-border-radius: 14px;
-margin-left:-160px;  
-border: 1px solid rgba(100, 100, 100, 0.5);
-background-color:whitesmoke;
-input[type=file] {
--webkit-appearance:none;
-}
-`
+export const RegisterButton60=styled.button`
+width:200px;
+height:40px;
+margin-top:-50px;
+margin-left:452px;
+border-radius:30px;
+background-color:#929292;
+
+//background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);
+z-index:20;
+transition:0.4s;
+cursor:pointer;
+border:1.5px solid #1c0d02;
+color:black;
+font-weight:500;
+font-size:20px;
+padding-bottom:5px;
+
+:hover{
+    transform:scale(1.02, 1.02); 
+    color:yellow;
+    background-color:#7f7f7f;
+    font-weight:400;
+}`

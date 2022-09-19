@@ -3,8 +3,9 @@ import {useDispatch, useSelector} from 'react-redux'
 import { FileUpload } from '../../src/helpers/FileUpload';
 import useForm from '../hooks/useForm';
 import {addPlantaAsync} from '../redux/actions/actionEdit'
-import { Firstdiv5, FormAllH, FormIn6,Frase6, IconGit5, LabeName6, RegisterButton6, Seconddiv6, TitleMain6 } from '../styled/StyledComponents';
+import { Firstdiv5, FormAllH, FormIn6,Frase6, IconGit5, LabeName6, RegisterButton60, Seconddiv6, TitleMain6 } from '../styled/StyledComponents';
 import '../styled/main.css'
+import { FormControl } from 'react-bootstrap';
 
 
 const AddEdit = () => {
@@ -85,15 +86,16 @@ const AddEdit = () => {
                     <LabeName6>birthday date</LabeName6>
                     <FormIn6 type="date" name="date" placeholder="your birth date" value={date} onChange={handleInputChange} />
 
-
-                     <LabeName6>Imagen</LabeName6>
-                    <input    className="cargarImg" type="file" name="foto"  onChange={handleFileChange} />
+                    
+                     <LabeName6>Foto o avatar</LabeName6>
+                    <FormControl className="custom-file-input" type="file" name="foto"  onChange={handleFileChange} />
+                    
                 
                 
 
-                <RegisterButton6 type="submit">
+                <RegisterButton60 type="submit">
                   Agregar
-                </RegisterButton6>
+                </RegisterButton60>
 
 
 
