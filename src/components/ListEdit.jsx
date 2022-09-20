@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { BsWindowSidebar } from 'react-icons/bs';
+
 //import ReactImageMagnify from 'react-image-magnify';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -30,7 +30,7 @@ const ListEdit = () => {
     const editar = (gitdata) => {
         setModal(true)
         setDatos(gitdata) 
-        
+        window.location.href()
        
     }
 

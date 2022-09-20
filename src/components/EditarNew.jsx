@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
+
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import useForm from '../hooks/useForm';
 
 import { editGituserAsync} from '../redux/actions/actionEdit';
 
 const EditNew = ({datos, setModal}) => {
+    const navigation=useNavigate
 
     const dispatch = useDispatch()
 //--------------Manejo del Modal--------------------//
@@ -38,7 +41,9 @@ const handleSubmit =(e)=>{
     console.log(formValue)
     dispatch(editGituserAsync(idcard, formValue))
     handleClose()
+   
 }
+
     return (
         <div>
             <>
@@ -79,7 +84,7 @@ const handleSubmit =(e)=>{
 
                 </Form.Group>
 
-                <Button type="submit">
+                <Button type="submit" >
                  Editar
                 </Button>
              
