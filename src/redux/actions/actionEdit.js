@@ -1,16 +1,17 @@
 import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc, where } from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
-import { typesPlanta } from "../types/typesEdit"
+import { typesUsergit } from "../types/typesEdit"
 
 //----------------Agregar Planta-------------------------//
-export const addPlantaAsync = (planta) => {
+export const addGituserAsync = (gitdata, navigation) => {
     return (dispath) => {
         // addDoc recibe dos parametros(donde lo voy a guardar, que voy a guardar)
         //collection recibe dos parametros( la coneccion FirebaseConfig, Nombre de la colleccion)    
-        addDoc(collection(db, "usuariosGit"), planta)
+        addDoc(collection(db, "usuariosGit"), gitdata)
             .then(resp => {
-                dispath(addPlantaSync(planta))
-                dispath(listPlantasSync())
+                dispath(addGituserSync(gitdata))
+                dispath(listGituserSync())
+                navigation('/editar2')
 
             })
             .catch(error => {
@@ -20,10 +21,10 @@ export const addPlantaAsync = (planta) => {
     }
 }
 
-export const addPlantaSync = (planta) => {
+export const addGituserSync = (gitdata) => {
     return {
-        type: typesPlanta.add,
-        payload: planta
+        type: typesUsergit.add,
+        payload: gitdata
     }
 }
 
@@ -42,10 +43,10 @@ export const addPlantaSync = (planta) => {
 
 //editar
 
-export const editPlantaAsync = (codigo, planta) => {
+export const editGituserAsync = (idcard, gitdata) => {
     return async (dispatch)=> {
         const collectionListar = collection(db, "usuariosGit")
-        const q = query(collectionListar, where('codigo', '==', codigo))
+        const q = query(collectionListar, where('idcard', '==', idcard))
         const datosQ = await getDocs(q)
         let id
 
@@ -56,10 +57,10 @@ export const editPlantaAsync = (codigo, planta) => {
 
         const docRef = doc(db, "usuariosGit", id)
 
-        await updateDoc(docRef, planta)
+        await updateDoc(docRef, gitdata)
 
         .then(resp =>{ 
-            dispatch(editPlantaSync(planta))
+            dispatch(editGituserSync(gitdata))
             console.log(resp)
         })
         .catch(error => console.warn(error))
@@ -70,53 +71,53 @@ export const editPlantaAsync = (codigo, planta) => {
     }
 }
 
-export const editPlantaSync = (planta) => {
+export const editGituserSync = (gitdata) => {
     return{
-        type: typesPlanta.edit,
-        payload: planta
+        type: typesUsergit.edit,
+        payload: gitdata
 
     }
 }
 
 
 //----------------------Listar Plantas------------------------------//
-export const listPlantaAsync = () => {
+export const listGituserAsync = () => {
     return async (dispath) => {
         const collectionListar = await getDocs(collection(db, "usuariosGit"))
         console.log(collectionListar)
-        const plantas = []
+        const showUsers = []
         collectionListar.forEach(lista => {
-            plantas.push({
+            showUsers.push({
                 ...lista.data()
             })
         })
-        dispath(listPlantasSync(plantas))
+        dispath(listGituserSync(showUsers))
 
     }
 
 }
 
-export const listPlantasSync = (planta) => {
+export const listGituserSync = (showUsers) => {
     return {
-        type: typesPlanta.list,
-        payload: planta
+        type: typesUsergit.list,
+        payload: showUsers
     }
 }
 
 //-----------------------Eliminar Planta-------------------------------------------///
 
-export const deletPlantaAsync = (codigo) => {
+export const deletGituserAsync = (idcard) => {
     return async (dispatch) => {
 
         const collectionListar = collection(db, "usuariosGit")
-        const q = query(collectionListar, where('codigo', '==', codigo))
+        const q = query(collectionListar, where('idcard', '==', idcard))
         const datosQ = await getDocs(q)
         console.log(datosQ)
         datosQ.forEach(docu => {
             deleteDoc(doc(db, 'usuariosGit', docu.id))
 
         })
-        dispatch(deletPlantaSync(codigo))
+        dispatch(deletGituserSync(idcard))
         //dispatch(listPlantaAsync())
 
 
@@ -124,10 +125,10 @@ export const deletPlantaAsync = (codigo) => {
 
 }
 
-export const deletPlantaSync = (codigo) => {
+export const deletGituserSync = (idcard) => {
     return {
-        type: typesPlanta.delete,
-        payload: codigo
+        type: typesUsergit.delete,
+        payload: idcard
     }
 
 }

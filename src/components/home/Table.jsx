@@ -52,9 +52,9 @@ const Table = ({ setEdit }) => {
  
     <TableInfo>
     <Navbar/>
-    <>
+      <>
       <TitleTable55>Bienvenido   {nombre.nombre} </TitleTable55>
-    </>
+       </>
   <Table2>
     {/* <!-- head --> */}
     <thead>

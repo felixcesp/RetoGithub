@@ -3,7 +3,7 @@ import { Button, Form, Modal } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import useForm from '../hooks/useForm';
 
-import { editPlantaAsync} from '../redux/actions/actionEdit';
+import { editGituserAsync} from '../redux/actions/actionEdit';
 
 const EditNew = ({datos, setModal}) => {
 
@@ -18,20 +18,25 @@ const EditNew = ({datos, setModal}) => {
 
 //-------------------Manejo del formulario para editar---------------------------//
 const [formValue, handleInputChange ]= useForm({
-    nombre: datos.nombre,
-    codigo: datos.codigo,
-    descripcion: datos.descripcion,
-    tipo: datos.tipo,
-    precio: datos.precio,
+    name: datos.name,
+    lastname: datos.lastname,
+    email: datos.email,
+    phone: datos.phone,
+    gituser: datos.gituser,
+    idcard: datos.idcard,
+    date: datos.date,
+    foto: datos.foto,
+
+
   
 })
 
-const {nombre, codigo, descripcion, tipo, precio}=formValue
+const {name, lastname, email, phone, gituser, idcard, date, foto}=formValue
 
 const handleSubmit =(e)=>{
     e.preventDefault();
     console.log(formValue)
-    dispatch(editPlantaAsync(codigo, formValue))
+    dispatch(editGituserAsync(idcard, formValue))
     handleClose()
 }
     return (
@@ -44,22 +49,34 @@ const handleSubmit =(e)=>{
                     <Modal.Body>
                     <Form onSubmit={handleSubmit} margin={50}>
                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Nombre de la Planta</Form.Label>
-                    <Form.Control type="text" name="nombre" placeholder="Enter nombre" value={nombre} onChange={handleInputChange} />
+                    <Form.Label>Name user</Form.Label>
+                    <Form.Control type="text" name="name" placeholder="Edit name" value={name} onChange={handleInputChange} />
 
-                    <Form.Label>Descripcion</Form.Label>
-                    <Form.Control type="text" name="descripcion" placeholder="Enter descripcion" value={descripcion} onChange={handleInputChange} />
+                    <Form.Label>Last name</Form.Label>
+                    <Form.Control type="text" name="lastname" placeholder="Edit lastname" value={lastname} onChange={handleInputChange} />
 
-                    <Form.Label>Codigo</Form.Label>
-                    <Form.Control type="text" name="codigo" placeholder="El codigo contine dos letras y 3 numeros" value={codigo} onChange={handleInputChange} />
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control type="email" name="email" placeholder="Edit email" value={email} onChange={handleInputChange} />
 
-                    <Form.Label>Tipo</Form.Label>
-                    <Form.Control type="text" name="tipo" placeholder="Tipo" value={tipo} onChange={handleInputChange} />
+                    <Form.Label>Phone</Form.Label>
+                    <Form.Control type="tel" name="phone" placeholder="edit your phone" value={phone} onChange={handleInputChange} />
 
-                    <Form.Label>Precio</Form.Label>
-                    <Form.Control type="text" name="precio" placeholder="El precio en Pesos Colomb iano" value={precio} onChange={handleInputChange} />
+                    <Form.Label>Gituser</Form.Label>
+                    <Form.Control  type="text" name="gituser" placeholder="no editable" value={gituser} onChange={handleInputChange} />
+
+                    <Form.Label>identification number</Form.Label>
+                    <Form.Control type="text" name="precio" placeholder="no editable" value={idcard} onChange={handleInputChange} />
+                    
+                    <Form.Label>Birthday date</Form.Label>
+                    <Form.Control type="date" name="date" placeholder="edit date" value={date} onChange={handleInputChange} />
+                    
+                    <Form.Label>foto</Form.Label>
+                    <Form.Control type="image" name="foto" placeholder="no editable" value={foto} onChange={handleInputChange} />
                     
                 
+
+
+
                 </Form.Group>
 
                 <Button type="submit">

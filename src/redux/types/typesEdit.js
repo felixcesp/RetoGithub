@@ -1,4 +1,4 @@
-export const typesPlanta ={
+export const typesUsergit ={
     add: 'add',
     list: 'list',
     delete: 'delete',

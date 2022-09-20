@@ -1,48 +1,69 @@
 import React, { useEffect, useState } from 'react';
 //import ReactImageMagnify from 'react-image-magnify';
 import { useDispatch, useSelector } from 'react-redux';
-import { deletPlantaAsync, listPlantaAsync } from '../redux/actions/actionEdit';
+import { deletGituserAsync,listGituserAsync} from '../redux/actions/actionEdit';
+import { LisitImg, Table22,TableInfo22, TableTd, TitleTable55 } from '../styled/StyledComponents';
 import EditNew from './EditarNew';
 
 
 const ListEdit = () => {
+    const nombre= useSelector(state => state.login);
+
+
     const dispatch = useDispatch()
     //manejo el estado del modal activo o no
     const [modal, setModal] = useState(false);
     //manejar para enviar los datos
     const [datos, setDatos] = useState([]);
 
-    const { plantas } = useSelector(store => store.newGitUser)
-    console.log(plantas)
+    const { showUsers } = useSelector(store => store.newGitUser)
+    console.log(showUsers)
 
     useEffect(() => {
-        dispatch(listPlantaAsync()); //
+        dispatch(listGituserAsync()); //
     }, [dispatch])
 
-    const editar = (planta) => {
+    const editar = (gitdata) => {
         setModal(true)
-        setDatos(planta)
+        setDatos(gitdata)
     }
 
 
     return (
-        <div>
-            <table className="table">
+        <>
+        <TableInfo22>
+            <>
+              <TitleTable55>Bienvenido   {nombre.nombre} </TitleTable55>
+            </>
+            <Table22>
                 <thead>
+                <tr>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Github user</th>
+        <th>Id card</th>
+        <th>Birthdate</th>
+        <th>Photo</th>
+      </tr>
                 </thead>
                 <tbody>
                     {
-                        plantas.map((p, index) => (
+                        showUsers.map((p, index) => (
                             <tr key={index}>
-                                <td width='15%'>
-                               
-
-                                </td>
-                                <td>{p.nombre}</td>
-                                <td>{p.precio}</td>
-                                <td>
+                            
+                                <TableTd>{p.name}</TableTd>
+                                <TableTd>{p.lastname}</TableTd>
+                                <TableTd>{p.email}</TableTd>
+                                <TableTd>{p.phone}</TableTd>
+                                <TableTd>{p.gituser}</TableTd>
+                                <TableTd>{p.idcard}</TableTd>
+                                <TableTd>{p.date}</TableTd>
+                                <TableTd><LisitImg src={p.foto} alt="" /></TableTd>
+                                <TableTd>
                                     <br />
-                                    <button type="button" className="btn btn-danger" onClick={() => dispatch(deletPlantaAsync(p.codigo))}
+                                    <button type="button" className="btn btn-danger" onClick={() => dispatch(deletGituserAsync(p.idcard))}
                                     >Borrar</button>
                                     <br /><br />
 
@@ -51,18 +72,24 @@ const ListEdit = () => {
                                     >Editar</button><br /><br />
 
                                     <button type="button" className="btn btn-warning"
-                                    >Detalle</button></td><br />
+                                    >Detalle</button></TableTd><br />
                             </tr>
                         ))
                     }
 
                 </tbody>
-            </table>
+            </Table22>
+
+
+
+
+
             {
                 modal === true ? <EditNew datos={datos} setModal={setModal} /> : ''
             }
 
-        </div>
+        </TableInfo22>
+        </>
     );
 };
 

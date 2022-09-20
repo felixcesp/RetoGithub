@@ -764,3 +764,33 @@ padding-bottom:5px;
     background-color:#7f7f7f;
     font-weight:400;
 }`
+
+
+
+
+//listar table 2
+export const Table22=styled.table`
+color:black;
+margin:auto;
+width:auto;
+height:auto;
+font-size:18px;
+border: solid 1px black;
+border-collapse: collapse;
+background-color:#9f90ea;
+
+`
+export const TableInfo22=styled.div`
+height:550px;
+width:1300px;
+background-color:whitesmoke;
+box-sizing: border-box;
+text-align:center;
+background-color:blue;
+
+`
+export const LisitImg=styled.img`
+height:50px;
+width:50px;
+
+`

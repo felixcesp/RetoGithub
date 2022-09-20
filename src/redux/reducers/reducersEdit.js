@@ -1,33 +1,33 @@
-import { typesPlanta } from "../types/typesEdit"
+import { typesUsergit } from "../types/typesEdit"
 
 
 const initialState = {
-    plantas: []
+    showUsers: []
 }
 
-export const reducersPlantas = (state = initialState, action) => {
+export const reducersUsergit = (state = initialState, action) => {
     switch (action.type) {
-        case typesPlanta.add:
+        case typesUsergit.add:
             return {
-                plantas: [action.payload]
+                showUsers: [action.payload]
             }
 
-        case typesPlanta.list:
+        case typesUsergit.list:
             return {
-                plantas: [...action.payload]
+                showUsers: [...action.payload]
             }
 
-        case typesPlanta.delete:
+        case typesUsergit.delete:
             return {
-                plantas: state.plantas.filter(p => p.codigo !== action.payload)
+                showUsers: state.showUsers.filter(p => p.idcard !== action.payload)
             }
-        case typesPlanta.edit:
+        case typesUsergit.edit:
             return {
                 ...state
             }
-        case typesPlanta.search:
+        case typesUsergit.search:
             return {
-                plantas: action.payload
+                showUsers: action.payload
             }
         default:
             return state

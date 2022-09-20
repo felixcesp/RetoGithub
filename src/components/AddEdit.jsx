@@ -2,13 +2,15 @@ import React from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import { FileUpload } from '../../src/helpers/FileUpload';
 import useForm from '../hooks/useForm';
-import {addPlantaAsync} from '../redux/actions/actionEdit'
 import { Firstdiv5, FormAllH, FormIn6,Frase6, IconGit5, LabeName6, RegisterButton60, Seconddiv6, TitleMain6 } from '../styled/StyledComponents';
 import '../styled/main.css'
 import { FormControl } from 'react-bootstrap';
+import { addGituserAsync } from '../redux/actions/actionEdit';
+import { useNavigate } from 'react-router-dom';
 
 
 const AddEdit = () => {
+    const navigation = useNavigate;
 
     const dispatch = useDispatch();
     const usuarioName= useSelector(state => state.login);
@@ -26,11 +28,13 @@ const AddEdit = () => {
     })
 
     const {name, lastname, email, phone, gituser, idcard, date}=formValue
+
      const handleSubmit =(e)=>{
         e.preventDefault()
         console.log(formValue)
-        dispatch(addPlantaAsync(formValue))
+        dispatch(addGituserAsync(formValue, navigation))
         reset()
+       
     }
 
     const handleFileChange =(e)=>{
