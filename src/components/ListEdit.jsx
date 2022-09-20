@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { BsWindowSidebar } from 'react-icons/bs';
 //import ReactImageMagnify from 'react-image-magnify';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { deletGituserAsync,listGituserAsync} from '../redux/actions/actionEdit';
-import { LisitImg, Table22,TableInfo22, TableTd, TitleTable55 } from '../styled/StyledComponents';
+import { CrudBoton, CrudBoton1, CrudBoton2, LisitImg, Table22,TableInfo22, TableTd22,TableTd223, TitleTable55 } from '../styled/StyledComponents';
 import EditNew from './EditarNew';
 
 
 const ListEdit = () => {
     const nombre= useSelector(state => state.login);
+    const navigation = useNavigate;
+  
 
 
     const dispatch = useDispatch()
@@ -25,7 +29,9 @@ const ListEdit = () => {
 
     const editar = (gitdata) => {
         setModal(true)
-        setDatos(gitdata)
+        setDatos(gitdata) 
+        
+       
     }
 
 
@@ -53,26 +59,26 @@ const ListEdit = () => {
                         showUsers.map((p, index) => (
                             <tr key={index}>
                             
-                                <TableTd>{p.name}</TableTd>
-                                <TableTd>{p.lastname}</TableTd>
-                                <TableTd>{p.email}</TableTd>
-                                <TableTd>{p.phone}</TableTd>
-                                <TableTd>{p.gituser}</TableTd>
-                                <TableTd>{p.idcard}</TableTd>
-                                <TableTd>{p.date}</TableTd>
-                                <TableTd><LisitImg src={p.foto} alt="" /></TableTd>
-                                <TableTd>
+                                <TableTd22>{p.name}</TableTd22>
+                                <TableTd22>{p.lastname}</TableTd22>
+                                <TableTd22>{p.email}</TableTd22>
+                                <TableTd22>{p.phone}</TableTd22>
+                                <TableTd22>{p.gituser}</TableTd22>
+                                <TableTd22>{p.idcard}</TableTd22>
+                                <TableTd22>{p.date}</TableTd22>
+                                <TableTd223><LisitImg src={p.foto} alt="" /></TableTd223>
+                                <TableTd223>
                                     <br />
-                                    <button type="button" className="btn btn-danger" onClick={() => dispatch(deletGituserAsync(p.idcard))}
-                                    >Borrar</button>
+                                    <CrudBoton type="button" onClick={() => dispatch(deletGituserAsync(p.idcard))}
+                                    >Borrar</CrudBoton>
                                     <br /><br />
 
-                                    <button type="button" className="btn btn-success"
+                                    <CrudBoton1 type="button"
                                         onClick={() => editar(p)}
-                                    >Editar</button><br /><br />
+                                    >Editar</CrudBoton1><br /><br />
 
-                                    <button type="button" className="btn btn-warning"
-                                    >Detalle</button></TableTd><br />
+                                    <CrudBoton2 type="button"
+                                    >Detalle</CrudBoton2></TableTd223><br />
                             </tr>
                         ))
                     }

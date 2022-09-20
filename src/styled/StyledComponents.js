@@ -772,17 +772,16 @@ padding-bottom:5px;
 export const Table22=styled.table`
 color:black;
 margin:auto;
-width:auto;
+width:90%;
 height:auto;
 font-size:18px;
 border: solid 1px black;
 border-collapse: collapse;
 background-color:#9f90ea;
-
 `
 export const TableInfo22=styled.div`
 height:550px;
-width:1300px;
+width:1263px;
 background-color:whitesmoke;
 box-sizing: border-box;
 text-align:center;
@@ -790,7 +789,59 @@ background-color:blue;
 
 `
 export const LisitImg=styled.img`
-height:50px;
-width:50px;
+height:40px;
+width:40px;
+
+`
+export const TableTd223=styled.td`
+border: solid 1px black;
+text-align:center;
+position:relative;
+width:80px;
+height:0px;
+
+`
+export const TableTd22=styled.td`
+border: solid 1px black;
+
+position:relative;
+width:auto;
+height:20px;
+`
+
+export const CrudBoton= styled.button`
+position:absolute;
+background-color:red;
+border-radius:30px;
+color:whitesmoke;
+font-size:16px;
+text-decoration:none;
+border:none;
+top:20px;
+left:5px;
+`
+export const CrudBoton1= styled.button`
+position:absolute;
+top:58px;
+left:5px;
+background-color:green;
+border-radius:30px;
+color:whitesmoke;
+font-size:16px;
+text-decoration:none;
+border:none;
+margin-bottom:2px;
+
+`
+export const CrudBoton2= styled.button`
+position:absolute;
+top:95px;
+left:5px;
+background-color:yellow;
+border-radius:30px;
+color:black;
+font-size:14px;
+text-decoration:none;
+border:none;
 
 `
