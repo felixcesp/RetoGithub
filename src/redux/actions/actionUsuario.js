@@ -11,7 +11,7 @@ export const registrarUserAsync =(navigation, email, pass, nombre)=>{
                 await updateProfile(auth.currentUser, {displayName: nombre})
                 dispatch(registrarUserSync(email, pass, nombre))
                 alert('felicitaciones    '+ nombre + '    estas ya registrado')
-                navigation("/saveuser"); 
+                navigation("/editar3"); 
         })
         .catch(err=>{
             alert('no te pudiste registar llena bien los campos')

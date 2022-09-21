@@ -1,3 +1,4 @@
+/*
 import { Link } from "react-router-dom";
 import useForm from "../hooks/useForm";
 import { registrarUserAsync } from "../redux/actions/actionUsuario";
@@ -72,4 +73,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Register;*/

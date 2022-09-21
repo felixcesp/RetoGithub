@@ -16,7 +16,9 @@ function Repos() {
    //este es para el filtro
    const [filterRepos,setFilterRepos] = useState([]);
 
-    const gitUser = useSelector( state => state.gitUser.gitName);
+   // const gitUser = useSelector( state => state.gituser.gitName);
+   const gitUser= "felixcesp"
+    console.log(gitUser)
 //recarga tabla con un nuevo nuemro de pagina actual
     const paginationCurrentPage= (newPage)=>{
         setCurrentPagination(newPage)

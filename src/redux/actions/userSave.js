@@ -1,5 +1,5 @@
 
-
+/*
 import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc, where} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
 import { saveUserTypes } from "../types/storeUser"
@@ -85,3 +85,4 @@ export const editUserData =(data, edit)=>{
     }
 }
 
+*/

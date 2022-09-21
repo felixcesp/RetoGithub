@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
+import { AiOutlineEdit } from 'react-icons/ai';
+import { BsFillTrashFill } from 'react-icons/bs';
 
 //import ReactImageMagnify from 'react-image-magnify';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
 import { deletGituserAsync,listGituserAsync} from '../redux/actions/actionEdit';
-import { CrudBoton, CrudBoton1, CrudBoton2, LisitImg, Table22,TableInfo22, TableTd22,TableTd223, TitleTable55 } from '../styled/StyledComponents';
+import { actionRepoSync } from '../redux/actions/actionRepo';
+import { ImgTables, ImgTables2, LisitImg, Table22,TableInfo22, TableT25, TableTd22,TableTd223,TableThn, TitleTable55 } from '../styled/StyledComponents';
 import EditNew from './EditarNew';
 
 
 const ListEdit = () => {
     const nombre= useSelector(state => state.login);
-    const navigation = useNavigate;
-  
-
+    const iral =useNavigate
 
     const dispatch = useDispatch()
     //manejo el estado del modal activo o no
@@ -27,12 +29,19 @@ const ListEdit = () => {
         dispatch(listGituserAsync()); //
     }, [dispatch])
 
+
+    
     const editar = (gitdata) => {
         setModal(true)
         setDatos(gitdata) 
-        window.location.href()
-       
     }
+    const getRepos=(gitUser )=>{
+        dispatch(actionRepoSync(gitUser))
+        iral('/repos')
+        
+        
+      }
+     
 
 
     return (
@@ -63,22 +72,17 @@ const ListEdit = () => {
                                 <TableTd22>{p.lastname}</TableTd22>
                                 <TableTd22>{p.email}</TableTd22>
                                 <TableTd22>{p.phone}</TableTd22>
-                                <TableTd22>{p.gituser}</TableTd22>
+                                <TableT25  onClick={()=>{getRepos(p.gituser)}}>{p.gituser}</TableT25>
                                 <TableTd22>{p.idcard}</TableTd22>
                                 <TableTd22>{p.date}</TableTd22>
                                 <TableTd223><LisitImg src={p.foto} alt="" /></TableTd223>
-                                <TableTd223>
-                                    <br />
-                                    <CrudBoton type="button" onClick={() => dispatch(deletGituserAsync(p.idcard))}
-                                    >Borrar</CrudBoton>
-                                    <br /><br />
+                             
 
-                                    <CrudBoton1 type="button"
-                                        onClick={() => editar(p)}
-                                    >Editar</CrudBoton1><br /><br />
 
-                                    <CrudBoton2 type="button"
-                                    >Detalle</CrudBoton2></TableTd223><br />
+          <TableThn>
+              <ImgTables  onClick={() => editar(p)} ><AiOutlineEdit/></ImgTables><br />
+              <ImgTables2 onClick={() => dispatch(deletGituserAsync(p.idcard))} ><BsFillTrashFill/></ImgTables2>
+          </TableThn>
                             </tr>
                         ))
                     }

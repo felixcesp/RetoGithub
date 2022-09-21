@@ -432,6 +432,7 @@ cursor: pointer;
 //botones imagenes
 export const ImgTables= styled.button`
 background-color:lightblue;
+margin-top:5px;
 border:none;
 width:30px;
 border-radius:50%;
@@ -445,6 +446,8 @@ cursor: pointer;
 export const ImgTables2= styled.button`
 background-color:#ff4040;
 border:none;
+margin-top:5px;
+margin-bottom:5px;
 width:30px;
 border-radius:50%;
 height:30px;
@@ -789,8 +792,9 @@ background-color:blue;
 
 `
 export const LisitImg=styled.img`
-height:40px;
-width:40px;
+height:55px;
+width:55px;
+border-radius:50%;
 
 `
 export const TableTd223=styled.td`
@@ -844,4 +848,8 @@ font-size:14px;
 text-decoration:none;
 border:none;
 
+`
+export const TableThn=styled.td`
+border: solid 1px black;
+height:auto;
 `

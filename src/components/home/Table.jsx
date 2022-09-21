@@ -1,4 +1,4 @@
-
+/*
 import { useEffect } from 'react';
 import  Navbar  from '../home/NavBar';
 import { useDispatch, useSelector } from 'react-redux'
@@ -56,7 +56,7 @@ const Table = ({ setEdit }) => {
       <TitleTable55>Bienvenido   {nombre.nombre} </TitleTable55>
        </>
   <Table2>
-    {/* <!-- head --> */}
+    /*
     <thead>
       <tr>
         <th>Name</th>
@@ -97,4 +97,4 @@ const Table = ({ setEdit }) => {
   )
 }
 
-export default Table
+export default Table*/

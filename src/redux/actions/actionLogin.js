@@ -80,7 +80,7 @@ export const loginFace = ()=>{
         .then(({user})=>{
                 const nombre =user.displayName
                 dispatch(actionLoginSync(email, pass, nombre, true))             
-                navigation("/saveuser")
+                navigation("/editar3")
                 alert(user.displayName + '   Welcome')
                
         })
@@ -106,7 +106,7 @@ export const loginGoogle = (dispatch, navigation)=>{
              dispatch(actionLoginSync(user.email,"", nombre, true))
             
             // window.location="/saveuser";
-            navigation("/saveuser")
+            navigation("/editar3")
              alert('thanks   ' + user.displayName + '    Welcome')
           })
         .catch(({error})=>{
@@ -125,7 +125,7 @@ export const loginGoogle = (dispatch, navigation)=>{
                 const nombre =user.displayName
                  dispatch(actionLoginSync(user.email, "", nombre, true))
                  alert('gracias   ' + user + '   Bienvenido')
-                 navigation('/saveuser')
+                 navigation('/editar3')
               })
               .catch(({error})=>{
                 alert('No autorizado')

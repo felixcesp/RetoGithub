@@ -2,7 +2,7 @@ import { addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc, where } 
 import { db } from "../../firebase/firebaseConfig"
 import { typesUsergit } from "../types/typesEdit"
 
-//----------------Agregar Planta-------------------------//
+//----------------Agregar usaurio-------------------------//
 export const addGituserAsync = (gitdata, navigation) => {
     return (dispath) => {
         // addDoc recibe dos parametros(donde lo voy a guardar, que voy a guardar)
@@ -11,7 +11,7 @@ export const addGituserAsync = (gitdata, navigation) => {
             .then(resp => {
                 dispath(addGituserSync(gitdata))
                 dispath(listGituserSync())
-                navigation('/editar2')
+                navigation('/editar3')
 
             })
             .catch(error => {
@@ -65,7 +65,7 @@ export const editGituserAsync = (idcard, gitdata) => {
         })
         .catch(error => console.warn(error))
 
-       // dispatch(listPlantaAsync())
+      
 
 
     }
@@ -80,7 +80,7 @@ export const editGituserSync = (gitdata) => {
 }
 
 
-//----------------------Listar Plantas------------------------------//
+//----------------------Listar ususarios------------------------------//
 export const listGituserAsync = () => {
     return async (dispath) => {
         const collectionListar = await getDocs(collection(db, "usuariosGit"))
@@ -104,7 +104,7 @@ export const listGituserSync = (showUsers) => {
     }
 }
 
-//-----------------------Eliminar Planta-------------------------------------------///
+//-----------------------Eliminar usuario-------------------------------------------///
 
 export const deletGituserAsync = (idcard) => {
     return async (dispatch) => {
@@ -118,7 +118,7 @@ export const deletGituserAsync = (idcard) => {
 
         })
         dispatch(deletGituserSync(idcard))
-        //dispatch(listPlantaAsync())
+     
 
 
     }

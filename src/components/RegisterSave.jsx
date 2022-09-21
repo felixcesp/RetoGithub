@@ -1,4 +1,4 @@
-
+/*
 import { useFormik } from 'formik';
 import { useDispatch, useSelector} from 'react-redux';
 import {Firstdiv5, FormAllH, FormIn6, Frase6,IconGit5, LabeName6, LettersR22, RegisterButton6, RegisterButton7, Seconddiv6, TitleMain6 } from "../styled/StyledComponents";
@@ -127,4 +127,4 @@ const RegisterSave = ({ edit }) => {
 
 };
 
-export default RegisterSave;
+export default RegisterSave;*/

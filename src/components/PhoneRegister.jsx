@@ -32,7 +32,7 @@ export default function PhoneRegister() {
   });
   const veryTel = async (phone) => {
        const dataUsers=[]
-       const resp= await getDocs(collection(db, "estadisticUser"))
+       const resp= await getDocs(collection(db, "usuariosGit"))
         resp.forEach((doc)=> dataUsers.push (doc.data()))
 
        dataUsers.forEach(async (element) => {
@@ -40,7 +40,7 @@ export default function PhoneRegister() {
         const nombre=element.name;
        if (elegido === phone){
         dispatch(actionLoginSync("","","", true))
-        openuser('/saveuser')
+        openuser('/editar3')
         alert('Welcome again  ' + nombre ); 
        //window.location="/saveuser"; 
       }

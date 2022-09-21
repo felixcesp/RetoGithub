@@ -1,3 +1,4 @@
+/*
 import { saveUserTypes } from "../types/storeUser";
 
 
@@ -20,4 +21,4 @@ export const saveReducer = ( state = [], action ) => {
         default:
             return state;
     }
-}
+}*/
