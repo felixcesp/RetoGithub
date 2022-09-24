@@ -2,7 +2,7 @@ import { createUserWithEmailAndPassword, getAuth, updateProfile } from "firebase
 import { typesUsuario } from "../types/types"
 
 //-----------Registrar usuario Nuevo--------------/
-export const registrarUserAsync =(navigation, email, pass, nombre)=>{
+export const registrarUserAsync =(email, pass, nombre)=>{
     return (dispatch)=>{
         const auth = getAuth()
         createUserWithEmailAndPassword(auth, email, pass)
@@ -11,7 +11,7 @@ export const registrarUserAsync =(navigation, email, pass, nombre)=>{
                 await updateProfile(auth.currentUser, {displayName: nombre})
                 dispatch(registrarUserSync(email, pass, nombre))
                 alert('felicitaciones    '+ nombre + '    estas ya registrado')
-                navigation("/editar3"); 
+                
         })
         .catch(err=>{
             alert('no te pudiste registar llena bien los campos')

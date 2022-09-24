@@ -1,6 +1,6 @@
+/*import { Navigate} from "react-router-dom"
 
 
-import { Navigate } from "react-router-dom";
 
 export const PrivatePath= ({auth, children})=>{
     
@@ -8,7 +8,7 @@ if (auth){
  
     return     children ;
 }else{
-    return < Navigate to = {'/pag1'}/>
+    return < Navigate to = {'/register'}/>
 }
 
 }
@@ -16,9 +16,14 @@ if (auth){
 export const PublicPath= ({auth, children})=>{
    
     if (!auth){
+      
         return     children ;
     }else{
-        return < Navigate to = {'/saveuser'}/>
+        return < Navigate to = {'/editar3'}/>
     }
     
-    }
+    }*/
+    
+ 
+        
+

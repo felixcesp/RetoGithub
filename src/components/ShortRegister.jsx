@@ -1,12 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link} from 'react-router-dom'
 import useForm from '../hooks/useForm'
 import { registrarUserAsync } from '../redux/actions/actionUsuario'
 import { BotonImg, ButLogin, Firstdiv2, FormAll2, FormIn2, Frase2, IconGit2, LabeName2, LettersR2, LoginConte, RegisterButton, Seconddiv2, TitleMain2 } from '../styled/StyledComponents'
 
 const ShortRegister=() =>{
-    const navigation = useNavigate();
+   
 
     const dispatch = useDispatch()
     const [formValue, handleInputChange, reset] = useForm({
@@ -20,7 +20,7 @@ const ShortRegister=() =>{
  const handleSubmit = (e) => {
      e.preventDefault()
      console.log(email, pass, nombre)
-     dispatch(registrarUserAsync(navigation,email, pass, nombre))
+     dispatch(registrarUserAsync(email, pass, nombre))
      reset()
  }
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import { FileUpload } from '../../src/helpers/FileUpload';
 import useForm from '../hooks/useForm';
@@ -6,14 +5,17 @@ import { Firstdiv5, FormAllH, FormIn6,Frase6, IconGit5, LabeName6, RegisterButto
 import '../styled/main.css'
 import { FormControl } from 'react-bootstrap';
 import { addGituserAsync } from '../redux/actions/actionEdit';
+
 import { useNavigate } from 'react-router-dom';
 
 
+
 const AddEdit = () => {
-    const navigation = useNavigate;
+    const navigation =useNavigate();
 
     const dispatch = useDispatch();
     const usuarioName= useSelector(state => state.login);
+
 
     const [formValue, handleInputChange, reset]= useForm({
         name: '',
@@ -32,11 +34,14 @@ const AddEdit = () => {
      const handleSubmit =(e)=>{
         e.preventDefault()
         console.log(formValue)
-        dispatch(addGituserAsync(formValue, navigation))
-      
-        reset()
-       
+        dispatch(addGituserAsync(formValue))
+        if(formValue){
+         
+            navigation('/editar')
+        }
+        reset()   
     }
+    
 
     const handleFileChange =(e)=>{
         const file= e.target.files[0]
@@ -49,9 +54,9 @@ const AddEdit = () => {
         })
         .catch(error =>{
             console.warn(error)
-        })
-    
+        }) 
     }
+  
     return (
 
      <>
@@ -98,8 +103,8 @@ const AddEdit = () => {
                 
                 
 
-                <RegisterButton60 type="submit">
-                  Agregar
+                <RegisterButton60 type="submit" >
+                  Save
                 </RegisterButton60>
 
 

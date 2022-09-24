@@ -3,7 +3,7 @@ import { db } from "../../firebase/firebaseConfig"
 import { typesUsergit } from "../types/typesEdit"
 
 //----------------Agregar usaurio-------------------------//
-export const addGituserAsync = (gitdata, navigation) => {
+export const addGituserAsync = (gitdata) => {
     return (dispath) => {
         // addDoc recibe dos parametros(donde lo voy a guardar, que voy a guardar)
         //collection recibe dos parametros( la coneccion FirebaseConfig, Nombre de la colleccion)    
@@ -11,11 +11,10 @@ export const addGituserAsync = (gitdata, navigation) => {
             .then(resp => {
                 dispath(addGituserSync(gitdata))
                 dispath(listGituserSync())
-                navigation('/editar3')
-
             })
             .catch(error => {
-                console.warn(error)
+                alert("problemas con el enlace pero datos guardados")
+                
             })
 
     }

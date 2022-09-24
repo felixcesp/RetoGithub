@@ -4,23 +4,26 @@ import { BsFillTrashFill } from 'react-icons/bs';
 
 //import ReactImageMagnify from 'react-image-magnify';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+
 
 import { deletGituserAsync,listGituserAsync} from '../redux/actions/actionEdit';
 import { actionRepoSync } from '../redux/actions/actionRepo';
 import { ImgTables, ImgTables2, LisitImg, Table22,TableInfo22, TableT25, TableTd22,TableTd223,TableThn, TitleTable55 } from '../styled/StyledComponents';
 import EditNew from './EditarNew';
+import NavBarUser from '../components/home/NavbarUser'
+import { useNavigate } from 'react-router-dom';
 
 
 const ListEdit = () => {
     const nombre= useSelector(state => state.login);
-    const iral =useNavigate
+  
 
     const dispatch = useDispatch()
     //manejo el estado del modal activo o no
     const [modal, setModal] = useState(false);
     //manejar para enviar los datos
     const [datos, setDatos] = useState([]);
+    const navigation =useNavigate();
 
     const { showUsers } = useSelector(store => store.newGitUser)
     console.log(showUsers)
@@ -37,7 +40,9 @@ const ListEdit = () => {
     }
     const getRepos=(gitUser )=>{
         dispatch(actionRepoSync(gitUser))
-        iral('/repos')
+        navigation('/repos')
+
+
         
         
       }
@@ -46,7 +51,9 @@ const ListEdit = () => {
 
     return (
         <>
+      
         <TableInfo22>
+        <NavBarUser/>
             <>
               <TitleTable55>Bienvenido   {nombre.nombre} </TitleTable55>
             </>
@@ -77,7 +84,7 @@ const ListEdit = () => {
                                 <TableTd22>{p.date}</TableTd22>
                                 <TableTd223><LisitImg src={p.foto} alt="" /></TableTd223>
                              
-
+                               
 
           <TableThn>
               <ImgTables  onClick={() => editar(p)} ><AiOutlineEdit/></ImgTables><br />

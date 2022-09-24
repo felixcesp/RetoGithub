@@ -9,7 +9,7 @@ function NavbarUser() {
   const navigation =useNavigate();
   
   const back=()=>{
-    navigation('/verinfo')
+    navigation('/login')
   }
   return (
     <div className='all2'>

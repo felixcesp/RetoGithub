@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react'
-//import  Navbar  from '../components/home/NavBar'
+import  Navbar  from '../components/home/NavBar'
 import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styled/main.css'
-import {InsearchR, LapaSearch, PaginationConte,Table2, TableInfo, TableTd } from '../styled/StyledComponents'
-import { useSelector } from 'react-redux';
-import axios from 'axios';import NavbarUser from './home/NavbarUser';
-import { BsSearch } from 'react-icons/bs';
+
+import {PaginationConte, Table2, TableInfo, TableTd } from '../styled/StyledComponents'
+//import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 function Repos() {
     const [repos, setRepos] = useState([]);
@@ -16,9 +15,8 @@ function Repos() {
    //este es para el filtro
    const [filterRepos,setFilterRepos] = useState([]);
 
-   // const gitUser = useSelector( state => state.gituser.gitName);
-   const gitUser= "felixcesp"
-    console.log(gitUser)
+    //const gitUser = useSelector( state => state.gitUser.gitName);
+    const gitUser= "felixcesp"
 //recarga tabla con un nuevo nuemro de pagina actual
     const paginationCurrentPage= (newPage)=>{
         setCurrentPagination(newPage)
@@ -91,12 +89,11 @@ function Repos() {
     <>
  
     <TableInfo>
-   <NavbarUser/> 
-
-      <h1 className='boton55'>Repositorios de {gitUser}</h1>
-      <InsearchR type='text' name='search' onChange={searching}/>
-      <LapaSearch><BsSearch size='auto' /></LapaSearch>
+   <Navbar/> 
+      <h1>Repositorios de {gitUser}</h1>
       
+      
+      <input type='text' name='search' onChange={searching}/>
    
   <Table2>
     {/* <!-- head --> */}
@@ -148,8 +145,7 @@ function Repos() {
     <Pagination.Next onClick={paginationCurrentNext}/>
     
   </Pagination>  
-  </PaginationConte> 
- 
+  </PaginationConte>    
 </>
   )
 }

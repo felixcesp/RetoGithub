@@ -23,8 +23,8 @@ import {
 
 export default function PhoneRegister() {
   const dispatch = useDispatch();
-  //const openRegis=useNavigate();
-  const openuser=useNavigate();
+  const openRegis=useNavigate();
+  //const openuser=useNavigate();
 
   
   const [formValue, handleInputChange, reset] = useForm({
@@ -34,28 +34,25 @@ export default function PhoneRegister() {
        const dataUsers=[]
        const resp= await getDocs(collection(db, "usuariosGit"))
         resp.forEach((doc)=> dataUsers.push (doc.data()))
-
-       dataUsers.forEach(async (element) => {
-        const elegido=element.phone
-        const nombre=element.name;
-       if (elegido === phone){
-        dispatch(actionLoginSync("","","", true))
-        openuser('/editar3')
-        alert('Welcome again  ' + nombre ); 
-       //window.location="/saveuser"; 
-      }
-      else{
-         //funcion();
-         
-      }
+        let nombre
+        let elegido2
+  
+      dataUsers.forEach(async (element) => {
+           
+      const elegido=element.phone
+      //const nombre2=element.name;
+      if (elegido === phone){
+        nombre=element.name
+        elegido2=element.phone}
          });
+         if (elegido2 === phone){
+          dispatch(actionLoginSync("","",nombre))
+          alert('Welcome again  ' + nombre ); 
+         }else{
+          alert('your phone is not register, please register')
+          openRegis('/register')
+         }
 
-     
-
-  /*  function funcion(){
-      alert('hola')
-      openuser('/register')
-    }*/
   
     }
   const { phone } = formValue;

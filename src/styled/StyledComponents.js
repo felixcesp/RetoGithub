@@ -783,7 +783,7 @@ border-collapse: collapse;
 background-color:#9f90ea;
 `
 export const TableInfo22=styled.div`
-height:550px;
+height:auto;
 width:1263px;
 background-color:whitesmoke;
 box-sizing: border-box;

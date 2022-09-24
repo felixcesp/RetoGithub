@@ -8,7 +8,7 @@ function NavBar() {
   const dispatch = useDispatch()
   const navigation =useNavigate();
   const back=()=>{
-    navigation('/saveuser')
+    navigation('/editar')
   }
   
  
