@@ -62,10 +62,10 @@ const AddEdit = () => {
      <>
       <Firstdiv5>
       <IconGit5 src="https://res.cloudinary.com/felixces/image/upload/v1661614263/Retogithub/icono2_ubwqaw.png" alt="" />
-        <Frase6>Your information closes Github to you</Frase6>
+        <Frase6>{usuarioName.nombre}&nbsp;&nbsp; fill the blanks with the git user info</Frase6>
         <Seconddiv6>
 
-        <TitleMain6>{usuarioName.nombre}&nbsp;&nbsp;information</TitleMain6>
+        <TitleMain6>Git user information</TitleMain6>
 
 
 
@@ -76,7 +76,7 @@ const AddEdit = () => {
 
              
                     <LabeName6>Your name</LabeName6>
-                    <FormIn6 type="text" name="name" placeholder="Enter name" value={name} onChange={handleInputChange} />
+                    <FormIn6 required type="text" name="name" placeholder="Enter name" value={name} onChange={handleInputChange} />
 
                     <LabeName6>Last name</LabeName6>
                     <FormIn6 type="text" name="lastname" placeholder="Enter last name" value={lastname} onChange={handleInputChange} />
@@ -85,10 +85,10 @@ const AddEdit = () => {
                     <FormIn6 type="email" name="email" placeholder="name@enlace" value={email} onChange={handleInputChange} />
 
                     <LabeName6>Phone</LabeName6>
-                    <FormIn6 type="tel" name="phone" placeholder="your phone" value={phone} onChange={handleInputChange} />
+                    <FormIn6 required type="tel" name="phone" placeholder="your phone" value={phone} onChange={handleInputChange} />
 
                     <LabeName6>Git user</LabeName6>
-                    <FormIn6 type="text" name="gituser" placeholder="your github user" value={gituser} onChange={handleInputChange} />
+                    <FormIn6 required type="text" name="gituser" placeholder="your github user" value={gituser} onChange={handleInputChange} />
                     
                     <LabeName6>Id card</LabeName6>
                     <FormIn6 type="text" name="idcard" placeholder="your identification number" value={idcard} onChange={handleInputChange} />

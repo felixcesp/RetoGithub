@@ -788,12 +788,12 @@ width:1263px;
 background-color:whitesmoke;
 box-sizing: border-box;
 text-align:center;
-background-color:blue;
+background-color:whitesmoke;
 
 `
 export const LisitImg=styled.img`
 height:55px;
-width:55px;
+//width:55px;
 border-radius:50%;
 
 `
@@ -801,8 +801,8 @@ export const TableTd223=styled.td`
 border: solid 1px black;
 text-align:center;
 position:relative;
-width:80px;
-height:0px;
+width:auto;
+height:50px;
 
 `
 export const TableTd22=styled.td`
@@ -852,4 +852,11 @@ border:none;
 export const TableThn=styled.td`
 border: solid 1px black;
 height:auto;
+`
+
+//repos title
+export const ReposTitleMain= styled.h1`
+margin-top:80px;
+margin-bottom:30px;
+
 `

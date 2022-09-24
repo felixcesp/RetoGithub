@@ -55,7 +55,8 @@ const ListEdit = () => {
         <TableInfo22>
         <NavBarUser/>
             <>
-              <TitleTable55>Bienvenido   {nombre.nombre} </TitleTable55>
+              <TitleTable55>
+Evaluator {nombre.nombre} these are your users</TitleTable55>
             </>
             <Table22>
                 <thead>

@@ -3,9 +3,10 @@ import  Navbar  from '../components/home/NavBar'
 import Pagination from 'react-bootstrap/Pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import {PaginationConte, Table2, TableInfo, TableTd } from '../styled/StyledComponents'
+import {PaginationConte, ReposTitleMain, Table2, TableInfo, TableTd } from '../styled/StyledComponents'
 //import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function Repos() {
     const [repos, setRepos] = useState([]);
@@ -15,8 +16,8 @@ function Repos() {
    //este es para el filtro
    const [filterRepos,setFilterRepos] = useState([]);
 
-    //const gitUser = useSelector( state => state.gitUser.gitName);
-    const gitUser= "felixcesp"
+    const gitUser = useSelector( state => state.gitUser.gitName);
+    
 //recarga tabla con un nuevo nuemro de pagina actual
     const paginationCurrentPage= (newPage)=>{
         setCurrentPagination(newPage)
@@ -90,7 +91,7 @@ function Repos() {
  
     <TableInfo>
    <Navbar/> 
-      <h1>Repositorios de {gitUser}</h1>
+      <ReposTitleMain>Repositorios de {gitUser}</ReposTitleMain>
       
       
       <input type='text' name='search' onChange={searching}/>
