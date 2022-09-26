@@ -1,9 +1,10 @@
-import { collection, getDocs} from "firebase/firestore";
+//import { getAuth } from "firebase/auth";
+//import { collection, getDocs} from "firebase/firestore";
 import { useDispatch} from "react-redux";
-import { Link, useNavigate} from "react-router-dom";
-import { db } from "../firebase/firebaseConfig";
+import { Link, /*useNavigate*/} from "react-router-dom";
+//import { db } from "../firebase/firebaseConfig";
 import useForm from "../hooks/useForm";
-import { actionLoginSync } from "../redux/actions/actionLogin";
+//import { actionLoginSync } from "../redux/actions/actionLogin";
 import { actionLogPhoneSync} from "../redux/actions/actionLogPhone";
 import {
   ButLoNext,
@@ -22,14 +23,28 @@ import {
 } from "../styled/StyledComponents";
 
 export default function PhoneRegister() {
-  const dispatch = useDispatch();
-  const openRegis=useNavigate();
+ // const dispatch = useDispatch();
+ // const openRegis=useNavigate();
   //const openuser=useNavigate();
 
   
   const [formValue, handleInputChange, reset] = useForm({
     phone: "",
   });
+
+
+
+//nueva funcion para evaluar desde firebase
+
+
+
+
+
+
+
+
+
+/*
   const veryTel = async (phone) => {
        const dataUsers=[]
        const resp= await getDocs(collection(db, "usuariosGit"))
@@ -37,10 +52,8 @@ export default function PhoneRegister() {
         let nombre
         let elegido2
   
-      dataUsers.forEach(async (element) => {
-           
+      dataUsers.forEach(async (element) => {    
       const elegido=element.phone
-      //const nombre2=element.name;
       if (elegido === phone){
         nombre=element.name
         elegido2=element.phone}
@@ -52,15 +65,14 @@ export default function PhoneRegister() {
           alert('your phone is not register, please register')
           openRegis('/register')
          }
-
-  
     }
-  const { phone } = formValue;
+    */
+ // const { phone } = formValue;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     //console.log(formValue)
-    dispatch(actionLogPhoneSync(phone));
+   // dispatch(actionLogPhoneSync(phone));
     reset();
   };
   return (
@@ -85,7 +97,7 @@ export default function PhoneRegister() {
           />
 
           <RegisterButton type="submit">
-            <LettersR2  onClick={() =>veryTel(formValue.phone) }>Login</LettersR2>
+            <LettersR2 /* onClick={() =>veryTel(formValue.phone) }*/>Login</LettersR2>
           </RegisterButton>
         </FormAll2>
       </Seconddiv3>

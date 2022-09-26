@@ -57,9 +57,8 @@ export const editGituserAsync = (idcard, gitdata) => {
 
         .then(resp =>{ 
             dispatch(editGituserSync(gitdata))
-            console.log(resp)
         })
-        .catch(error => console.warn(error))
+        .catch(error => alert('no se actualizo'))
 
       
 
@@ -80,7 +79,6 @@ export const editGituserSync = (gitdata) => {
 export const listGituserAsync = () => {
     return async (dispath) => {
         const collectionListar = await getDocs(collection(db, "usuariosGit"))
-        console.log(collectionListar)
         const showUsers = []
         collectionListar.forEach(lista => {
             showUsers.push({
@@ -108,7 +106,6 @@ export const deletGituserAsync = (idcard) => {
         const collectionListar = collection(db, "usuariosGit")
         const q = query(collectionListar, where('idcard', '==', idcard))
         const datosQ = await getDocs(q)
-        console.log(datosQ)
         datosQ.forEach(docu => {
             deleteDoc(doc(db, 'usuariosGit', docu.id))
 

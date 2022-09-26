@@ -190,9 +190,9 @@ position: relative;
 //contenedor del registro
 export const Seconddiv2= styled.div`
 position:absolute;
-height:500px;
+height:auto;
 width:25rem;
-top:80px;
+top:50px;
 left:400px;
 box-sizing: border-box;
 background-image: url("https://res.cloudinary.com/felixces/image/upload/v1662591043/Retogithub/oto4_ptw4jf.jpg");
@@ -234,7 +234,8 @@ border: 1.5px solid rgba(100, 100, 100, 0.5);
 export const RegisterButton=styled.button`
 width:150px;
 height:40px;
-margin-top:25px;
+margin-top:10px;
+margin-bottom:40px;
 border-radius:30px;
 background-color:#929292;
 //background:radial-gradient(circle at 50% -20.71%, #695e80 0, #403864 50%, #0f1749 100%);

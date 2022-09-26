@@ -55,6 +55,7 @@ export const loginGoogle = ()=>{
         .catch(({error})=>{
          alert("you dont have a valid google count, please register")
         })
+        
   }
   }
   // ingresar con face

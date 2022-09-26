@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { Link} from 'react-router-dom'
 import useForm from '../hooks/useForm'
+import { actionLogPhoneAsync } from '../redux/actions/actionLogPhone'
 import { registrarUserAsync } from '../redux/actions/actionUsuario'
 import { BotonImg, ButLogin, Firstdiv2, FormAll2, FormIn2, Frase2, IconGit2, LabeName2, LettersR2, LoginConte, RegisterButton, Seconddiv2, TitleMain2 } from '../styled/StyledComponents'
 
@@ -13,14 +14,16 @@ const ShortRegister=() =>{
      email: '',
      pass: '',
      nombre: '',
+     phone:'',
    
  })
 
- const {email, pass, nombre} = formValue
+ const {email, pass, nombre, phone} = formValue
  const handleSubmit = (e) => {
      e.preventDefault()
-     console.log(email, pass, nombre)
-     dispatch(registrarUserAsync(email, pass, nombre))
+    // console.log(email, pass, nombre)
+     dispatch(registrarUserAsync(email, pass, nombre, phone))
+     dispatch(actionLogPhoneAsync(email, pass, nombre, phone))
      reset()
  }
 
@@ -28,7 +31,7 @@ const ShortRegister=() =>{
  return (
      <Firstdiv2>
      <IconGit2 src="https://res.cloudinary.com/felixces/image/upload/v1661614263/Retogithub/icono2_ubwqaw.png" alt="" />
-     <Frase2>Your registration make us better</Frase2>
+     <Frase2>Evaluator register to start working</Frase2>
      <Seconddiv2>
      <FormAll2 onSubmit={handleSubmit} >
          <TitleMain2>User register</TitleMain2>
@@ -41,7 +44,10 @@ const ShortRegister=() =>{
              <FormIn2 type="email" placeholder="name@example.com" name="email"  value={formValue.email} onChange={handleInputChange}/>
        
              <LabeName2>Password</LabeName2>
-             <FormIn2 type="password" name="pass" value={formValue.pass} onChange={handleInputChange} />
+             <FormIn2 type="password" placeholder="minimun 6 characters" name="pass" value={formValue.pass} onChange={handleInputChange} />
+                    
+             <LabeName2>Phone</LabeName2>
+             <FormIn2 type="tel" name="phone" value={formValue.phone} onChange={handleInputChange} />
          
          <RegisterButton type="submit"  >
            <LettersR2>Register</LettersR2> 

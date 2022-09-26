@@ -26,7 +26,7 @@ const ListEdit = () => {
     const navigation =useNavigate();
 
     const { showUsers } = useSelector(store => store.newGitUser)
-    console.log(showUsers)
+
 
     useEffect(() => {
         dispatch(listGituserAsync()); //

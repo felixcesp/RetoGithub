@@ -35,7 +35,7 @@ return (
     <Firstdiv>
      
         <IconGit src="https://res.cloudinary.com/felixces/image/upload/v1661614263/Retogithub/icono2_ubwqaw.png" alt="" />
-        <Frase>We want to know more about you, you are very impontant for us</Frase>
+        <Frase>We want to know more about Git users, their information are very impontant for us, evaluator please login</Frase>
 
         <Seconddiv>
         <FormAll onSubmit ={handleSubmit}>
