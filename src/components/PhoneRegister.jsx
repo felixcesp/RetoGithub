@@ -1,11 +1,7 @@
-//import { getAuth } from "firebase/auth";
-//import { collection, getDocs} from "firebase/firestore";
 import { useDispatch} from "react-redux";
-import { Link, /*useNavigate*/} from "react-router-dom";
-//import { db } from "../firebase/firebaseConfig";
+import { Link} from "react-router-dom";
 import useForm from "../hooks/useForm";
-//import { actionLoginSync } from "../redux/actions/actionLogin";
-import { actionLogPhoneSync} from "../redux/actions/actionLogPhone";
+import { actionStatePhoneAsync } from "../redux/actions/actionStatePhone";
 import {
   ButLoNext,
   Firstdiv4,
@@ -23,56 +19,20 @@ import {
 } from "../styled/StyledComponents";
 
 export default function PhoneRegister() {
- // const dispatch = useDispatch();
- // const openRegis=useNavigate();
-  //const openuser=useNavigate();
+    const dispatch = useDispatch();
 
-  
+ 
   const [formValue, handleInputChange, reset] = useForm({
     phone: "",
   });
 
 
-
-//nueva funcion para evaluar desde firebase
-
-
-
-
-
-
-
-
-
-/*
-  const veryTel = async (phone) => {
-       const dataUsers=[]
-       const resp= await getDocs(collection(db, "usuariosGit"))
-        resp.forEach((doc)=> dataUsers.push (doc.data()))
-        let nombre
-        let elegido2
-  
-      dataUsers.forEach(async (element) => {    
-      const elegido=element.phone
-      if (elegido === phone){
-        nombre=element.name
-        elegido2=element.phone}
-         });
-         if (elegido2 === phone){
-          dispatch(actionLoginSync("","",nombre))
-          alert('Welcome again  ' + nombre ); 
-         }else{
-          alert('your phone is not register, please register')
-          openRegis('/register')
-         }
-    }
-    */
- // const { phone } = formValue;
+  const { phone } = formValue;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     //console.log(formValue)
-   // dispatch(actionLogPhoneSync(phone));
+   dispatch(actionStatePhoneAsync(phone));
     reset();
   };
   return (
@@ -82,11 +42,11 @@ export default function PhoneRegister() {
         alt=""
       />
       <Frase2>
-        If you have an account enter your phone number, in other hand click next
+        evaluator If you have an account enter your phone number, in other hand click next
       </Frase2>
       <Seconddiv3>
         <FormAll2 onSubmit={handleSubmit}>
-          <TitleMain2>User phone login</TitleMain2>
+          <TitleMain2>Evaluator phone login</TitleMain2>
           <hr />
           <LabeName2>Phone</LabeName2>
           <FormIn2

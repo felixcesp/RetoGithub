@@ -294,7 +294,7 @@ border-radius:50%;
 `
 export const Frase2=styled.h2`
 position:absolute;
-width:15.625rem;
+width:300px;
 height:1.25rem;
 top:170px;
 left:5rem;

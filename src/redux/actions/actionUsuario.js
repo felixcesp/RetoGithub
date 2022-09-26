@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, getAuth, updateProfile} from "firebase/auth"
 //import { addDoc, collection } from "firebase/firestore"
 //import { db } from "../../firebase/firebaseConfig"
-import { typesUsuario } from "../types/types"
+import { typesEstadoPhone} from "../types/types"
 
 
 //-----------Registrar usuario Nuevo--------------/
@@ -25,9 +25,9 @@ export const registrarUserAsync =(email, pass, nombre, phone)=>{
     }
 }
 
-export const registrarUserSync =(email, pass, nombre, phone)=>{
+export const registrarUserSync =(stateAuth)=>{
     return {
-        type: typesUsuario.register,
-        payload: {email, pass, nombre, phone}
+        type: typesEstadoPhone,
+        payload: {stateAuth}
     }
 }

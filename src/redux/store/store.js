@@ -1,6 +1,7 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { reducersGetRepo } from "../reducers/getrepoReducer";
+import { reducerAuthPhone } from "../reducers/reducerAuthPhone";
 import { reducersUsergit } from "../reducers/reducersEdit";
 
 import { reducersLogin } from "../reducers/reducersLogin";
@@ -16,6 +17,7 @@ const reducers = combineReducers(
         logPhone:reducersLogPhone,
         gitUser:reducersGetRepo,
         newGitUser: reducersUsergit,
+        statePhone:reducerAuthPhone,
        
      
     

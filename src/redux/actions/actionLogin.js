@@ -20,6 +20,7 @@ return {
 //--------------Login con email y pass-----------------------/
 
 export const actionLoginAsync = (email, pass)=>{
+  console.log(email, pass)
     
     return (dispatch)=>{
     const auth =getAuth()
