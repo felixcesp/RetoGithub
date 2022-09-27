@@ -15,7 +15,7 @@ const AppRoute = () => {
     const [isLoggedIn, setIsLoggedIn]= useState(false);
    // let logPhonelast=useSelector(state => state.statePhone.phoneState)
     //console.log(logPhonelast);
-    console.log(isLoggedIn)
+    //console.log(isLoggedIn)
     //veryPHone();
 
     useEffect(() => {
@@ -68,6 +68,7 @@ const AppRoute = () => {
         <BrowserRouter>
           <Routes>
           <Route path="/" element={<PublicRoutes isAuth={isLoggedIn}><Landing/></PublicRoutes>} />
+          <Route path="/land" element={<PublicRoutes isAuth={isLoggedIn}><Landing/></PublicRoutes>} />
           <Route path="/phone" element={<PublicRoutes isAuth={isLoggedIn}><PhoneRegister/></PublicRoutes>} />
           <Route path="/pag1" element={<PublicRoutes isAuth={isLoggedIn}><Login/></PublicRoutes>} />
           <Route path="/register" element={<PublicRoutes isAuth={isLoggedIn}><ShortRegister/></PublicRoutes>} />

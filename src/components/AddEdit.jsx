@@ -33,7 +33,7 @@ const AddEdit = () => {
 
      const handleSubmit =(e)=>{
         e.preventDefault()
-        console.log(formValue)
+  
         dispatch(addGituserAsync(formValue))
         if(formValue){
          

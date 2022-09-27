@@ -1,7 +1,8 @@
 import { createUserWithEmailAndPassword, getAuth, updateProfile} from "firebase/auth"
 //import { addDoc, collection } from "firebase/firestore"
 //import { db } from "../../firebase/firebaseConfig"
-import { typesEstadoPhone} from "../types/types"
+import {typesUsuario} from "../types/types"
+import { actionLogPhoneAsync } from "./actionLogPhone"
 
 
 //-----------Registrar usuario Nuevo--------------/
@@ -13,7 +14,10 @@ export const registrarUserAsync =(email, pass, nombre, phone)=>{
         createUserWithEmailAndPassword(auth, email, pass)
         .then(async({user})=>{
                 await updateProfile(auth.currentUser, {displayName: nombre})
-                dispatch(registrarUserSync(email, pass, nombre, phone))
+                const uid=auth.currentUser.uid;
+                console.log(uid)
+                dispatch(registrarUserSync(email, pass, nombre, phone, uid))
+                dispatch(actionLogPhoneAsync(uid))
                 alert('felicitaciones    '+ nombre + ' ahora estas ya registrado')
             
         })
@@ -25,9 +29,9 @@ export const registrarUserAsync =(email, pass, nombre, phone)=>{
     }
 }
 
-export const registrarUserSync =(stateAuth)=>{
+export const registrarUserSync =(email,pass,nombre,phone, uid )=>{
     return {
-        type: typesEstadoPhone,
-        payload: {stateAuth}
+        type: typesUsuario.register,
+        payload:{email, pass, nombre, phone,uid} 
     }
 }

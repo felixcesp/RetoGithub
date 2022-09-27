@@ -7,7 +7,9 @@ export const reducersLogin = (state={}, action)=>{
             return {
                 email: action.payload.email,
                 pass: action.payload.pass,
-                nombre: action.payload.nombre,      
+                nombre: action.payload.nombre, 
+                uid: action.payload.uid, 
+
                
             }
                     
@@ -20,7 +22,8 @@ export const reducersLogin = (state={}, action)=>{
                     email: action.payload.email,
                     pass: action.payload.pass,
                     nombre: action.payload.nombre,
-                    phone: action.payload.phone
+                    phone: action.payload.phone,
+                    uid: action.payload.uid,  
                    
                 }
         default:

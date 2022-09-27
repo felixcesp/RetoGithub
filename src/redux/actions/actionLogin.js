@@ -1,16 +1,17 @@
 import { getAuth, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth"
 import { face, google} from "../../firebase/firebaseConfig"
 import { typesLogin } from "../types/types"
+import { actionLogPhoneAsync } from "./actionLogPhone"
 
 
 
 //--------------Login con email y pass-----------------------/
 
-export const actionLoginSync = (email, pass, nombre)=>{
+export const actionLoginSync = (email, pass, nombre, uid)=>{
 return {
     type: typesLogin.verificarLogin,
     payload:{
-        email, pass, nombre,
+        email, pass, nombre, uid
     }
 }
 }
@@ -20,15 +21,16 @@ return {
 //--------------Login con email y pass-----------------------/
 
 export const actionLoginAsync = (email, pass)=>{
-  console.log(email, pass)
+
     
     return (dispatch)=>{
     const auth =getAuth()
     signInWithEmailAndPassword(auth, email, pass)
     .then(({user})=>{
+      let uid=user.uid
       let nombre=user.displayName;
-      
-            dispatch(actionLoginSync(email, pass, nombre))
+            dispatch(actionLoginSync(email, pass, nombre,  uid))
+            dispatch(actionLogPhoneAsync(uid))
             alert(user.displayName + '   Welcome')
            // window.location="/saveuser";
     })
@@ -50,7 +52,9 @@ export const loginGoogle = ()=>{
          const auth = getAuth()
         signInWithPopup(auth, google)
         .then(({user})=>{
-           dispatch(actionLoginSync(user.email,"", user.displayName ))
+          let uid=user.uid
+           dispatch(actionLoginSync(user.email,"", user.displayName, uid ))
+           dispatch(actionLogPhoneAsync(uid))
           alert('thanks   ' + user.displayName + '    Welcome')
         })
         .catch(({error})=>{
@@ -65,7 +69,7 @@ export const loginGoogle = ()=>{
              const auth = getAuth()
             signInWithPopup(auth, face)
             .then(({user})=>{
-           
+              
                dispatch(actionLoginSync(user.email))
                alert('thanks   ' + user + '   welcome')
             })
