@@ -14,7 +14,7 @@ const AddEdit = () => {
     const navigation =useNavigate();
 
     const dispatch = useDispatch();
-    const usuarioName= useSelector(state => state.login);
+   const usuarioName= useSelector(state => state.login);
 
 
     const [formValue, handleInputChange, reset]= useForm({
@@ -34,7 +34,7 @@ const AddEdit = () => {
      const handleSubmit =(e)=>{
         e.preventDefault()
   
-        dispatch(addGituserAsync(formValue))
+        dispatch(addGituserAsync(formValue/* usuarioName.uid*/))
         if(formValue){
          
             navigation('/editar')

@@ -8,6 +8,7 @@ export const reducersLogPhone = (state = {}, action)=>{
                 pass: action.payload.pass,
                 nombre: action.payload.nombre,
                 phone: action.payload.phone,
+                uid: action.payload.uid,
             }
         default:
             return state

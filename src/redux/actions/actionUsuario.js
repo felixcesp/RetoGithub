@@ -2,6 +2,7 @@ import { createUserWithEmailAndPassword, getAuth, updateProfile} from "firebase/
 //import { addDoc, collection } from "firebase/firestore"
 //import { db } from "../../firebase/firebaseConfig"
 import {typesUsuario} from "../types/types"
+
 import { actionLogPhoneAsync } from "./actionLogPhone"
 
 
@@ -17,13 +18,15 @@ export const registrarUserAsync =(email, pass, nombre, phone)=>{
                 const uid=auth.currentUser.uid;
                 console.log(uid)
                 dispatch(registrarUserSync(email, pass, nombre, phone, uid))
-                dispatch(actionLogPhoneAsync(uid))
+                dispatch(actionLogPhoneAsync(email, pass, nombre, phone, uid))
                 alert('felicitaciones    '+ nombre + ' ahora estas ya registrado')
             
         })
         .catch(err=>{
             alert('no te pudiste registar llena bien los campos')
-        });
+        })
+        
+        ;
      
 
     }

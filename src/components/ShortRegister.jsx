@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link} from 'react-router-dom'
 import useForm from '../hooks/useForm'
 import { actionLogPhoneAsync } from '../redux/actions/actionLogPhone'
@@ -7,7 +7,8 @@ import { registrarUserAsync } from '../redux/actions/actionUsuario'
 import { BotonImg, ButLogin, Firstdiv2, FormAll2, FormIn2, Frase2, IconGit2, LabeName2, LettersR2, LoginConte, RegisterButton, Seconddiv2, TitleMain2 } from '../styled/StyledComponents'
 
 const ShortRegister=() =>{
-   
+    const uid= useSelector((state)=> state.login.uid)
+    console.log(uid)
 
     const dispatch = useDispatch()
     const [formValue, handleInputChange, reset] = useForm({
@@ -22,8 +23,10 @@ const ShortRegister=() =>{
  const handleSubmit = (e) => {
      e.preventDefault()
     // console.log(email, pass, nombre)
+    
      dispatch(registrarUserAsync(email, pass, nombre, phone))
-     dispatch(actionLogPhoneAsync(email, pass, nombre, phone))
+     dispatch(actionLogPhoneAsync(email, pass, nombre, phone, uid))
+     
      reset()
  }
 

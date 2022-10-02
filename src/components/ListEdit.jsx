@@ -26,6 +26,7 @@ const ListEdit = () => {
     const navigation =useNavigate();
 
     const { showUsers } = useSelector(store => store.newGitUser)
+    const evaluadores= useSelector(state => state.login)
 
 
     useEffect(() => {
@@ -98,13 +99,49 @@ Evaluator {nombre.nombre} these are your users</TitleTable55>
                 </tbody>
             </Table22>
 
-
-
-
-
             {
                 modal === true ? <EditNew datos={datos} setModal={setModal} /> : ''
             }
+
+        </TableInfo22>
+
+
+        <TableInfo22>
+ 
+            <>
+              <TitleTable55>
+{nombre.nombre} these are all the evaluators who are registered</TitleTable55>
+            </>
+            <Table22>
+                <thead>
+                <tr>
+        <th>Name and last name</th>
+        <th>Email</th>
+        <th>pass</th>
+        <th>phone</th>
+        <th>Photo</th>
+      </tr>
+                </thead>
+                <tbody>
+                    {
+         
+                            <tr >
+                            
+                                <TableTd22>{evaluadores?.name}</TableTd22>
+                                <TableTd22>{evaluadores?.email}</TableTd22>
+                                <TableTd22>{evaluadores?.pass}</TableTd22>
+                                <TableTd22>{evaluadores?.phone}</TableTd22>
+
+                             
+                               
+
+                            </tr>
+                    
+                    }
+
+                </tbody>
+            </Table22>
+
 
         </TableInfo22>
         </>

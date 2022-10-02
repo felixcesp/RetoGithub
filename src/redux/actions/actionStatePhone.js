@@ -39,7 +39,7 @@ export const actionStatePhoneAsync=(phone)=> {
        }else{
            // authstate=false;
      //   dispatch(actionStatePhonesync(authstate))
-        alert('evaluator your phone is not register, please click next')
+      alert('evaluator your phone is not register, please click next')
         
         }
     

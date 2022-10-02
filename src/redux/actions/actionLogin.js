@@ -25,13 +25,23 @@ export const actionLoginAsync = (email, pass)=>{
     
     return (dispatch)=>{
     const auth =getAuth()
-    signInWithEmailAndPassword(auth, email, pass)
+    const phone='';
+    signInWithEmailAndPassword(auth, email, pass, phone)
+    
     .then(({user})=>{
       let uid=user.uid
       let nombre=user.displayName;
-            dispatch(actionLoginSync(email, pass, nombre,  uid))
-            dispatch(actionLogPhoneAsync(uid))
-            alert(user.displayName + '   Welcome')
+
+      alert(user.displayName + '   Welcome');
+            dispatch(actionLoginSync(email, pass, nombre,  uid));
+            if(phone){
+              console.log(phone)
+            dispatch(actionLogPhoneAsync(email, pass, nombre, uid))
+            //alert(user.displayName + '   Welcome your phonr is ok');
+          }
+            /*else{
+              alert(' User not found, please verify your data, or click on register')
+            }*/
            // window.location="/saveuser";
     })
     .catch(error =>{
@@ -52,10 +62,11 @@ export const loginGoogle = ()=>{
          const auth = getAuth()
         signInWithPopup(auth, google)
         .then(({user})=>{
-          let uid=user.uid
-           dispatch(actionLoginSync(user.email,"", user.displayName, uid ))
-           dispatch(actionLogPhoneAsync(uid))
-          alert('thanks   ' + user.displayName + '    Welcome')
+    
+         // let uid=user.uid
+           dispatch(actionLoginSync(user.email,"", user.displayName /*uid */))
+          // dispatch(actionLogPhoneAsync(uid))
+         alert('thanks   ' + user.displayName + '    Welcome')
         })
         .catch(({error})=>{
          alert("you dont have a valid google count, please register")
