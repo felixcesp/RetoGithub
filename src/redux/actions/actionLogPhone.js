@@ -1,8 +1,9 @@
 
 
-import { addDoc, collection} from "firebase/firestore"
+import { addDoc, collection, getDocs} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
 import { typesLoginPhone } from "../types/types"
+import { typesUsergit } from "../types/typesEdit"
 
 
 
@@ -12,23 +13,8 @@ export const actionLogPhoneAsync = (email, pass, nombre, phone, uid)=>{
       addDoc(collection(db, "evaluadores"), {email:email, pass:pass, nombre:nombre, phone: phone, uid: uid})
        
        .then((resp) => {
-       // const user = { name: "Juan", city: "Valencia", country: "Spain" };
-       // db.collection("evaluadores").doc("sus users").set(user);
            dispatch(actionLogPhoneSync(email, pass, nombre, phone, uid))
-       });
-       
-      /*const introduceUser = collection(db, "evaluadores")
-       const userEVa = query(introduceUser, where('uid', '==', uid))
-       const datosUsers = getDocs(userEVa)
-       console.log(datosUsers)
-       datosUsers.forEach(docu => {
-           setDoc(doc(db, 'evaluadores', 'users'),{
-            user: JSON.parse(JSON.stringify(docu))
-           })
-
-       })*/
-           
-         
+       });         
             }
             }
         
@@ -39,22 +25,33 @@ export const actionLogPhoneSync = (email, pass, nombre, phone, uid)=>{
         
         type: typesLoginPhone.verificarPhone,
         payload:{
-            email, pass, nombre, phone, uid
-            
+            email, pass, nombre, phone, uid          
         }
     }
     }
 
 
 
-   
-    //agregar una subcoleccion a un usuario
-   /* export const eachEvaluatorUsers=(email, pass, nombre, phone, uid)=>{
-        return (dispatch)=>{
-       // Add a new document with a generated id
-     const newEvaluatorRef = doc(collection(db, "evaluators", "userGittoCheck"));
-     .then((resp)=> {
-     await   setDoc(newEvaluatorRef, {email:email, pass:pass, nombre:nombre, phone: phone});
-    })
-        }}*/
+        //listar evaluadores
+        //----------------------Listar ususarios------------------------------//
+export const listEvaluatorAsync = () => {
+    return async (dispath) => {
+        const collectionListar = await getDocs(collection(db, "evaluadores"))
+        const showEvaluators = []
+        collectionListar.forEach(lista => {
+            showEvaluators.push({
+                ...lista.data()
+            })
+        })
+        dispath(listEvaluatorSync(showEvaluators))
 
+    }
+
+}
+
+export const listEvaluatorSync = (showEvaluators) => {
+    return {
+        type: typesUsergit.listEva,
+        payload: showEvaluators
+    }
+}

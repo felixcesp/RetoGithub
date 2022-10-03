@@ -10,7 +10,7 @@ export const addGituserAsync = (gitdata) => {
         addDoc(collection(db, "usuariosGit"), gitdata)
             .then(resp => {
                 dispath(addGituserSync(gitdata))
-               dispath(listGituserSync()) 
+              // dispath(listGituserSync()) 
             })
 
 

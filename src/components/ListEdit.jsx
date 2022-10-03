@@ -12,6 +12,7 @@ import { ImgTables, ImgTables2, LisitImg, Table22,TableInfo22, TableT25, TableTd
 import EditNew from './EditarNew';
 import NavBarUser from '../components/home/NavbarUser'
 import { useNavigate } from 'react-router-dom';
+import { listEvaluatorAsync } from '../redux/actions/actionLogPhone';
 
 
 const ListEdit = () => {
@@ -25,12 +26,41 @@ const ListEdit = () => {
     const [datos, setDatos] = useState([]);
     const navigation =useNavigate();
 
-    const { showUsers } = useSelector(store => store.newGitUser)
-    const evaluadores= useSelector(state => state.login)
+    const  showUsers  = useSelector(store => store.newGitUser.showUsers)
+    localStorage.setItem('showUsers2', JSON.stringify(showUsers));
+  
+    let showUsuarios=localStorage.getItem('showUsers2');
+    console.log(showUsuarios);
+
+    /*let userSave = [];
+    for(let x = 0; x <= showUsuarios.length; x++) {
+    userSave.push(showUsuarios.key(x));
+}
+    console.log(showUsuarios)*/
+
+
+
+
+    const showEvaluators= useSelector(state => state.logPhone.showEvaluators)
+    localStorage.setItem('showEvaluators2', JSON.stringify(showEvaluators));
+  
+    let showEvaluator=localStorage.getItem('showEvaluators2');
+  //  let userEval = [];
+    showEvaluator.foreach((elemnt)=>{
+       console.log(elemnt)
+    })
+    //for(let x = 0; x <= showEvaluator.length; x++) {
+    //userEval.push((x.name));
+    //console.log(userEval)
+//}
+ //  console.log(userEval)
+   
+
 
 
     useEffect(() => {
-        dispatch(listGituserAsync()); //
+        dispatch(listGituserAsync()); 
+        dispatch(listEvaluatorAsync())
     }, [dispatch])
 
 
@@ -124,19 +154,20 @@ Evaluator {nombre.nombre} these are your users</TitleTable55>
                 </thead>
                 <tbody>
                     {
-         
-                            <tr >
+                        showEvaluators.map((eva, idx) => (
+                            <tr key={idx}>
                             
-                                <TableTd22>{evaluadores?.name}</TableTd22>
-                                <TableTd22>{evaluadores?.email}</TableTd22>
-                                <TableTd22>{evaluadores?.pass}</TableTd22>
-                                <TableTd22>{evaluadores?.phone}</TableTd22>
-
+                                <TableTd22>{eva?.nombre}</TableTd22>
+                                <TableTd22>{eva?.email}</TableTd22>
+                                <TableTd22>{eva?.pass}</TableTd22>
+                                <TableTd22>{eva?.phone}</TableTd22>
+                              {/*  <TableT25  onClick={()=>{getRepos(p.gituser)}}>{eva.phone}</TableT25>*/}
+                                <TableTd223><LisitImg src={eva?.foto} alt="" /></TableTd223>
                              
                                
 
                             </tr>
-                    
+                        ))
                     }
 
                 </tbody>

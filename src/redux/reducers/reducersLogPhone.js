@@ -4,11 +4,12 @@ export const reducersLogPhone = (state = {}, action)=>{
     switch (action.type) {
         case typesLoginPhone.verificarPhone:
             return {
-                email: action.payload.email,
+              /*  email: action.payload.email,
                 pass: action.payload.pass,
                 nombre: action.payload.nombre,
                 phone: action.payload.phone,
-                uid: action.payload.uid,
+                uid: action.payload.uid,*/
+               showEvaluators: [action.payload]
             }
         default:
             return state
