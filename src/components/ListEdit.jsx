@@ -27,36 +27,31 @@ const ListEdit = () => {
     const navigation =useNavigate();
 
     const  showUsers  = useSelector(store => store.newGitUser.showUsers)
-    localStorage.setItem('showUsers2', JSON.stringify(showUsers));
+   // localStorage.setItem('showUsers2', JSON.stringify(showUsers));
   
-    let showUsuarios=localStorage.getItem('showUsers2');
-    console.log(showUsuarios);
+   // let showUsuarios=localStorage.getItem('showUsers2');
+  //  console.log(showUsuarios);
 
     /*let userSave = [];
     for(let x = 0; x <= showUsuarios.length; x++) {
     userSave.push(showUsuarios.key(x));
 }
     console.log(showUsuarios)*/
-
-
-
-
-    const showEvaluators= useSelector(state => state.logPhone.showEvaluators)
-    localStorage.setItem('showEvaluators2', JSON.stringify(showEvaluators));
+//const showEvaluators= useSelector(state => state.logPhone.showEvaluators)
+const showEvaluators= useSelector(state => state.allEvaluators.verEvaluators)
+   // localStorage.setItem('showEvaluators2', JSON.stringify(showEvaluators));
   
-    let showEvaluator=localStorage.getItem('showEvaluators2');
+  //  let showEvaluator=localStorage.getItem('showEvaluators2');
   //  let userEval = [];
-    showEvaluator.foreach((elemnt)=>{
-       console.log(elemnt)
-    })
+  //  showEvaluator.foreach((elemnt)=>{
+   //    console.log(elemnt)
+  //  })
     //for(let x = 0; x <= showEvaluator.length; x++) {
     //userEval.push((x.name));
     //console.log(userEval)
 //}
  //  console.log(userEval)
    
-
-
 
     useEffect(() => {
         dispatch(listGituserAsync()); 

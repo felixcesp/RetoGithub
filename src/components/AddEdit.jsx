@@ -33,10 +33,8 @@ const AddEdit = () => {
 
      const handleSubmit =(e)=>{
         e.preventDefault()
-  
-        dispatch(addGituserAsync(formValue/* usuarioName.uid*/))
-        if(formValue){
-         
+        dispatch(addGituserAsync(formValue))
+        if(formValue){    
             navigation('/editar')
         }
         reset()   
@@ -79,19 +77,19 @@ const AddEdit = () => {
                     <FormIn6 required type="text" name="name" placeholder="Enter name" value={name} onChange={handleInputChange} />
 
                     <LabeName6>Last name</LabeName6>
-                    <FormIn6 type="text" name="lastname" placeholder="Enter last name" value={lastname} onChange={handleInputChange} />
+                    <FormIn6 required type="text" name="lastname" placeholder="Enter last name" value={lastname} onChange={handleInputChange} />
 
                     <LabeName6>Email address</LabeName6>
                     <FormIn6 type="email" name="email" placeholder="name@enlace" value={email} onChange={handleInputChange} />
 
                     <LabeName6>Phone</LabeName6>
-                    <FormIn6 required type="tel" name="phone" placeholder="your phone" value={phone} onChange={handleInputChange} />
+                    <FormIn6  type="tel" name="phone" placeholder="your phone" value={phone} onChange={handleInputChange} />
 
                     <LabeName6>Git user</LabeName6>
                     <FormIn6 required type="text" name="gituser" placeholder="your github user" value={gituser} onChange={handleInputChange} />
                     
                     <LabeName6>Id card</LabeName6>
-                    <FormIn6 type="text" name="idcard" placeholder="your identification number" value={idcard} onChange={handleInputChange} />
+                    <FormIn6 required type="text" name="idcard" placeholder="your identification number" value={idcard} onChange={handleInputChange} />
                     
                     <LabeName6>birthday date</LabeName6>
                     <FormIn6 type="date" name="date" placeholder="your birth date" value={date} onChange={handleInputChange} />

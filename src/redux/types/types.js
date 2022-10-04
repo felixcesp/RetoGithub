@@ -16,3 +16,6 @@ export const typesLoginPhone={
 export const typesEstadoPhone={
     estadoPhone:'estado rutas phone'
 }
+export const typesEvaluadores={
+    verEvaluadores:'evaluadores'
+}

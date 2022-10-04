@@ -1,6 +1,6 @@
 import { typesLoginPhone } from "../types/types"
 
-export const reducersLogPhone = (state = {}, action)=>{
+export const reducersLogPhone = (state = [], action)=>{
     switch (action.type) {
         case typesLoginPhone.verificarPhone:
             return {
@@ -15,3 +15,6 @@ export const reducersLogPhone = (state = {}, action)=>{
             return state
     }
 }
+
+
+
