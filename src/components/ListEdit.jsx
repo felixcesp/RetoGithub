@@ -99,7 +99,7 @@ Evaluator {nombre.nombre} these are your users</TitleTable55>
                 </thead>
                 <tbody>
                     {
-                        showUsers.map((p, index) => (
+                        showUsers?.map((p, index) => (
                             <tr key={index}>
                             
                                 <TableTd22>{p.name}</TableTd22>
@@ -149,7 +149,7 @@ Evaluator {nombre.nombre} these are your users</TitleTable55>
                 </thead>
                 <tbody>
                     {
-                        showEvaluators.map((eva, idx) => (
+                        showEvaluators?.map((eva, idx) => (
                             <tr key={idx}>
                             
                                 <TableTd22>{eva?.nombre}</TableTd22>

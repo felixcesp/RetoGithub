@@ -2,8 +2,8 @@
 
 import { addDoc, collection, getDocs} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
-import { typesLoginPhone } from "../types/types"
-import { typesUsergit } from "../types/typesEdit"
+import { typesEvaluadores, typesLoginPhone } from "../types/types"
+
 
 
 
@@ -37,22 +37,22 @@ export const actionLogPhoneSync = (email, pass, nombre, phone, uid)=>{
 export const listEvaluatorAsync = () => {
     return async (dispath) => {
         const collectionListar = await getDocs(collection(db, "evaluadores"))
-        const showEvaluators = []
+        const seeAllevalu = []
         collectionListar.forEach(lista => {
-            showEvaluators.push({
+            seeAllevalu.push({
                 ...lista.data()
             })
         })
-        dispath(listEvaluatorSync(showEvaluators))
+        dispath(listEvaluatorSync(seeAllevalu))
 
     }
 
 }
 
-export const listEvaluatorSync = (showEvaluators) => {
+export const listEvaluatorSync = (seeAllevalu) => {
     return {
-        type: typesUsergit.listEva,
-        payload: showEvaluators
+        type: typesEvaluadores.verEvaluadores,
+        payload: seeAllevalu
     }
 }
 
