@@ -8,7 +8,7 @@ import { BotonImg, ButLogin, Firstdiv2, FormAll2, FormIn2, Frase2, IconGit2, Lab
 
 const ShortRegister=() =>{
     const uid= useSelector((state)=> state.login.uid)
-    console.log(uid)
+    //console.log(uid)
 
     const dispatch = useDispatch()
     const [formValue, handleInputChange, reset] = useForm({

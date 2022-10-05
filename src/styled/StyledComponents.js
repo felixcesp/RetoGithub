@@ -782,6 +782,7 @@ font-size:18px;
 border: solid 1px black;
 border-collapse: collapse;
 background-color:#9f90ea;
+margin-bottom:50px;
 `
 export const TableInfo22=styled.div`
 height:auto;

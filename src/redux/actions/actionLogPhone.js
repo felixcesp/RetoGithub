@@ -1,6 +1,6 @@
 
 
-import { addDoc, collection, getDocs} from "firebase/firestore"
+import { addDoc, collection, doc, getDocs, setDoc} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
 import { typesEvaluadores, typesLoginPhone } from "../types/types"
 
@@ -10,7 +10,7 @@ import { typesEvaluadores, typesLoginPhone } from "../types/types"
 export const actionLogPhoneAsync = (email, pass, nombre, phone, uid)=>{
     console.log(uid)
     return (dispatch)=>{
-      addDoc(collection(db, "evaluadores"), {email:email, pass:pass, nombre:nombre, phone: phone, uid: uid})
+      setDoc(doc(db, "evaluadores", uid), {email:email, pass:pass, nombre:nombre, phone: phone, uid: uid})
        
        .then((resp) => {
            dispatch(actionLogPhoneSync(email, pass, nombre, phone, uid))

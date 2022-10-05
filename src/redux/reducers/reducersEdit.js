@@ -16,7 +16,7 @@ export const reducersUsergit = (state = initialState, action) => {
             return {
                 showUsers: [...action.payload]
             }
-            case typesUsergit.listEva:
+           case typesUsergit.listEva:
                 return {
                     showEva: [...action.payload]
                 }
