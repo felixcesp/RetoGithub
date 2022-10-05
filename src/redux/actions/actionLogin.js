@@ -20,14 +20,11 @@ return {
 
 //--------------Login con email y pass-----------------------/
 
-export const actionLoginAsync = (email, pass)=>{
-
-    
+export const actionLoginAsync = (email, pass)=>{  
     return (dispatch)=>{
     const auth =getAuth()
     const phone='';
-    signInWithEmailAndPassword(auth, email, pass, phone)
-    
+    signInWithEmailAndPassword(auth, email, pass, phone)  
     .then(({user})=>{
       let uid=user.uid
       let nombre=user.displayName;
@@ -37,19 +34,12 @@ export const actionLoginAsync = (email, pass)=>{
             if(phone){
               console.log(phone)
             dispatch(actionLogPhoneAsync(email, pass, nombre, uid))
-            //alert(user.displayName + '   Welcome your phonr is ok');
+            
           }
-            /*else{
-              alert(' User not found, please verify your data, or click on register')
-            }*/
-           // window.location="/saveuser";
     })
     .catch(error =>{
         
         alert(' User not found, please verify your data, or click on register')
-      //  window.location="/register";
-      
-
     })
 
 }

@@ -1,13 +1,16 @@
-import {/* addDoc*/ addDoc,/* arrayUnion,*/ collection, deleteDoc, doc, getDocs, query, updateDoc, where } from "firebase/firestore"
+import { getAuth } from "firebase/auth";
+import {/* addDoc*/ /*addDoc,/* arrayUnion,*/ collection, deleteDoc, doc, getDocs, query, setDoc, updateDoc, where } from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
 import { typesUsergit } from "../types/typesEdit"
 
 //----------------Agregar usaurio-------------------------//
 export const addGituserAsync = (gitdata) => {
+    const auth = getAuth();
+    console.log(auth.currentUser.uid)
     return (dispath) => {
         //addDoc recibe dos parametros(donde lo voy a guardar, que voy a guardar)
         //collection recibe dos parametros( la coneccion FirebaseConfig, Nombre de la colleccion)    
-        addDoc(collection(db, "usuariosGit"), gitdata)
+        setDoc(doc(db, "usuariosGit",auth.currentUser.uid ), gitdata)
             .then(resp => {
                 dispath(addGituserSync(gitdata))
               // dispath(listGituserSync()) 

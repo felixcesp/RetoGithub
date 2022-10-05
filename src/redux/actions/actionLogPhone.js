@@ -1,6 +1,6 @@
 
 
-import { addDoc, collection, doc, getDocs, setDoc} from "firebase/firestore"
+import { collection, doc, getDocs, setDoc} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
 import { typesEvaluadores, typesLoginPhone } from "../types/types"
 
