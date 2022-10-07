@@ -9,7 +9,7 @@ export const reducersUsergit = (state = initialState, action) => {
     switch (action.type) {
         case typesUsergit.add:
             return {
-                showUsers: [action.payload]
+                showUsers: [action.payload],        
             }
 
         case typesUsergit.list:

@@ -37,7 +37,7 @@ const ShortRegister=() =>{
      <Frase2>Evaluator register to start working</Frase2>
      <Seconddiv2>
      <FormAll2 onSubmit={handleSubmit} >
-         <TitleMain2>User register</TitleMain2>
+         <TitleMain2>Evaluator register</TitleMain2>
          <hr />
          
              <LabeName2>Name and last name</LabeName2>

@@ -17,6 +17,7 @@ const AddEdit = () => {
    const usuarioName= useSelector(state => state.login);
 
 
+
     const [formValue, handleInputChange, reset]= useForm({
         name: '',
         lastname:'',
@@ -25,10 +26,11 @@ const AddEdit = () => {
         gituser:'',
         idcard: '',
         date:'',
-        foto: ''
+        foto: '',
+    
 
     })
-
+    
     const {name, lastname, email, phone, gituser, idcard, date}=formValue
 
      const handleSubmit =(e)=>{
