@@ -1,74 +1,26 @@
 //import { getAuth } from "firebase/auth";
-import {addDoc, collection, deleteDoc, doc, getDocs, query,updateDoc, where } from "firebase/firestore"
+
+import { getAuth } from "firebase/auth";
+import {addDoc, collection, deleteDoc, doc, getDocs,query,updateDoc, where } from "firebase/firestore"
 
 import { db } from "../../firebase/firebaseConfig"
 import { typesUsergit } from "../types/typesEdit"
 
 //----------------Agregar usaurio-------------------------//
 export const addGituserAsync = (gitdata) => {
-   //  const auth = getAuth();
-   //  let evalId = auth.currentUser?.uid
-      //console.log(evalId)
-   // console.log(auth.currentUser.uid)
+    const auth = getAuth();
+    let evalId = auth.currentUser?.uid
+
+let uidEval = { uid: evalId };
+Object.assign(gitdata, uidEval);
+
     return (dispath) => {
-       //set doc crea la coleccion con un id en este caso el uid del usuario registrado
-       // setDoc(doc(db, "usuariosGit", auth.currentUser?.uid ), gitdata)
-         //addDoc recibe dos parametros(donde lo voy a guardar, que voy a guardar)
-        //collection recibe dos parametros( la coneccion FirebaseConfig, Nombre de la colleccion)  
-        addDoc(collection(db, "usuariosGit"), gitdata)
-            .then(resp => {
-            
-;
-                dispath(addGituserSync(gitdata))
-              // dispath(listGituserSync()) 
-            })
-           // db.collection("ususario").document(auth.currentUser.uid).setDoc(["Add" , "usuarios"], {merge: true})
-            //db.collection("usuariosGit").document(auth.currentUser.uid).setData(["Add" : "Mentor"], merge: true)
-
-          
-      
-    
-           // db.collection("useriosGit").document(auth.currentUser?.uid).setData(["Add" : "Mentor"], merge: true)
-           
-           /* db.collection('usuariosGit').doc( auth.currentUser.uid).add({
-              'usuarios ': {
-                  gitdata
-                }
-              },{merge:true})*/
-        
-
-            //const docRef = doc(db, "usuariosGit",auth.currentUser.uid  );
-          //  setDoc(docRef, { capital: true }, { merge: true });
-          //  const data = {
-         //   gitdata
-         //    };
-    
-         //   setDoc(docRef, data) 
-
-
-/*
-            
-       //con sebastian cambios 27 sept
-       addDoc(collection(db, "evaluadores", "usuarios"), gitdata)
-       const ususariosListar = collection(db, "usuarios")
-       const u = query(ususariosListar, where('uid', '==', uid))
-       const datosU = getDocs(u)
-       let ident
-       datosU.forEach(async(document)=>{
-           ident= document.uid
-       })
-       console.log(ident)
-       const documentRef = doc(db, "ususarios", uid)
-       addDoc(documentRef, gitdata)
-      /* updateDoc(doc(db, "ususarios", uid),{
-        usuarios:arrayUnion(
-            gitdata
-        )
-       })
-       .then(resp => {
-        dispath(addGituserSync(gitdata))
-        dispath(listGituserSync()) 
-    })*/
+ 
+     addDoc(collection(db, "usuariosGit"), gitdata)    
+          .then(resp => {   
+             dispath(addGituserSync(gitdata))
+             dispath(listGituserSync()) 
+          })
 
     }
 }

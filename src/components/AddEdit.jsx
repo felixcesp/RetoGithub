@@ -30,7 +30,8 @@ const AddEdit = () => {
     
 
     })
-    
+
+
     const {name, lastname, email, phone, gituser, idcard, date}=formValue
 
      const handleSubmit =(e)=>{
@@ -38,6 +39,7 @@ const AddEdit = () => {
         dispatch(addGituserAsync(formValue))
         if(formValue){    
             navigation('/editar')
+           
         }
         reset()   
     }
