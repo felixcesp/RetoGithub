@@ -28,7 +28,7 @@ const ListEdit = () => {
 
     const  showUsers  = useSelector(store => store.newGitUser.showUsers)
     const showEvaluators= useSelector(state => state.allEvaluators.verEvaluators)
-    const yourUsers= useSelector(state=> state.userEspecific.evaluadorUsers)
+    const yourUsers= useSelector(state=> state.userEspecific.finalGitGotten)
     console.log(yourUsers)
 
    

@@ -158,16 +158,16 @@ export const evalGituserAsync = () => {
                ...sellect.data()
             })
         })
-         .then(resp => {   
+       //  .then(resp => {   
             dispath(evalGituserSync(finalGitGotten))
            
-          })
+       //   })
 
     }
 }
 
 export const evalGituserSync = (finalGitGotten) => {
-   // console.log(finalGitGotten)
+    console.log(finalGitGotten)
    
     return {
         type: typesSearch.evaluadorUsers,

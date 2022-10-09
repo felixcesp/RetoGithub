@@ -1,16 +1,17 @@
 import { typesSearch } from "../types/types"
 
-const initialState = {
-    finalGitGotten: []
-}
+//const initialState = {
+ //   finalGitGotten: []
+//}
 
-export const reducersSearchgit = (state = initialState, action) => {
+export const reducersSearchgit = (state =[]/*= initialState*/, action) => {
     switch (action.type) {
     
 
         case typesSearch.evaluadorUsers:
             return {
-                finalGitGotten: [...action.payload]
+                //finalGitGotten: [...action.payload]
+                finalGitGotten: action.payload
             }
        
         default:
