@@ -8,7 +8,7 @@ import { typesEvaluadores, typesLoginPhone } from "../types/types"
 
 
 export const actionLogPhoneAsync = (email, pass, nombre, phone, uid)=>{
-    console.log(uid)
+   // console.log(uid)
     return (dispatch)=>{
       setDoc(doc(db, "evaluadores", uid), {email:email, pass:pass, nombre:nombre, phone: phone, uid: uid})
        
@@ -20,7 +20,7 @@ export const actionLogPhoneAsync = (email, pass, nombre, phone, uid)=>{
         
 
 export const actionLogPhoneSync = (email, pass, nombre, phone, uid)=>{
-    console.log(phone)
+   // console.log(phone)
     return {
         
         type: typesLoginPhone.verificarPhone,

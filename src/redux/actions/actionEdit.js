@@ -4,6 +4,7 @@ import { getAuth } from "firebase/auth";
 import {addDoc, collection, deleteDoc, doc, getDocs,query,updateDoc, where } from "firebase/firestore"
 
 import { db } from "../../firebase/firebaseConfig"
+import { typesSearch } from "../types/types";
 import { typesUsergit } from "../types/typesEdit"
 
 //----------------Agregar usaurio-------------------------//
@@ -11,7 +12,7 @@ export const addGituserAsync = (gitdata) => {
     const auth = getAuth();
     let evalId = auth.currentUser?.uid
 
-let uidEval = { uid: evalId };
+let uidEval = { Euid: evalId };
 Object.assign(gitdata, uidEval);
 
     return (dispath) => {
@@ -137,3 +138,41 @@ export const deletGituserSync = (idcard) => {
 
 }
 
+
+
+
+//usuarios de cada evaluador lista
+export const evalGituserAsync = () => {
+    const auth = getAuth();
+    let evalId = auth.currentUser?.uid
+    return async (dispath) => {
+        const alluserGit =  collection(db, "usuariosGit")
+       
+        const usersGitGotten = query(alluserGit, where('Euid', '==', evalId))
+        const usersQ = await getDocs(usersGitGotten)
+       // console.log(usersQ)
+        const finalGitGotten = []
+       // console.log(finalGitGotten)
+        usersQ.forEach(sellect => {
+            finalGitGotten.push({
+               ...sellect.data()
+            })
+        })
+         .then(resp => {   
+            dispath(evalGituserSync(finalGitGotten))
+           
+          })
+
+    }
+}
+
+export const evalGituserSync = (finalGitGotten) => {
+   // console.log(finalGitGotten)
+   
+    return {
+        type: typesSearch.evaluadorUsers,
+        payload: finalGitGotten
+        
+        
+    }
+};

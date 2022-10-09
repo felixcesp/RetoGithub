@@ -5,7 +5,8 @@ export const reducersEvaluators = (state = [], action)=>{
     case typesEvaluadores.verEvaluadores:
     return{
       verEvaluators: action.payload
-    } 
+    }
+
     default:
         return state
 }} 

@@ -17,5 +17,10 @@ export const typesEstadoPhone={
     estadoPhone:'estado rutas phone'
 }
 export const typesEvaluadores={
-    verEvaluadores:'evaluadores'
+    verEvaluadores:'evaluadores',
+    evaluadorUsers: 'evaUsers'
+}
+export const typesSearch={
+
+    evaluadorUsers: 'evaUsers'
 }

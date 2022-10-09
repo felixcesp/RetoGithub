@@ -26,10 +26,10 @@ export const actionStatePhoneAsync=(phone)=> {
     }
          });
          console.log(phoeEvalu)
-         console.log(elegido2)
-         console.log(email)
-         console.log(pass)
-         console.log(elegido2)
+      //   console.log(elegido2)
+        // console.log(email)
+       //  console.log(pass)
+       //  console.log(elegido2)
         // let authstate;
        if (elegido2 === phone){
         //authstate=true;

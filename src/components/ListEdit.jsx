@@ -6,7 +6,7 @@ import { BsFillTrashFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-import { deletGituserAsync,listGituserAsync} from '../redux/actions/actionEdit';
+import { deletGituserAsync,evalGituserAsync,listGituserAsync} from '../redux/actions/actionEdit';
 import { actionRepoSync } from '../redux/actions/actionRepo';
 import { ImgTables, ImgTables2, LisitImg, Table22,TableInfo22, TableT25, TableTd22,TableTd223,TableThn, TitleTable55 } from '../styled/StyledComponents';
 import EditNew from './EditarNew';
@@ -27,35 +27,16 @@ const ListEdit = () => {
     const navigation =useNavigate();
 
     const  showUsers  = useSelector(store => store.newGitUser.showUsers)
-   // localStorage.setItem('showUsers2', JSON.stringify(showUsers));
-  
-   // let showUsuarios=localStorage.getItem('showUsers2');
-  //  console.log(showUsuarios);
+    const showEvaluators= useSelector(state => state.allEvaluators.verEvaluators)
+    const yourUsers= useSelector(state=> state.userEspecific.evaluadorUsers)
+    console.log(yourUsers)
 
-    /*let userSave = [];
-    for(let x = 0; x <= showUsuarios.length; x++) {
-    userSave.push(showUsuarios.key(x));
-}
-    console.log(showUsuarios)*/
-//const showEvaluators= useSelector(state => state.logPhone.showEvaluators)
-const showEvaluators= useSelector(state => state.allEvaluators.verEvaluators)
-   // localStorage.setItem('showEvaluators2', JSON.stringify(showEvaluators));
-  
-  //  let showEvaluator=localStorage.getItem('showEvaluators2');
-  //  let userEval = [];
-  //  showEvaluator.foreach((elemnt)=>{
-   //    console.log(elemnt)
-  //  })
-    //for(let x = 0; x <= showEvaluator.length; x++) {
-    //userEval.push((x.name));
-    //console.log(userEval)
-//}
- //  console.log(userEval)
    
-
+    //para accionar las acciones ya que no resiven parametros
     useEffect(() => {
         dispatch(listGituserAsync()); 
         dispatch(listEvaluatorAsync())
+        dispatch(evalGituserAsync())
     }, [dispatch])
 
 
@@ -77,12 +58,70 @@ const showEvaluators= useSelector(state => state.allEvaluators.verEvaluators)
 
     return (
         <>
-      
-        <TableInfo22>
+             <TableInfo22>
         <NavBarUser/>
             <>
               <TitleTable55>
 Evaluator {nombre.nombre} these are your users</TitleTable55>
+            </>
+            <Table22>
+                <thead>
+                <tr>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Github user</th>
+        <th>Id card</th>
+        <th>Birthdate</th>
+        <th>Photo</th>
+      </tr>
+                </thead>
+                <tbody>
+                    {
+                        yourUsers?.map((y, index) => (
+                          
+                            <tr key={index}>
+                                   
+                                <TableTd22>{y.name}</TableTd22>
+                                <TableTd22>{y.lastname}</TableTd22>
+                                <TableTd22>{y.email}</TableTd22>
+                                <TableTd22>{y.phone}</TableTd22>
+                                <TableT25  onClick={()=>{getRepos(y.gituser)}}>{y.gituser}</TableT25>
+                                <TableTd22>{y.idcard}</TableTd22>
+                                <TableTd22>{y.date}</TableTd22>
+                                <TableTd223><LisitImg src={y.foto} alt="" /></TableTd223>
+                             
+                               
+
+          <TableThn>
+              <ImgTables  onClick={() => editar(y)} ><AiOutlineEdit/></ImgTables><br />
+              <ImgTables2 onClick={() => dispatch(deletGituserAsync(y.idcard))} ><BsFillTrashFill/></ImgTables2>
+          </TableThn>
+                            </tr>
+                        ))
+                    }
+
+                </tbody>
+            </Table22>
+
+            {
+                modal === true ? <EditNew datos={datos} setModal={setModal} /> : ''
+            }
+
+        </TableInfo22>
+
+
+
+
+
+
+
+        <TableInfo22>
+ 
+            <>
+              <TitleTable55>
+Evaluator {nombre.nombre} these all the register users</TitleTable55>
             </>
             <Table22>
                 <thead>

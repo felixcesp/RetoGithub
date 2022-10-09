@@ -7,6 +7,7 @@ import { reducersEvaluators } from "../reducers/reducersEvaluators";
 
 import { reducersLogin } from "../reducers/reducersLogin";
 import { reducersLogPhone} from "../reducers/reducersLogPhone";
+import { reducersSearchgit } from "../reducers/reducersSearch";
 
 
 
@@ -20,6 +21,7 @@ const reducers = combineReducers(
         newGitUser: reducersUsergit,
         statePhone:reducerAuthPhone,
         allEvaluators:reducersEvaluators,
+        userEspecific:reducersSearchgit,
        
      
     

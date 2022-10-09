@@ -16,7 +16,7 @@ export const registrarUserAsync =(email, pass, nombre, phone)=>{
         .then(async({user})=>{
                 await updateProfile(auth.currentUser, {displayName: nombre})
                 const uid=auth.currentUser.uid;
-                console.log(uid)
+              //  console.log(uid)
                 dispatch(registrarUserSync(email, pass, nombre, phone, uid))
                 dispatch(actionLogPhoneAsync(email, pass, nombre, phone, uid))
                 alert('felicitaciones    '+ nombre + ' ahora estas ya registrado')
