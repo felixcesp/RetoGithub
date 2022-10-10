@@ -12,14 +12,14 @@ export const reducersUsergit = (state = initialState, action) => {
                 showUsers: [action.payload],        
             }
 
-        case typesUsergit.list:
-            return {
-                showUsers: [...action.payload]
-            }
-           case typesUsergit.listEva:
-                return {
-                    showEva: [...action.payload]
-                }
+      //  case typesUsergit.list:
+       //     return {
+       //         showUsers: [...action.payload]
+        //    }
+        //   case typesUsergit.listEva:
+        //        return {
+        //            showEva: [...action.payload]
+          //      }
 
         case typesUsergit.delete:
             return {

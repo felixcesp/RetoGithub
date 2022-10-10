@@ -18,7 +18,7 @@ export const typesEstadoPhone={
 }
 export const typesEvaluadores={
     verEvaluadores:'evaluadores',
-    evaluadorUsers: 'evaUsers'
+   // evaluadorUsers: 'evaUsers'
 }
 export const typesSearch={
 

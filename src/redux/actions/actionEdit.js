@@ -5,7 +5,8 @@ import {addDoc, collection, deleteDoc, doc, getDocs,query,updateDoc, where } fro
 
 import { db } from "../../firebase/firebaseConfig"
 import { typesSearch } from "../types/types";
-import { typesUsergit } from "../types/typesEdit"
+import { typesAllUser, typesUsergit } from "../types/typesEdit"
+import { listEvaluatorAsync } from "./actionLogPhone";
 
 //----------------Agregar usaurio-------------------------//
 export const addGituserAsync = (gitdata) => {
@@ -20,7 +21,7 @@ Object.assign(gitdata, uidEval);
      addDoc(collection(db, "usuariosGit"), gitdata)    
           .then(resp => {   
              dispath(addGituserSync(gitdata))
-             dispath(listGituserSync()) 
+             dispath(listGituserAsync()) 
           })
 
     }
@@ -91,22 +92,22 @@ export const editGituserSync = (gitdata) => {
 export const listGituserAsync = () => {
     return async (dispath) => {
         const collectionListar = await getDocs(collection(db, "usuariosGit"))
-        const showUsers = []
+        const listUsers = []
         collectionListar.forEach(lista => {
-            showUsers.push({
+            listUsers.push({
                 ...lista.data()
             })
         })
-        dispath(listGituserSync(showUsers))
+        dispath(listGituserSync(listUsers))
 
     }
 
 }
 
-export const listGituserSync = (showUsers) => {
+export const listGituserSync = (listUsers) => {
     return {
-        type: typesUsergit.list,
-        payload: showUsers
+        type: typesAllUser.allList,
+        payload: listUsers
     }
 }
 
@@ -123,6 +124,9 @@ export const deletGituserAsync = (idcard) => {
 
         })
         dispatch(deletGituserSync(idcard))
+        dispatch(listGituserAsync()); 
+        dispatch(listEvaluatorAsync())
+        dispatch(evalGituserAsync())
      
 
 

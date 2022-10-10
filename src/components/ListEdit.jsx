@@ -26,10 +26,10 @@ const ListEdit = () => {
     const [datos, setDatos] = useState([]);
     const navigation =useNavigate();
 
-    const  showUsers  = useSelector(store => store.newGitUser.showUsers)
-    const showEvaluators= useSelector(state => state.allEvaluators.verEvaluators)
+    const  showUsers  = useSelector(store => store.listaUsers.listUsers)
+    const showEvaluators= useSelector(state => state.allEvaluators.seeAll)
     const yourUsers= useSelector(state=> state.userEspecific.finalGitGotten)
-    console.log(yourUsers)
+    //console.log(yourUsers)
 
    
     //para accionar las acciones ya que no resiven parametros
@@ -141,13 +141,13 @@ Evaluator {nombre.nombre} these all the register users</TitleTable55>
                         showUsers?.map((p, index) => (
                             <tr key={index}>
                             
-                                <TableTd22>{p.name}</TableTd22>
-                                <TableTd22>{p.lastname}</TableTd22>
-                                <TableTd22>{p.email}</TableTd22>
-                                <TableTd22>{p.phone}</TableTd22>
-                                <TableT25  onClick={()=>{getRepos(p.gituser)}}>{p.gituser}</TableT25>
-                                <TableTd22>{p.idcard}</TableTd22>
-                                <TableTd22>{p.date}</TableTd22>
+                                <TableTd22>{p?.name}</TableTd22>
+                                <TableTd22>{p?.lastname}</TableTd22>
+                                <TableTd22>{p?.email}</TableTd22>
+                                <TableTd22>{p?.phone}</TableTd22>
+                                <TableT25  onClick={()=>{getRepos(p?.gituser)}}>{p?.gituser}</TableT25>
+                                <TableTd22>{p?.idcard}</TableTd22>
+                                <TableTd22>{p?.date}</TableTd22>
                                 <TableTd223><LisitImg src={p.foto} alt="" /></TableTd223>
                              
                                
