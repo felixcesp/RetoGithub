@@ -70,6 +70,9 @@ export const editGituserAsync = (idcard, gitdata) => {
 
         .then(resp =>{ 
             dispatch(editGituserSync(gitdata))
+            dispatch(listGituserAsync()); 
+            dispatch(listEvaluatorAsync())
+            dispatch(evalGituserAsync());
         })
         .catch(error => alert('no se actualizo'))
 
