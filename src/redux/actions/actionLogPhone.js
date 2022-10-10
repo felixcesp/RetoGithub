@@ -1,8 +1,9 @@
 
 
+import { getAuth } from "firebase/auth"
 import { collection, doc, getDocs, setDoc} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
-import { typesEvaluadores, typesLoginPhone } from "../types/types"
+import { typesCurrentEvalName, typesEvaluadores, typesLoginPhone } from "../types/types"
 
 
 
@@ -36,6 +37,7 @@ export const actionLogPhoneSync = (email, pass, nombre, phone, uid)=>{
         //----------------------Listar ususarios------------------------------//
 export const listEvaluatorAsync = () => {
     return async (dispath) => {
+      
         const collectionListar = await getDocs(collection(db, "evaluadores"))
         const seeAllevalu = []
         collectionListar.forEach(lista => {
@@ -56,3 +58,17 @@ export const listEvaluatorSync = (seeAllevalu) => {
     }
 }
 
+//mantener nombre ususario
+export const keepNameAsyncEval=()=>{
+    return async (dispatch)=>{
+        const auth = getAuth()
+        const keepName= auth.currentUser.displayName;
+        await dispatch(keepNamesyncEval(keepName))
+    }
+}
+export const keepNamesyncEval=(keepName)=>{
+    return {
+        type: typesCurrentEvalName.keeepName,
+        payload: keepName
+    }
+}

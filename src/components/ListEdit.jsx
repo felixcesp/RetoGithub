@@ -12,11 +12,12 @@ import { ImgTables, ImgTables2, LisitImg, Table22,TableInfo22, TableT25, TableTd
 import EditNew from './EditarNew';
 import NavBarUser from '../components/home/NavbarUser'
 import { useNavigate } from 'react-router-dom';
-import { listEvaluatorAsync } from '../redux/actions/actionLogPhone';
+import { keepNameAsyncEval, listEvaluatorAsync } from '../redux/actions/actionLogPhone';
 
 
 const ListEdit = () => {
-    const nombre= useSelector(state => state.login);
+    const nombre= useSelector(state => state.keepName);
+    console.log(nombre)
   
 
     const dispatch = useDispatch()
@@ -37,6 +38,7 @@ const ListEdit = () => {
         dispatch(listGituserAsync()); 
         dispatch(listEvaluatorAsync())
         dispatch(evalGituserAsync())
+        dispatch(keepNameAsyncEval())
     }, [dispatch])
 
 
@@ -62,7 +64,7 @@ const ListEdit = () => {
         <NavBarUser/>
             <>
               <TitleTable55>
-Evaluator {nombre.nombre} these are your users</TitleTable55>
+Evaluator {nombre.keepName} these are your users</TitleTable55>
             </>
             <Table22>
                 <thead>
@@ -121,7 +123,7 @@ Evaluator {nombre.nombre} these are your users</TitleTable55>
  
             <>
               <TitleTable55>
-Evaluator {nombre.nombre} these all the register users</TitleTable55>
+Evaluator {nombre.keepName} these all the register users</TitleTable55>
             </>
             <Table22>
                 <thead>
@@ -174,7 +176,7 @@ Evaluator {nombre.nombre} these all the register users</TitleTable55>
  
             <>
               <TitleTable55>
-{nombre.nombre} these are all the evaluators who are registered</TitleTable55>
+{nombre.keepName} these are all the evaluators who are registered</TitleTable55>
             </>
             <Table22>
                 <thead>

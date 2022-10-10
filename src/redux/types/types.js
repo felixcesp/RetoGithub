@@ -24,3 +24,7 @@ export const typesSearch={
 
     evaluadorUsers: 'evaUsers'
 }
+export const typesCurrentEvalName={
+    keeepName:'evaluadorName'
+
+}

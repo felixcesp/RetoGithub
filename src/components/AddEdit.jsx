@@ -7,6 +7,8 @@ import { FormControl } from 'react-bootstrap';
 import { addGituserAsync } from '../redux/actions/actionEdit';
 
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { keepNameAsyncEval } from '../redux/actions/actionLogPhone';
 
 
 
@@ -14,7 +16,15 @@ const AddEdit = () => {
     const navigation =useNavigate();
 
     const dispatch = useDispatch();
-   const usuarioName= useSelector(state => state.login);
+   const usuarioName= useSelector(state => state.keepName);
+
+   localStorage.setItem("evaname",JSON.stringify(usuarioName.nombre) );
+   //para sacar un elemnto de un objeto
+ //  const almacenajeName= JSON.parse(localStorage.getItem("evaname"));
+const alamcenajeName= localStorage.getItem("evaname");
+   console.log(alamcenajeName)
+
+
 
 
 
@@ -58,13 +68,16 @@ const AddEdit = () => {
             console.warn(error)
         }) 
     }
+    useEffect(() => {
+        dispatch(keepNameAsyncEval())
+    }, [dispatch])
   
     return (
 
      <>
       <Firstdiv5>
       <IconGit5 src="https://res.cloudinary.com/felixces/image/upload/v1661614263/Retogithub/icono2_ubwqaw.png" alt="" />
-        <Frase6>{usuarioName.nombre}&nbsp;&nbsp; fill the blanks with the git user info</Frase6>
+        <Frase6>{usuarioName.keepName}&nbsp;&nbsp; fill the blanks with the git user info</Frase6>
         <Seconddiv6>
 
         <TitleMain6>Git user information</TitleMain6>
