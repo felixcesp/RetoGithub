@@ -12,9 +12,11 @@ import { listEvaluatorAsync } from "./actionLogPhone";
 export const addGituserAsync = (gitdata) => {
     const auth = getAuth();
     let evalId = auth.currentUser?.uid
+    let evalName = auth.currentUser?.displayName
 
+let evaNombre={eval:evalName}
 let uidEval = { Euid: evalId };
-Object.assign(gitdata, uidEval);
+Object.assign(gitdata, uidEval, evaNombre);
 
     return (dispath) => {
  

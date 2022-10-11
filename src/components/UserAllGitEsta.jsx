@@ -4,6 +4,7 @@ import { BsFillTrashFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { deletGituserAsync, listGituserAsync } from "../redux/actions/actionEdit";
+import { keepNameAsyncEval } from "../redux/actions/actionLogPhone";
 import { actionRepoSync } from "../redux/actions/actionRepo";
 import { ImgTables, ImgTables2, LisitImg, Table22, TableInfo22, TableT25, TableTd22, TableTd223, TableThn, TitleTable55 } from "../styled/StyledComponents";
 import EditNew from "./EditarNew";
@@ -21,6 +22,7 @@ export default function UserAllGitEsta() {
 
     useEffect(() => {
         dispatch(listGituserAsync()); 
+        dispatch(keepNameAsyncEval());
     }, [dispatch])
 
 
@@ -64,7 +66,7 @@ export default function UserAllGitEsta() {
               <tr key={index}>
                 <TableTd22>{p?.name}</TableTd22>
                 <TableTd22>{p?.lastname}</TableTd22>
-                <TableTd22>{p?.email}</TableTd22>
+                <TableTd22>{p?.eval}</TableTd22>
                 <TableTd22>{p?.phone}</TableTd22>
                 <TableT25
                   onClick={() => {getRepos(p?.gituser); }}>{p?.gituser}
