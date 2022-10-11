@@ -21,8 +21,8 @@ const AddEdit = () => {
    localStorage.setItem("evaname",JSON.stringify(usuarioName.nombre) );
    //para sacar un elemnto de un objeto
  //  const almacenajeName= JSON.parse(localStorage.getItem("evaname"));
-const alamcenajeName= localStorage.getItem("evaname");
-   console.log(alamcenajeName)
+//const alamcenajeName= localStorage.getItem("evaname");
+   //console.log(alamcenajeName)
 
 
 

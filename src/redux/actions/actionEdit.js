@@ -174,7 +174,7 @@ export const evalGituserAsync = () => {
 }
 
 export const evalGituserSync = (finalGitGotten) => {
-    console.log(finalGitGotten)
+    //console.log(finalGitGotten)
    
     return {
         type: typesSearch.evaluadorUsers,

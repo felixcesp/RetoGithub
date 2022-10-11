@@ -17,7 +17,7 @@ import { keepNameAsyncEval, listEvaluatorAsync } from '../redux/actions/actionLo
 
 const ListEdit = () => {
     const nombre= useSelector(state => state.keepName);
-    console.log(nombre)
+    //console.log(nombre)
   
 
     const dispatch = useDispatch()
@@ -49,13 +49,12 @@ const ListEdit = () => {
     }
     const getRepos=(gitUser )=>{
         dispatch(actionRepoSync(gitUser))
-        navigation('/repos')
-
-
-        
-        
+        navigation('/repos'); 
       }
-     
+      const aluser=(gitUser )=>{
+        //  dispatch(actionRepoSync(gitUser))
+          navigation('/all')   
+        } 
 
 
     return (
@@ -136,6 +135,7 @@ Evaluator {nombre.keepName} these all the register users</TitleTable55>
         <th>Id card</th>
         <th>Birthdate</th>
         <th>Photo</th>
+        
       </tr>
                 </thead>
                 <tbody>
@@ -148,7 +148,7 @@ Evaluator {nombre.keepName} these all the register users</TitleTable55>
                                 <TableTd22>{p?.email}</TableTd22>
                                 <TableTd22>{p?.phone}</TableTd22>
                                 <TableT25  onClick={()=>{getRepos(p?.gituser)}}>{p?.gituser}</TableT25>
-                                <TableTd22>{p?.idcard}</TableTd22>
+                                <TableTd22  onClick={()=>{aluser()}}>{p?.idcard}</TableTd22>
                                 <TableTd22>{p?.date}</TableTd22>
                                 <TableTd223><LisitImg src={p.foto} alt="" /></TableTd223>
                              
