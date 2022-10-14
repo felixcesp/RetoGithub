@@ -9,9 +9,13 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 
 function Repos() {
-    const [repos, setRepos] = useState([]);
+  //usuariogit que tiene los repos que esta en el redux 
+  const [repos, setRepos] = useState([]);
+  //los repos de la pagina actual son 5 por defecto pagina 1
    const [currentPage, setCurrentPage] = useState([]);
+   //la pagina en que esta el usuario en la paginacion por defecto pagina 1
    const [currentPagination, setCurrentPagination] = useState(1);
+
    const [pageNumber, setPageNumber] = useState(0)
    //este es para el filtro
    const [filterRepos,setFilterRepos] = useState([]);
@@ -41,18 +45,23 @@ function Repos() {
 
     
     useEffect(() => {
+      //ESTA ES LA PETICION ANTERIOR HACE LO MISMO QUE LA NUEVA QUE SIGUE
+      // fetch(`https:api.github.com/users/${gitUser}/repos?per_page=100`)
       let api= axios.create(
         {baseURL:`https:api.github.com/users/${gitUser}/repos?per_page=100` }
       )
         api.get()
         .then(resp=>{
+          //GUARDO EN LA CONSTANTE DATA LO QUE ME TRAE LA URL MAXIJMO 100 ELEMNTOS O REPOS
           let data=resp.data
             setPageNumber(Math.ceil(data.length / 5))
             setRepos(data);
             setFilterRepos(data)
+            //le pongo el limite del subarray de la pagina actual los repos de esta pagina son 5 calculo
+            //se calcula la posicion del array o indice depnediendo de la pagina
             setCurrentPage(data.slice((currentPagination*5)-5, currentPagination*5 ))
         })
-        
+        //llamo a todas las variables que se deben recargar
     }, [setRepos, gitUser, setCurrentPage, currentPagination, setPageNumber, setFilterRepos])
 
 
