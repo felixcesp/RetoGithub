@@ -9,17 +9,17 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 
 function Repos() {
-  //usuariogit que tiene los repos que esta en el redux 
+  //todos los repos llegan al setrepo desde la peticion y se guardan en repos en un array
   const [repos, setRepos] = useState([]);
-  //los repos de la pagina actual son 5 por defecto pagina 1
+  //con este estado sabemos los repos de la pagina actual son 5 por defecto pagina 1, es decir la posicion del array o indice
    const [currentPage, setCurrentPage] = useState([]);
-   //la pagina en que esta el usuario en la paginacion por defecto pagina 1
+   //con este estado sabemos la pagina en que esta el usuario en la paginacion por defecto pagina 1
    const [currentPagination, setCurrentPagination] = useState(1);
-
+   //con este estado sabemos cuantas paginas tienen todos los repos del usuario
    const [pageNumber, setPageNumber] = useState(0)
    //este es para el filtro
    const [filterRepos,setFilterRepos] = useState([]);
-
+   //con esta constante sanbemos cual es el usuario git que escribieron en el formulario y busque en el get los repos
     const gitUser = useSelector( state => state.gitUser.gitName);
     
 //recarga tabla con un nuevo nuemro de pagina actual
@@ -54,6 +54,7 @@ function Repos() {
         .then(resp=>{
           //GUARDO EN LA CONSTANTE DATA LO QUE ME TRAE LA URL MAXIJMO 100 ELEMNTOS O REPOS
           let data=resp.data
+          //aca le enviamos al esstado de las paginas el numero de paginas
             setPageNumber(Math.ceil(data.length / 5))
             setRepos(data);
             setFilterRepos(data)
