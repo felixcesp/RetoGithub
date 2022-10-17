@@ -11,11 +11,11 @@ import { useSelector } from 'react-redux';
 function Repos() {
   //todos los repos llegan al setrepo desde la peticion y se guardan en repos en un array
   const [repos, setRepos] = useState([]);
-  //con este estado sabemos los repos de la pagina actual son 5 por defecto pagina 1, es decir la posicion del array o indice
+  //con este estado sabemos los repos de la pagina actual son 5 por defecto pagina 1, es decir la posicion del array o indice DE 5 ELEMNTOS
    const [currentPage, setCurrentPage] = useState([]);
    //con este estado sabemos la pagina en que esta el usuario en la paginacion por defecto pagina 1
    const [currentPagination, setCurrentPagination] = useState(1);
-   //con este estado sabemos cuantas paginas tienen todos los repos del usuario
+   //con este estado sabemos cuantas paginas tienen todos los repos del usuario Y ME LA DA LA FORMULA DEL USEEFFECT
    const [pageNumber, setPageNumber] = useState(0)
    //este es para el filtro
    const [filterRepos,setFilterRepos] = useState([]);
@@ -140,6 +140,14 @@ function Repos() {
 
 
 <PaginationConte>
+
+<Pagination size='lg'>
+    <Pagination.Prev/>
+      <Pagination.Item active>1</Pagination.Item> 
+      <Pagination.Item>2</Pagination.Item> 
+      <Pagination.Item>3</Pagination.Item>    
+    <Pagination.Next/>  
+  </Pagination>  
   
 
 
