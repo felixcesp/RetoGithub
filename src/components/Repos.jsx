@@ -17,23 +17,25 @@ function Repos() {
    const [currentPagination, setCurrentPagination] = useState(1);
    //con este estado sabemos cuantas paginas tienen todos los repos del usuario Y ME LA DA LA FORMULA DEL USEEFFECT
    const [pageNumber, setPageNumber] = useState(0)
-   //este es para el filtro
+   //este es para el filtro de busqueda que va a usar el evento onchange
    const [filterRepos,setFilterRepos] = useState([]);
    //con esta constante sanbemos cual es el usuario git que escribieron en el formulario y busque en el get los repos
     const gitUser = useSelector( state => state.gitUser.gitName);
     
-//recarga tabla con un nuevo nuemro de pagina actual
+//recarga tabla con un nuevo nuemro de pagina actual, aca resive la pagina del paginador en el xml y con esta hace la
+//formula para que de el segmento del array correspondiente
     const paginationCurrentPage= (newPage)=>{
         setCurrentPagination(newPage)
         setCurrentPage(filterRepos.slice((currentPagination*5)-5, currentPagination*5 ))
     }
+    //estas son para la flecha de anterior usamos la pagina que nos da el paginador y le restamos a este valor numero
     const paginationCurrentPrev = ()=>{
         let newPage = currentPagination - 1;
         if (newPage >=1){
             paginationCurrentPage(newPage);
         }
     }
-
+//esta es para la flecha de next, y usa el valor total de paginas para no pasarse de ella
    const paginationCurrentNext = ()=>{
    
     let newPage = currentPagination + 1;
@@ -67,10 +69,8 @@ function Repos() {
 
 
   //********************************************************************** */
-  const searching = (event)=>{
-  
-    let userSearch= event.target.value;
-    
+  const searching = (event)=>{ 
+    let userSearch= event.target.value;  
     if(userSearch.length >= 3 ){
      let temporal = repos.filter((element)=>{
         return  element.name.includes(userSearch)
