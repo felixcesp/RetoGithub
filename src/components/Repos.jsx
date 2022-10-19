@@ -26,6 +26,7 @@ function Repos() {
 //formula para que de el segmento del array correspondiente
     const paginationCurrentPage= (newPage)=>{
         setCurrentPagination(newPage)
+        //setCurrentPage(repos.slice((currentPagination*5)-5, currentPagination*5 ))
         setCurrentPage(filterRepos.slice((currentPagination*5)-5, currentPagination*5 ))
     }
     //estas son para la flecha de anterior usamos la pagina que nos da el paginador y le restamos a este valor numero
@@ -59,10 +60,11 @@ function Repos() {
           //aca le enviamos al esstado de las paginas el numero de paginas
             setPageNumber(Math.ceil(data.length / 5))
             setRepos(data);
-            setFilterRepos(data)
+             setFilterRepos(data)
             //le pongo el limite del subarray de la pagina actual los repos de esta pagina son 5 calculo
             //se calcula la posicion del array o indice depnediendo de la pagina
             setCurrentPage(data.slice((currentPagination*5)-5, currentPagination*5 ))
+         
         })
         //llamo a todas las variables que se deben recargar
     }, [setRepos, gitUser, setCurrentPage, currentPagination, setPageNumber, setFilterRepos])
@@ -73,20 +75,16 @@ function Repos() {
     let userSearch= event.target.value;  
     if(userSearch.length >= 3 ){
      let temporal = repos.filter((element)=>{
-        return  element.name.includes(userSearch)
-        
+        return  element.name.includes(userSearch)     
         })
         console.log(temporal)
       setFilterRepos([...temporal])
       setCurrentPagination(1);
-    }else{
-      
+    }else{   
       setFilterRepos([...repos]);
-    }
-    
+    }  
     setPageNumber(Math.ceil(filterRepos.length / 5));
     setCurrentPage(filterRepos.slice((currentPagination*5)-5, currentPagination*5 ))
-
   }
 
 
