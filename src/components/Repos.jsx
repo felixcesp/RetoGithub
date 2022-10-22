@@ -111,36 +111,28 @@ function Repos() {
   const estadisticis = () => {
     let totalRepos= repos.length;
     let totalPages=pageNumber
-
-    //let seenPages=currentPagination
-    let seenPages=[]
-    seenPages.push(currentPagination)
+    let paginaVista=[currentPagination]
+  
     let pagesTotal= [...Array(totalPages).keys()].map((_,i)=>{
       return(
         i+1
       )
     })
-    
-    //console.log(totalRepos)
-   // console.log(totalPages)
-    console.log(seenPages)
-
-    
-    
+ 
+    let seenPages=(pagesTotal.filter(element => !paginaVista.includes(element)))
+    //let quedan=[seenPages-currentPagination]
    
-   // [Array(totalPages)].map((_, i) => {
-   //   return(
-   //  pagesTotal=i+1
-     
-  //    )
-  //  })
+    if(seenPages.length < pagesTotal.lenght){
+    //  let seenPagesMenor=seenPages;
+      let seenPagesMenor2=(seenPages.filter(element => !paginaVista.delete(element)))
+      console.log(seenPagesMenor2)
+    }
+    console.log(seenPages)
     console.log(pagesTotal)
+   
+    
   };
   estadisticis()
-
-
-
-
 
 
   return (
