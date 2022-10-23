@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/home/NavBar";
 import Pagination from "react-bootstrap/Pagination";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BsSearch } from "react-icons/bs";
+import { BsChevronCompactLeft, BsSearch } from "react-icons/bs";
 import {
   InsearchR,
   LapaSearch,
@@ -85,6 +85,7 @@ function Repos() {
     setFilterRepos,
   ]);
 
+
   //********************************************************************** */
   const searching = (event) => {
     let userSearch = event.target.value;
@@ -109,26 +110,91 @@ function Repos() {
   //******************************************************************************** */
   //funciones para estadisticas
   const estadisticis = () => {
-    let totalRepos= repos.length;
+    
     let totalPages=pageNumber
-    let paginaVista=[currentPagination]
-  
-    let pagesTotal= [...Array(totalPages).keys()].map((_,i)=>{
+   // const paginaVista=currentPagination
+    const matriz = [];
+    let k = 0;
+    for (k; k<=totalPages; ++k) {   
+      matriz.push(k);
+      break
+     }
+     let arr = [];
+    arr[currentPagination][arr.length]= currentPagination;
+   
+    console.log(arr);
+ 
+    // console.log(matriz)
+    
+   /*  let removeItemFromArr = ( matriz, currentPagination ) => {
+      var i = arr.indexOf( item );
+      i !== -1 && arr.splice( i, 1 );
+  };*/
+   /*  const copyMatriz = [].concat(matriz)
+     if (copyMatriz){
+      let copyMatriz2=[].concat(copyMatriz)
+      localStorage.setItem('myArray', JSON.stringify(copyMatriz2));
+      let esperoArray = localStorage.getItem('myArray');
+      let esperoArray2 = JSON.parse(esperoArray);*/
+      let m=currentPagination;
+      const h=[];
+     // console.log(h)
+      for(m; m<=totalPages; m++){
+         h.push(m)
+         if (m===totalPages){
+         break
+        }
+
+      
+      
+   //   delete(esperoArray2[currentPagination])
+
+   //  console.log(esperoArray2)
+   //   console.log(copyMatriz)
+      
+     }
+   
+    // let si = matriz.splice(currentPagination, 1)
+      
+   //delete(ojala[currentPagination])
+  // if(copyMatriz){
+  //  delete(copyMatriz[currentPagination])}
+   // delete(matriz[paginaVista++])
+   //ojala.splice(currentPagination, 1);
+
+ //   console.log(ojala)
+ //  }
+   //  console.log(matriz)
+   // console.log(copyMatriz)
+   //console.log(nose)
+
+
+   /* let pagesTotal= [...Array(totalPages).keys()].map((_,i)=>{
       return(
         i+1
       )
     })
- 
-    let seenPages=(pagesTotal.filter(element => !paginaVista.includes(element)))
+     
+    let seeTotal= [...Array(paginaVista).keys()].map((_,i)=>{
+      return(
+        i+1
+      )
+    })*/
+    //console.log(seeTotal)
+
+
+   // let seenPages=(pagesTotal.filter(element => !paginaVista.includes(element)))
     //let quedan=[seenPages-currentPagination]
-   
-    if(seenPages.length < pagesTotal.lenght){
+   // let cantudad=seenPages.lenght;
+    //console.log(cantudad)
+   // if(seenPages.length < pagesTotal.lenght){
+      
     //  let seenPagesMenor=seenPages;
-      let seenPagesMenor2=(seenPages.filter(element => !paginaVista.delete(element)))
-      console.log(seenPagesMenor2)
-    }
-    console.log(seenPages)
-    console.log(pagesTotal)
+     // let seenPagesMenor2=(seenPages.filter(element => !paginaVista.delete(element)))
+    //  console.log(seenPagesMenor2)
+   // }
+    //console.log(seenPages)
+   // console.log(pagesTotal)
    
     
   };
