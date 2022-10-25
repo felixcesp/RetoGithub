@@ -1,9 +1,6 @@
 export const typesLogin = {
     verificarLogin: 'verificacion de Login',
-    Logout: 'cerrar sesion',
-    
-   
-   
+    Logout: 'cerrar sesion', 
 }
 
 export const typesUsuario ={

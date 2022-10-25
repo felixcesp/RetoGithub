@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../components/home/NavBar";
 import Pagination from "react-bootstrap/Pagination";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BsChevronCompactLeft, BsSearch } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 import {
   InsearchR,
   LapaSearch,
@@ -63,6 +63,9 @@ function Repos() {
       baseURL: `https:api.github.com/users/${gitUser}/repos?per_page=100`,
     });
     api.get().then((resp) => {
+   /* fetch(`https:api.github.com/users/${gitUser}/repos?per_page=100`)
+    .then((obtenido)=>obtenido.json())
+    .then(resp=>{*/
       //GUARDO EN LA CONSTANTE DATA LO QUE ME TRAE LA URL MAXIJMO 100 ELEMNTOS O REPOS
       let data = resp.data;
       //aca le enviamos al esstado de las paginas el numero de paginas
@@ -75,6 +78,7 @@ function Repos() {
         data.slice(currentPagination * 5 - 5, currentPagination * 5)
       );
     });
+  
     //llamo a todas las variables que se deben recargar
   }, [
     setRepos,
@@ -109,97 +113,15 @@ function Repos() {
 
   //******************************************************************************** */
   //funciones para estadisticas
-  const estadisticis = () => {
-    
-    let totalPages=pageNumber
-   // const paginaVista=currentPagination
-    const matriz = [];
-    let k = 0;
-    for (k; k<=totalPages; ++k) {   
-      matriz.push(k);
-      break
-     }
-     let arr = [];
-    arr[currentPagination][arr.length]= currentPagination;
-   
-    console.log(arr);
- 
-    // console.log(matriz)
-    
-   /*  let removeItemFromArr = ( matriz, currentPagination ) => {
-      var i = arr.indexOf( item );
-      i !== -1 && arr.splice( i, 1 );
-  };*/
-   /*  const copyMatriz = [].concat(matriz)
-     if (copyMatriz){
-      let copyMatriz2=[].concat(copyMatriz)
-      localStorage.setItem('myArray', JSON.stringify(copyMatriz2));
-      let esperoArray = localStorage.getItem('myArray');
-      let esperoArray2 = JSON.parse(esperoArray);*/
-      let m=currentPagination;
-      const h=[];
-     // console.log(h)
-      for(m; m<=totalPages; m++){
-         h.push(m)
-         if (m===totalPages){
-         break
-        }
-
-      
-      
-   //   delete(esperoArray2[currentPagination])
-
-   //  console.log(esperoArray2)
-   //   console.log(copyMatriz)
-      
-     }
-   
-    // let si = matriz.splice(currentPagination, 1)
-      
-   //delete(ojala[currentPagination])
-  // if(copyMatriz){
-  //  delete(copyMatriz[currentPagination])}
-   // delete(matriz[paginaVista++])
-   //ojala.splice(currentPagination, 1);
-
- //   console.log(ojala)
- //  }
-   //  console.log(matriz)
-   // console.log(copyMatriz)
-   //console.log(nose)
-
-
-   /* let pagesTotal= [...Array(totalPages).keys()].map((_,i)=>{
-      return(
-        i+1
-      )
-    })
-     
-    let seeTotal= [...Array(paginaVista).keys()].map((_,i)=>{
-      return(
-        i+1
-      )
-    })*/
-    //console.log(seeTotal)
-
-
-   // let seenPages=(pagesTotal.filter(element => !paginaVista.includes(element)))
-    //let quedan=[seenPages-currentPagination]
-   // let cantudad=seenPages.lenght;
-    //console.log(cantudad)
-   // if(seenPages.length < pagesTotal.lenght){
-      
-    //  let seenPagesMenor=seenPages;
-     // let seenPagesMenor2=(seenPages.filter(element => !paginaVista.delete(element)))
-    //  console.log(seenPagesMenor2)
-   // }
-    //console.log(seenPages)
-   // console.log(pagesTotal)
-   
-    
-  };
-  estadisticis()
-
+  const forStadistic = () => {
+    let reposStore= repos.length
+    localStorage.setItem('allrepos', JSON.stringify(reposStore));
+    let pagesStore= pageNumber
+    localStorage.setItem('allpages', JSON.stringify(pagesStore));
+    let paginationStore= currentPagination
+    localStorage.setItem('realPage', JSON.stringify(paginationStore));
+  }
+  forStadistic()
 
   return (
     <>
@@ -244,15 +166,15 @@ function Repos() {
    
 
      <PaginationConte>
-        <Pagination size="lg">
+        <Pagination size="lg" onChange={forStadistic}>
           <Pagination.Prev onClick={paginationCurrentPrev} />
           {[...Array(pageNumber)].map((_, i) => {
             return (
               <Pagination.Item
                 onClick={() => {
-                  paginationCurrentPage(i + 1);
+                  paginationCurrentPage(i + 1); ;
                 }}
-                active={currentPagination === i + 1 ? true : false}
+                active={currentPagination === i + 1 ? true : false}  
               >
                 {i + 1}
               </Pagination.Item>
