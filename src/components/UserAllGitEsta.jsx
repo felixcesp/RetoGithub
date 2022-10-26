@@ -36,32 +36,50 @@ export default function UserAllGitEsta() {
 
 
 
-    //ESTADISTICAS DESDE CON LOCAL STORAGE INICIALMENTE
- 
-    const [stadistic, setStadistic] = useState([])
-    console.log(stadistic)
+    /* let allInfo={
+      totalPages:waitALLPages ,
+      totalRepos:waitAllRepos ,
+      vistasPage:waitPagePagi,
+      userGit: gitUserSta,
+    }*/
+
+
+    const [stadistic, setStadistic] = useState({})
+    console.log(setStadistic);
   
 //llamar usuario para trabajarlo
 //funcion para traer los datos de los repos por el local storage
 //const seePagesEval=()=>{
-  let waitPagePagi = localStorage.getItem('realPage');
-  let waitALLPages = localStorage.getItem('allpages');
-  let waitAllRepos = localStorage.getItem('allrepos');
+  let waitPagePagi2 = localStorage.getItem('realPage');
+  let waitALLPages2 = localStorage.getItem('allpages');
+  let waitAllRepos2 = localStorage.getItem('allrepos');
+  //convertir para leer
+  let waitPagePagi = JSON.parse(waitPagePagi2)
+  let waitALLPages = JSON.parse(waitALLPages2)
+  let waitAllRepos = JSON.parse(waitAllRepos2)
   console.log(waitPagePagi);
   console.log(waitALLPages);
   console.log(waitAllRepos);
-  let allInfo={
+  const allInfo = () => {
+    setStadistic({
+      totalPages:waitALLPages ,
+      totalRepos:waitAllRepos ,
+      vistasPage:waitPagePagi,
+      userGit: gitUserSta,
+    });
+}
+
+
+ /* let allInfo={
     totalPages:waitALLPages ,
     totalRepos:waitAllRepos ,
     vistasPage:waitPagePagi,
-    userGit: gitUserSta,
-  }
+    userGit: gitUserSta,*/
+  //}
  
 
-useEffect(() => {
-  return () => {
-    setStadistic(allInfo)}
-}, [])
+   //setStadistic(allInfo)
+
  
 
 //}
@@ -199,14 +217,17 @@ useEffect(() => {
 
 
     useEffect(() => {
+
         dispatch(listGituserAsync()); 
         dispatch(keepNameAsyncEval());
-    }, [dispatch])
+        
+    }, [dispatch, stadistic ])
 
 
     const editar = (gitdata) => {
         setModal(true)
         setDatos(gitdata) 
+       
     }
     const getRepos=(gitUser )=>{
         dispatch(actionRepoSync(gitUser))
