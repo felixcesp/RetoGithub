@@ -1,3 +1,3 @@
 export const typesUserStadistic = {
-    typesUserStadistic: 'user stadistic',
+    typeUserStadistic: 'user stadistic',
 }

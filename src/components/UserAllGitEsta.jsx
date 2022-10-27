@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { deletGituserAsync, listGituserAsync } from "../redux/actions/actionEdit";
 import { keepNameAsyncEval } from "../redux/actions/actionLogPhone";
 import { actionRepoSync } from "../redux/actions/actionRepo";
+import { actionAsyncStadistic } from "../redux/actions/actionStadistic";
 import { ImgTables, ImgTables2, LisitImg, Table22, TableInfo22, TableT25, TableTd22, TableTd223, TableThn, TitleTable55 } from "../styled/StyledComponents";
 import EditNew from "./EditarNew";
 
@@ -24,7 +25,7 @@ export default function UserAllGitEsta() {
     const gitUserSta = useSelector((state) => state.newGitUser.showUsers[0].gituser);
     //const gitUserSta2=[gitUserSta].gituser
 
-    console.log(gitUserSta)
+    //console.log(gitUserSta)
     
    // console.log(gitUserSta2)
     //cantidad de paginas del ususario actual
@@ -44,8 +45,9 @@ export default function UserAllGitEsta() {
     }*/
 
 
-    const [stadistic, setStadistic] = useState({})
-    console.log(setStadistic);
+    const [stadistic, setStadistic] = useState({});
+    //console.log(setStadistic);
+    //console.log(stadistic)
   
 //llamar usuario para trabajarlo
 //funcion para traer los datos de los repos por el local storage
@@ -57,25 +59,34 @@ export default function UserAllGitEsta() {
   let waitPagePagi = JSON.parse(waitPagePagi2)
   let waitALLPages = JSON.parse(waitALLPages2)
   let waitAllRepos = JSON.parse(waitAllRepos2)
-  console.log(waitPagePagi);
-  console.log(waitALLPages);
-  console.log(waitAllRepos);
-  const allInfo = () => {
+  //console.log(waitPagePagi);
+  //console.log(waitALLPages);
+  //console.log(waitAllRepos);
+
+  const enviar =()=>{
+    if(setStadistic ==={}){
+      alert('no hay nada')
+    }else{
+      dispatch(actionAsyncStadistic(stadistic, gitUserSta)) 
+    }
+  }
+  enviar()
+ /* const allInfo = () => {
     setStadistic({
       totalPages:waitALLPages ,
       totalRepos:waitAllRepos ,
       vistasPage:waitPagePagi,
       userGit: gitUserSta,
     });
-}
+}*/
 
 
- /* let allInfo={
+  /*let allInfo={
     totalPages:waitALLPages ,
     totalRepos:waitAllRepos ,
     vistasPage:waitPagePagi,
-    userGit: gitUserSta,*/
-  //}
+    userGit: gitUserSta
+  }*/
  
 
    //setStadistic(allInfo)
@@ -220,8 +231,21 @@ export default function UserAllGitEsta() {
 
         dispatch(listGituserAsync()); 
         dispatch(keepNameAsyncEval());
-        
-    }, [dispatch, stadistic ])
+       
+        setStadistic({
+         /* totalPages:waitALLPages ,
+          totalRepos:waitAllRepos ,
+          vistasPage:waitPagePagi,
+          userGit: gitUserSta*/
+          totalPages:2 ,
+          totalRepos:20 ,
+          vistasPage:1,
+          userGit: 'felixcesp'
+        })  
+       
+       
+     
+    }, [dispatch, setStadistic /*gitUserSta, waitALLPages, waitAllRepos, waitPagePagi,stadistic*/])
 
 
     const editar = (gitdata) => {
