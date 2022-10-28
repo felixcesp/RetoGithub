@@ -14,7 +14,8 @@ import {
 } from "../styled/StyledComponents";
 //import { useSelector } from 'react-redux';
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { actionAsyncStadistic } from "../redux/actions/actionStadistic";
 
 function Repos() {
   //todos los repos llegan al setrepo desde la peticion y se guardan en repos en un array
@@ -27,8 +28,12 @@ function Repos() {
   const [pageNumber, setPageNumber] = useState(0);
   //este es para el filtro de busqueda que va a usar el evento onchange
   const [filterRepos, setFilterRepos] = useState([]);
+  //estado para numeros de repos y estadisticas
+  const [reposAll, setReposAll] = useState(0)
   //con esta constante sanbemos cual es el usuario git que escribieron en el formulario y busque en el get los repos
   const gitUser = useSelector((state) => state.gitUser.gitName);
+  //para enviar los adtos de las estadisticas
+  const dispatch=useDispatch()
 
   //recarga tabla con un nuevo nuemro de pagina actual, aca resive la pagina del paginador en el xml y con esta hace la
   //formula para que de el segmento del array correspondiente
@@ -72,6 +77,7 @@ function Repos() {
       setPageNumber(Math.ceil(data.length / 5));
       setRepos(data);
       setFilterRepos(data);
+      setReposAll(data.lenght)
       //le pongo el limite del subarray de la pagina actual los repos de esta pagina son 5 calculo
       //se calcula la posicion del array o indice depnediendo de la pagina
       setCurrentPage(
@@ -87,6 +93,7 @@ function Repos() {
     currentPagination,
     setPageNumber,
     setFilterRepos,
+    setReposAll,
   ]);
 
 
@@ -113,15 +120,29 @@ function Repos() {
 
   //******************************************************************************** */
   //funciones para estadisticas
-  const forStadistic = () => {
-    let reposStore= repos.length
+ const forStadistic = () => {
+    let forstadistic ={
+    reposAll: reposAll,
+    pagesAll:pageNumber,
+    actualPage: currentPagination,
+  }
+  if(forStadistic ==={}){
+    alert('no hay nada')
+  }else{
+    dispatch(actionAsyncStadistic(forstadistic)) 
+  }
+}
+   /* let reposStore= repos.len
+   gth
     localStorage.setItem('allrepos', JSON.stringify(reposStore));
     let pagesStore= pageNumber
     localStorage.setItem('allpages', JSON.stringify(pagesStore));
     let paginationStore= currentPagination
-    localStorage.setItem('realPage', JSON.stringify(paginationStore));
-  }
-  forStadistic()
+    localStorage.setItem('realPage', JSON.stringify(paginationStore));*/
+  
+  /*forStadistic()*/
+/*let reposStore= repos.length*/
+  
 
   return (
     <>

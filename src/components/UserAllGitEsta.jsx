@@ -62,15 +62,15 @@ export default function UserAllGitEsta() {
   //console.log(waitPagePagi);
   //console.log(waitALLPages);
   //console.log(waitAllRepos);
-
+/*
   const enviar =()=>{
     if(setStadistic ==={}){
       alert('no hay nada')
     }else{
-      dispatch(actionAsyncStadistic(stadistic, gitUserSta)) 
+      dispatch(actionAsyncStadistic(stadistic)) 
     }
-  }
-  enviar()
+  }*/
+
  /* const allInfo = () => {
     setStadistic({
       totalPages:waitALLPages ,
@@ -232,20 +232,21 @@ export default function UserAllGitEsta() {
         dispatch(listGituserAsync()); 
         dispatch(keepNameAsyncEval());
        
-        setStadistic({
-         /* totalPages:waitALLPages ,
+      /*  setStadistic({
+          totalPages:waitALLPages ,
           totalRepos:waitAllRepos ,
           vistasPage:waitPagePagi,
-          userGit: gitUserSta*/
-          totalPages:2 ,
+         // userGit: gitUserSta
+          /*totalPages:2 ,
           totalRepos:20 ,
           vistasPage:1,
-          userGit: 'felixcesp'
-        })  
+      
+        })  ;
+        enviar()*/
        
        
      
-    }, [dispatch, setStadistic /*gitUserSta, waitALLPages, waitAllRepos, waitPagePagi,stadistic*/])
+    }, [dispatch,/*gitUserSta, waitALLPages, waitAllRepos, waitPagePagi,stadistic*/])
 
 
     const editar = (gitdata) => {
