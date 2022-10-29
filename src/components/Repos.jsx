@@ -75,15 +75,19 @@ function Repos() {
       let data = resp.data;
       //aca le enviamos al esstado de las paginas el numero de paginas
       setPageNumber(Math.ceil(data.length / 5));
+    
       setRepos(data);
       setFilterRepos(data);
-      setReposAll(data.lenght)
+      //CREO VARIABLE PARA LA CANTIDADA DE REPOS SI NO LA CREO ME DA INDEFINIDO
+      let reposmath=data.length;
+      setReposAll(reposmath)
       //le pongo el limite del subarray de la pagina actual los repos de esta pagina son 5 calculo
       //se calcula la posicion del array o indice depnediendo de la pagina
       setCurrentPage(
         data.slice(currentPagination * 5 - 5, currentPagination * 5)
       );
     });
+    
   
     //llamo a todas las variables que se deben recargar
   }, [
@@ -93,7 +97,7 @@ function Repos() {
     currentPagination,
     setPageNumber,
     setFilterRepos,
-    setReposAll,
+    setReposAll
   ]);
 
 
@@ -104,7 +108,7 @@ function Repos() {
       let temporal = repos.filter((element) => {
         return element.name.includes(userSearch);
       });
-      console.log(temporal);
+    //  console.log(temporal);
       setFilterRepos([...temporal]);
       setCurrentPagination(1);
     } else {
@@ -121,28 +125,18 @@ function Repos() {
   //******************************************************************************** */
   //funciones para estadisticas
  const forStadistic = () => {
-    let forstadistic ={
+    let forstadistic ={  
     reposAll: reposAll,
     pagesAll:pageNumber,
     actualPage: currentPagination,
   }
-  if(forStadistic ==={}){
-    alert('no hay nada')
-  }else{
-    dispatch(actionAsyncStadistic(forstadistic)) 
-  }
+  if(reposAll!==0){
+  dispatch(actionAsyncStadistic(forstadistic)) 
+ // console.log(forstadistic)
 }
-   /* let reposStore= repos.len
-   gth
-    localStorage.setItem('allrepos', JSON.stringify(reposStore));
-    let pagesStore= pageNumber
-    localStorage.setItem('allpages', JSON.stringify(pagesStore));
-    let paginationStore= currentPagination
-    localStorage.setItem('realPage', JSON.stringify(paginationStore));*/
-  
-  /*forStadistic()*/
-/*let reposStore= repos.length*/
-  
+
+}
+forStadistic()
 
   return (
     <>
@@ -187,7 +181,7 @@ function Repos() {
    
 
      <PaginationConte>
-        <Pagination size="lg" onChange={forStadistic}>
+        <Pagination size="lg">
           <Pagination.Prev onClick={paginationCurrentPrev} />
           {[...Array(pageNumber)].map((_, i) => {
             return (

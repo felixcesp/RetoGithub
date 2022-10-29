@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { deletGituserAsync, listGituserAsync } from "../redux/actions/actionEdit";
 import { keepNameAsyncEval } from "../redux/actions/actionLogPhone";
 import { actionRepoSync } from "../redux/actions/actionRepo";
-import { actionAsyncStadistic } from "../redux/actions/actionStadistic";
+//import { actionAsyncStadistic } from "../redux/actions/actionStadistic";
 import { ImgTables, ImgTables2, LisitImg, Table22, TableInfo22, TableT25, TableTd22, TableTd223, TableThn, TitleTable55 } from "../styled/StyledComponents";
 import EditNew from "./EditarNew";
 
@@ -20,86 +20,6 @@ export default function UserAllGitEsta() {
     const [datos, setDatos] = useState([]);
     const navigation =useNavigate();
     const  showUsers2  = useSelector(store => store.listaUsers.listUsers)
-    //inicio estadisticas
-    //llamar al usuario que se esat revisando
-    const gitUserSta = useSelector((state) => state.newGitUser.showUsers[0].gituser);
-    //const gitUserSta2=[gitUserSta].gituser
-
-    //console.log(gitUserSta)
-    
-   // console.log(gitUserSta2)
-    //cantidad de paginas del ususario actual
-  //  const [allpages, setAllpages] = useState(0)
-    //cantidad de repos de usuario actual
-   // const [allrepos, setAllrepos] = useState(0)
-    //paginas recorridas
-   // const [seenPages, setSeenPages] = useState(0);
-
-
-
-    /* let allInfo={
-      totalPages:waitALLPages ,
-      totalRepos:waitAllRepos ,
-      vistasPage:waitPagePagi,
-      userGit: gitUserSta,
-    }*/
-
-
-    const [stadistic, setStadistic] = useState({});
-    //console.log(setStadistic);
-    //console.log(stadistic)
-  
-//llamar usuario para trabajarlo
-//funcion para traer los datos de los repos por el local storage
-//const seePagesEval=()=>{
-  let waitPagePagi2 = localStorage.getItem('realPage');
-  let waitALLPages2 = localStorage.getItem('allpages');
-  let waitAllRepos2 = localStorage.getItem('allrepos');
-  //convertir para leer
-  let waitPagePagi = JSON.parse(waitPagePagi2)
-  let waitALLPages = JSON.parse(waitALLPages2)
-  let waitAllRepos = JSON.parse(waitAllRepos2)
-  //console.log(waitPagePagi);
-  //console.log(waitALLPages);
-  //console.log(waitAllRepos);
-/*
-  const enviar =()=>{
-    if(setStadistic ==={}){
-      alert('no hay nada')
-    }else{
-      dispatch(actionAsyncStadistic(stadistic)) 
-    }
-  }*/
-
- /* const allInfo = () => {
-    setStadistic({
-      totalPages:waitALLPages ,
-      totalRepos:waitAllRepos ,
-      vistasPage:waitPagePagi,
-      userGit: gitUserSta,
-    });
-}*/
-
-
-  /*let allInfo={
-    totalPages:waitALLPages ,
-    totalRepos:waitAllRepos ,
-    vistasPage:waitPagePagi,
-    userGit: gitUserSta
-  }*/
- 
-
-   //setStadistic(allInfo)
-
- 
-
-//}
-
-//seePagesEval()
-// crear OBJETO para enviarlo a firebase para usarlo CON UN 
-
-
-
 
 /*
 
@@ -160,9 +80,7 @@ export default function UserAllGitEsta() {
    /*  const copyMatriz = [].concat(matriz)
      if (copyMatriz){
       let copyMatriz2=[].concat(copyMatriz)
-      localStorage.setItem('myArray', JSON.stringify(copyMatriz2));
-      let esperoArray = localStorage.getItem('myArray');
-      let esperoArray2 = JSON.parse(esperoArray);*/
+
     /*  let m=currentPagination;
       const h=[];
      // console.log(h)
@@ -231,22 +149,8 @@ export default function UserAllGitEsta() {
 
         dispatch(listGituserAsync()); 
         dispatch(keepNameAsyncEval());
-       
-      /*  setStadistic({
-          totalPages:waitALLPages ,
-          totalRepos:waitAllRepos ,
-          vistasPage:waitPagePagi,
-         // userGit: gitUserSta
-          /*totalPages:2 ,
-          totalRepos:20 ,
-          vistasPage:1,
-      
-        })  ;
-        enviar()*/
-       
-       
-     
-    }, [dispatch,/*gitUserSta, waitALLPages, waitAllRepos, waitPagePagi,stadistic*/])
+
+    }, [dispatch])
 
 
     const editar = (gitdata) => {

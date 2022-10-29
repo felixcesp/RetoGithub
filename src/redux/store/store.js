@@ -10,6 +10,7 @@ import { reducersEvaluators } from "../reducers/reducersEvaluators";
 import { reducersLogin } from "../reducers/reducersLogin";
 import { reducersLogPhone} from "../reducers/reducersLogPhone";
 import { reducersSearchgit } from "../reducers/reducersSearch";
+import { reducersStadistic } from "../reducers/reducerStadistic";
 
 
 
@@ -26,6 +27,7 @@ const reducers = combineReducers(
         userEspecific:reducersSearchgit,
         listaUsers:reducersAlluser,
         keepName:reducersNombreActual,
+        generalStadistic:reducersStadistic,
        
      
     
