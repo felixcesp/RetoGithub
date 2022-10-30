@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { actionLogoutAsyn } from '../../redux/actions/actionLogin';
+import { actionAsyncStadistic } from '../../redux/actions/actionStadistic';
 import '../../styled/navbar.css'
 
 function NavbarUser() {
@@ -10,6 +11,7 @@ function NavbarUser() {
   
   const back=()=>{
     navigation('/login')
+    dispatch(actionAsyncStadistic())
   }
   return (
     <div className='all2'>

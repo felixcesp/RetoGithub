@@ -9,6 +9,7 @@ import { addGituserAsync } from '../redux/actions/actionEdit';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { keepNameAsyncEval } from '../redux/actions/actionLogPhone';
+import { actionAsyncStadistic } from '../redux/actions/actionStadistic';
 
 
 
@@ -18,7 +19,7 @@ const AddEdit = () => {
     const dispatch = useDispatch();
    const usuarioName= useSelector(state => state.keepName);
 
-   localStorage.setItem("evaname",JSON.stringify(usuarioName.nombre) );
+   //localStorage.setItem("evaname",JSON.stringify(usuarioName.nombre) );
    //para sacar un elemnto de un objeto
  //  const almacenajeName= JSON.parse(localStorage.getItem("evaname"));
 //const alamcenajeName= localStorage.getItem("evaname");
@@ -70,6 +71,7 @@ const AddEdit = () => {
     }
     useEffect(() => {
         dispatch(keepNameAsyncEval())
+        dispatch(actionAsyncStadistic())
     }, [dispatch])
   
     return (

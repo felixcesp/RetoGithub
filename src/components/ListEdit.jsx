@@ -13,6 +13,7 @@ import EditNew from './EditarNew';
 import NavBarUser from '../components/home/NavbarUser'
 import { useNavigate } from 'react-router-dom';
 import { keepNameAsyncEval, listEvaluatorAsync } from '../redux/actions/actionLogPhone';
+import { actionAsyncStadistic } from '../redux/actions/actionStadistic';
 
 
 const ListEdit = () => {
@@ -33,12 +34,13 @@ const ListEdit = () => {
     //console.log(yourUsers)
 
    
-    //para accionar las acciones ya que no resiven parametros
+    //para accionar las acciones ya que no resiven parametros y para algunas veces retear el anterio dato
     useEffect(() => {
         dispatch(listGituserAsync()); 
         dispatch(listEvaluatorAsync())
         dispatch(evalGituserAsync())
         dispatch(keepNameAsyncEval())
+     //   dispatch(actionAsyncStadistic())
     }, [dispatch])
 
 
@@ -49,7 +51,9 @@ const ListEdit = () => {
     }
     const getRepos=(gitUser )=>{
         dispatch(actionRepoSync(gitUser))
-        navigation('/repos'); 
+        navigation('/repos');
+        dispatch(actionAsyncStadistic())
+      
       }
       const aluser=(gitUser )=>{
         //  dispatch(actionRepoSync(gitUser))

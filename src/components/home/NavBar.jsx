@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom'
 import { actionLogoutAsyn } from '../../redux/actions/actionLogin';
+import { actionAsyncStadistic } from '../../redux/actions/actionStadistic';
 import '../../styled/navbar.css'
 
 function NavBar() {
@@ -9,6 +10,7 @@ function NavBar() {
   const navigation =useNavigate();
   const back=()=>{
     navigation('/editar')
+    dispatch(actionAsyncStadistic())
   }
   
  

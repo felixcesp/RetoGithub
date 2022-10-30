@@ -4,9 +4,8 @@ export const reducersStadistic = (state =[], action) => {
     switch (action.type) {
         case typesUserStadistic.typeUserStadistic:
             return {
-                stadisticRepo: action.payload
-            }
-       
+                stadisticRepo: action.payload,
+            }    
         default:
             return state
     }

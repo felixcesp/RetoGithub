@@ -33,7 +33,10 @@ function Repos() {
   //con esta constante sanbemos cual es el usuario git que escribieron en el formulario y busque en el get los repos
   const gitUser = useSelector((state) => state.gitUser.gitName);
   //para enviar los adtos de las estadisticas
-  const dispatch=useDispatch()
+  const dispatch=useDispatch();
+  //identificacion del documento este en redux
+  const docuId=useSelector((state)=>state.generalStadistic.idUserNow)
+  console.log(docuId)
 
   //recarga tabla con un nuevo nuemro de pagina actual, aca resive la pagina del paginador en el xml y con esta hace la
   //formula para que de el segmento del array correspondiente
@@ -129,6 +132,8 @@ function Repos() {
     reposAll: reposAll,
     pagesAll:pageNumber,
     actualPage: currentPagination,
+    idUserNow:docuId,
+  
   }
   if(reposAll!==0){
   dispatch(actionAsyncStadistic(forstadistic)) 
