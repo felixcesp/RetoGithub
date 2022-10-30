@@ -862,4 +862,31 @@ margin-top:80px;
 margin-bottom:30px;
 
 `
-//input
+//home
+export const Seconddiv33= styled.div`
+height:50%;
+width:250px;
+left:20px;
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661642403/Retogithub/fondo12_v3bwzv.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+background-color: yellowgreen;
+border-radius:1.875rem;
+//position:absolute;
+//top:200px;
+`
+export const Firstdiv44= styled.div`
+height:655px;
+width:1280px;
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661709975/Retogithub/fondo22_zheuk7.jpg");
+background-size:cover;
+display:flex;
+align-items: flex-end;
+padding-bottom:50px;
+justify-content:center;
+flex-direction:row;
+column-gap:40px
+//position: relative;
+`
