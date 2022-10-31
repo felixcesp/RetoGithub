@@ -15,7 +15,7 @@ import {
 //import { useSelector } from 'react-redux';
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { actionAsyncStadistic } from "../redux/actions/actionStadistic";
+import { actionAsyncStadDynamic, actionAsyncStadistic } from "../redux/actions/actionStadistic";
 
 function Repos() {
   //todos los repos llegan al setrepo desde la peticion y se guardan en repos en un array
@@ -35,8 +35,7 @@ function Repos() {
   //para enviar los adtos de las estadisticas
   const dispatch=useDispatch();
   //identificacion del documento este en redux
-  const docuId=useSelector((state)=>state.generalStadistic.idUserNow)
-  console.log(docuId)
+
 
   //recarga tabla con un nuevo nuemro de pagina actual, aca resive la pagina del paginador en el xml y con esta hace la
   //formula para que de el segmento del array correspondiente
@@ -132,11 +131,11 @@ function Repos() {
     reposAll: reposAll,
     pagesAll:pageNumber,
     actualPage: currentPagination,
-    idUserNow:docuId,
-  
+    //idUserNow:docuId,
   }
   if(reposAll!==0){
-  dispatch(actionAsyncStadistic(forstadistic)) 
+  dispatch(actionAsyncStadistic(forstadistic, gitUser)) 
+  dispatch(actionAsyncStadDynamic(gitUser))
  // console.log(forstadistic)
 }
 

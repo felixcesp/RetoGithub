@@ -1,21 +1,22 @@
 import { arrayUnion, collection, doc,getDocs, query, updateDoc, where} from "firebase/firestore"
 import { db } from "../../firebase/firebaseConfig"
 import { typesUserStadistic } from "../types/typeUserStadistic"
-
-export const actionAsyncStadistic = (stadistic) => {
-   console.log(stadistic)
+//accion para guardar datos de las paginas y repos
+export const actionAsyncStadistic = (stadistic, repouser) => {
+   //console.log(stadistic)
     return async (dispatch)=> {
 
-    if(stadistic.idUserNow===undefined){
+   
       const collectionListarb = collection(db, "usuariosGit")
-      const datosQk = await getDocs(collectionListarb)
-      console.log(datosQk.id)  
-     
+      const docIndicated = query(collectionListarb, where('gituser', '==', repouser))
+      const dataIndicated = await getDocs(docIndicated)
+     // console.log(dataIndicated)  
+      
       let id
-      datosQk.forEach(async(docu)=>{
+      dataIndicated.forEach(async(docu)=>{
         id= docu.id;
     })
-    console.log(id)
+    //console.log(id)
     
     await updateDoc(doc(db, "usuariosGit", id),{    
            estadistic: arrayUnion({        
@@ -30,26 +31,16 @@ export const actionAsyncStadistic = (stadistic) => {
          } ),
         })
            .then(resp =>{ 
-let newId=stadistic.idUserNow;
-newId=id
-            dispatch(actionSyncStadistic(stadistic, newId)) ;        
-});}
-/*const collectionId = collection(db, "usuariosGit")
-const pagesForLeft = query(collectionId, where('id', '==', id))
-const pagesLeft = await getDocs(pagesForLeft)  
-console.log(pagesLeft)  
-     
-let arrayVistas
-pagesLeft.forEach(async(docu)=>{
-  arrayVistas= docu.email;
-})
-console.log(arrayVistas)  */
+            dispatch(actionSyncStadistic(stadistic)) ;        
+});
+
+
 
     }};
 
 
 export const actionSyncStadistic = (stadistic) => {
-  console.log(stadistic)
+
     return{
         type: typesUserStadistic.typeUserStadistic,
         payload: stadistic
@@ -57,3 +48,57 @@ export const actionSyncStadistic = (stadistic) => {
     }
 }
 
+
+
+
+//accion para solo la pginacion y enviar estadisticas
+export const actionAsyncStadDynamic = (repouser) => {
+  console.log(repouser)
+   return async (dispatch)=> {
+
+     const mathArray = collection(db, "usuariosGit")
+     const arrayToItinerar = query(mathArray, where('gituser', '==', repouser))
+     const finalArray = await getDocs(arrayToItinerar )
+     console.log(finalArray)   
+     if (finalArray.exists()) {
+      console.log("Document data:", finalArray.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+   //  let allArray=[];
+ 
+     // console.log(otro);
+ 
+    /* finalArray.forEach(async(pages)=>{
+       allArray= pages.query
+       ;
+   })
+   console.log(allArray);*/
+   
+  /* await updateDoc(doc(db, "usuariosGit", id),{    
+          estadistic: arrayUnion({        
+            totapages:stadistic.pagesAll,
+            totarepso:stadistic.reposAll,
+            proveid:id
+       }),});
+         
+         await updateDoc(doc(db, "usuariosGit", id),{    
+           currentPage: arrayUnion({        
+             vistapage:stadistic.actualPage, 
+        } ),
+       })
+          .then(resp =>{ 
+           dispatch(actionSyncStadistic(stadistic)) ;        
+});
+
+//let arrayActual=[];
+
+
+/*dataIndicated.map(async(document)=>{
+ arrayActual= document.id;
+ console.log(arrayActual)
+})*/
+
+
+   }};
