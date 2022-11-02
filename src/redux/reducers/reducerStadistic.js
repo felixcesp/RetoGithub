@@ -5,7 +5,13 @@ export const reducersStadistic = (state =[], action) => {
         case typesUserStadistic.typeUserStadistic:
             return {
                 stadisticRepo: action.payload,
-            }    
+            } 
+            case typesUserStadistic.typeUserDinaStadistic:
+                return {
+                    dinamicStadistic: action.payload,
+                }    
+            
+
         default:
             return state
     }
