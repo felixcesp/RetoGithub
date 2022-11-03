@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import useForm from "../hooks/useForm";
 import { deletGituserAsync, listGituserAsync } from "../redux/actions/actionEdit";
 import { keepNameAsyncEval } from "../redux/actions/actionLogPhone";
 import { actionRepoSync } from "../redux/actions/actionRepo";
@@ -20,6 +21,56 @@ export default function UserAllGitEsta() {
     const [datos, setDatos] = useState([]);
     const navigation =useNavigate();
     const  showUsers2  = useSelector(store => store.listaUsers.listUsers)
+   // console.log(showUsers2)
+    //PROCESO PARA LA CREACION DE ESATDISTICAS Y GRAFICAS
+    //1 LLAMAMOS AL HOOK QUE CREAMOS USEFORM PARA METER EL OBJETO, USANDO LOS ESTADO 
+    //CREADOS ANTERIORMENTE METEREMOS LOS DATOS QUE TENGAMOS
+   // console.log(showUsers2[0].estadistic)
+
+    const [formValue, handleInputChange, reset]= useForm({
+      pagesRepos: '',
+      ReposCount:'',
+      checkPages: '',
+      leftPages: '',
+      pageSeenNumbers:'',
+      pagesLeftNumber:'',
+      gituser:'',
+      checkSate: '',
+      dateCreation:'',
+      lastCheckDate: '',
+      checkedTime:{
+        lastTime:'',
+        generalTime:''
+      },
+      languagesDevRepo:{
+        phyton:'',
+        java:'',
+        javaScrypt:'',
+        undifined:''
+      },
+      BranchRepos:{
+        master:'',
+        main:'',
+        other:''
+      }
+  
+
+  })
+
+
+
+    //creamos funcion nueva para almacenar un objeto con todas las estadisticas
+    //aca usaremos el useForm
+    const stadisticisPages = () => {
+      let cuantitySeen= JSON.parse(showUsers2[0].estadistic) ;
+     
+      console.log(cuantitySeen)
+    }
+    stadisticisPages()
+   
+
+
+
 
 /*
 
@@ -140,11 +191,6 @@ export default function UserAllGitEsta() {
    // }
 
 
-
-
-
-
-
     useEffect(() => {
 
         dispatch(listGituserAsync()); 
@@ -180,7 +226,7 @@ export default function UserAllGitEsta() {
         <Table22>
           <thead>
             <tr>
-              <th>GituserName</th>
+              <th>User Name</th>
               <th>Revition state</th>
               <th>Evaluator Name</th>
               <th>Global Stadestics</th>
@@ -220,6 +266,16 @@ export default function UserAllGitEsta() {
             ))}
           </tbody>
         </Table22>
+        <div>
+          
+
+
+
+
+
+
+
+        </div>
 
         {modal === true ? <EditNew datos={datos} setModal={setModal} /> : ""}
       </TableInfo22>
