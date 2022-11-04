@@ -1,3 +1,4 @@
+import { runTransaction } from "firebase/firestore";
 import React, { Fragment, useEffect, useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
@@ -61,12 +62,60 @@ export default function UserAllGitEsta() {
 
     //creamos funcion nueva para almacenar un objeto con todas las estadisticas
     //aca usaremos el useForm
-    const stadisticisPages = () => {
-      let cuantitySeen= JSON.parse(showUsers2[0].estadistic) ;
+    const getStadistic=(p)=>{
+      //1 Y 2 VARIABLES
+      let pagesIn=p.estadistic
+      console.log(pagesIn)
+     //EXTRAER VALOR VARIABLES 1 CATIDAD DE PAGINAS
+     let pagesOut= pagesIn.map((elemnt)=>{  
+       let allPages=elemnt.totapages
+       return (
+        allPages
+       )
+      })
+      console.log(pagesOut);
+       //EXTRAER VALOR VARIABLES 2 CATIDAD DE REPOS
+     let reposOut= pagesIn.map((elemnt)=>{  
+      let allRepos=elemnt.totarepso
+      return (
+       allRepos  
+      )
+     })
+     console.log(reposOut);
+
+
+  //VARIABLES DE PAGINAS VISTAS Y FALTANTES
+  //paginas vistas guardar en arreglo
+  let pagesCurrentin=p.currentPage
+      let runPages=[];  
+      pagesCurrentin.map((elemnt1)=>{
+        return (
+         runPages.push(elemnt1.vistapage)  
+        )
+       })
+      //VARIABLE PAGINAS cantidad vistas
+      let seenP= pagesCurrentin.length
+      //variables pagina cantidada faltantes
+      let leftPages= pagesOut-seenP; 
+      console.log(pagesCurrentin)
+      console.log(seenP)
+      console.log(leftPages)
+    //variable paginas que vio cuales
+    console.log(runPages)
+    //variable paginas que no ha visto
+    let pagesTotal= [...Array(5).keys()].map((_,i)=>{
+      return(
+        i+1
+      )
+    })
+   console.log(pagesTotal)
+
+
+
+      
+  
      
-      console.log(cuantitySeen)
     }
-    stadisticisPages()
    
 
 
@@ -195,6 +244,7 @@ export default function UserAllGitEsta() {
 
         dispatch(listGituserAsync()); 
         dispatch(keepNameAsyncEval());
+       
 
     }, [dispatch])
 
@@ -242,6 +292,7 @@ export default function UserAllGitEsta() {
                 <TableTd22>{p?.lastname}</TableTd22>
                 <TableTd22>{p?.eval}</TableTd22>
                 <TableTd22>{p?.phone}</TableTd22>
+                <TableT25  onClick={()=>{getStadistic(p)}}>ver</TableT25>
                 <TableT25
                   onClick={() => {getRepos(p?.gituser); }}>{p?.gituser}
                 </TableT25>
