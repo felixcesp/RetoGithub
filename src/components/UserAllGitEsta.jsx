@@ -1,4 +1,5 @@
 import { runTransaction } from "firebase/firestore";
+import moment from "moment/moment";
 import React, { Fragment, useEffect, useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
@@ -22,11 +23,21 @@ export default function UserAllGitEsta() {
     const [datos, setDatos] = useState([]);
     const navigation =useNavigate();
     const  showUsers2  = useSelector(store => store.listaUsers.listUsers)
-   // console.log(showUsers2)
+    //ESTADO PARA REVISION O COMPLETADO O IMCOMPLETO
+    const [checked, setChecked] = useState('')
+    //ESTADO DE PORCENTAJE CHEQUEADO
+    const [percent, setPercent] = useState('')
+
+
+
+
+
+
+
     //PROCESO PARA LA CREACION DE ESATDISTICAS Y GRAFICAS
     //1 LLAMAMOS AL HOOK QUE CREAMOS USEFORM PARA METER EL OBJETO, USANDO LOS ESTADO 
     //CREADOS ANTERIORMENTE METEREMOS LOS DATOS QUE TENGAMOS
-   // console.log(showUsers2[0].estadistic)
+ 
 
     const [formValue, handleInputChange, reset]= useForm({
       pagesRepos: '',
@@ -37,6 +48,7 @@ export default function UserAllGitEsta() {
       pagesLeftNumber:'',
       gituser:'',
       checkSate: '',
+      checkSatePercent: '',
       dateCreation:'',
       lastCheckDate: '',
       checkedTime:{
@@ -63,7 +75,8 @@ export default function UserAllGitEsta() {
     //creamos funcion nueva para almacenar un objeto con todas las estadisticas
     //aca usaremos el useForm
     const getStadistic=(p)=>{
-      //1 Y 2 VARIABLES
+      //el boton ver envia la data del ususario que esta en el estado showusers
+      //creamos una variable que nos va a resivir solo ese array de redux
       let pagesIn=p.estadistic
       console.log(pagesIn)
      //EXTRAER VALOR VARIABLES 1 CATIDAD DE PAGINAS
@@ -82,7 +95,7 @@ export default function UserAllGitEsta() {
       )
      })
      console.log(reposOut);
-
+   
 
   //VARIABLES DE PAGINAS VISTAS Y FALTANTES
   //paginas vistas guardar en arreglo
@@ -95,20 +108,74 @@ export default function UserAllGitEsta() {
        })
       //VARIABLE PAGINAS cantidad vistas
       let seenP= pagesCurrentin.length
-      //variables pagina cantidada faltantes
+      //variables pagina cantidad faltantes
       let leftPages= pagesOut-seenP; 
       console.log(pagesCurrentin)
       console.log(seenP)
       console.log(leftPages)
-    //variable paginas que vio cuales
+    //CONSOLE PARA VER LAS PAGINA QUE HA VISTO ES DECIR ARREGLO CON LAS PAGINAS
     console.log(runPages)
-    //variable paginas que no ha visto
-    let pagesTotal= [...Array(5).keys()].map((_,i)=>{
+
+    //variable paginas que no han visto
+    //PRIMERO CREAMOS ARRAY CON EL NUMERO DE PAGINAS TOTALES DEL USUSARIO
+    let pagesTotal= [...Array(pagesOut[0]).keys()].map((_,i)=>{
       return(
         i+1
       )
     })
    console.log(pagesTotal)
+        //tenemos ya dos arreglos con todas las paginas y las paginas vistas
+     //para hallar las paginas que nos han visto se debe hacer la diferencias
+     //de conjuntos en este caso de array
+   let difference = pagesTotal.filter(x => !runPages.includes(x))
+   console.log(difference)
+     
+//estado de paginas chequeadas variable
+//se hace una funcion con regla de tres resive solo las paginas que quedan
+const stateSeen=(leftPages )=>{
+
+    if(leftPages===0){
+       setChecked('COMPLETED')
+    }else{
+      setChecked('INCOMPLETED')
+    }
+
+}
+stateSeen(leftPages);
+console.log(checked)
+
+//variable del porcentaje del estado chekeado
+const statePercent=(pagesOut, seenP )=>{
+let percentFinal= (seenP*100)/pagesOut;
+setPercent(percentFinal)
+}
+statePercent(pagesOut,seenP);
+console.log(percent +'%')
+
+/*
+const dateya=moment()
+console.log(dateya)
+const dateTimeAgo = moment(Date.now()).fromNow(dateya);
+
+console.log(dateTimeAgo);*/
+
+
+     // const difference1 = pagesTotal.filter(x => !runPages.includes(x));
+     // const difference2 = runPages.filter(x => !pagesTotal.includes(x))
+      //const symmetric = difference1.concat(difference2)
+    
+     // console.log(difference1)
+     // console.log(difference2)
+     // console.log(symmetric)
+
+      
+
+
+   
+
+    
+  
+
 
 
 
@@ -166,6 +233,9 @@ export default function UserAllGitEsta() {
       matriz.push(k);
       break
      }*/
+
+
+
     /* let arr = [];
     arr[currentPagination][arr.length]= currentPagination;
    
