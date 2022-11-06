@@ -1,5 +1,5 @@
-import { runTransaction } from "firebase/firestore";
-import moment from "moment/moment";
+import arrayUnion from 'array-union';
+import Moment from 'react-moment';
 import React, { Fragment, useEffect, useState } from "react";
 import { AiOutlineEdit } from "react-icons/ai";
 import { BsFillTrashFill } from "react-icons/bs";
@@ -12,6 +12,7 @@ import { actionRepoSync } from "../redux/actions/actionRepo";
 //import { actionAsyncStadistic } from "../redux/actions/actionStadistic";
 import { ImgTables, ImgTables2, LisitImg, Table22, TableInfo22, TableT25, TableTd22, TableTd223, TableThn, TitleTable55 } from "../styled/StyledComponents";
 import EditNew from "./EditarNew";
+import moment from 'moment';
 
 export default function UserAllGitEsta() {
 
@@ -152,10 +153,30 @@ setPercent(percentFinal)
 statePercent(pagesOut,seenP);
 console.log(percent +'%')
 
-/*
+
 const dateya=moment()
+const fecha = new Date();
 console.log(dateya)
-const dateTimeAgo = moment(Date.now()).fromNow(dateya);
+console.log(dateya._d)
+console.log(fecha)
+
+let day = fecha.getDate();
+ 
+// `getMonth()` devuelve el mes (de 0 a 11)
+let month = fecha.getMonth() + 1;
+ 
+// `getFullYear()` devuelve el año completo
+let year = fecha.getFullYear();
+ 
+// muestra la fecha de hoy en formato `MM/DD/YYYY`
+console.log(`${month}/${day}/${year}`);
+
+
+          
+
+
+
+/*const dateTimeAgo = moment(Date.now()).fromNow(dateya);
 
 console.log(dateTimeAgo);*/
 
