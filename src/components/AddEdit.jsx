@@ -50,7 +50,9 @@ const AddEdit = () => {
 
      const handleSubmit =(e)=>{
         e.preventDefault()
-       let creationDate =fecha()
+      // let creationDate =fecha()
+      
+       let creationDate =moment().format('MMMM Do YYYY, h:mm:ss a');
        console.log(creationDate)
         dispatch(addGituserAsync(formValue, creationDate))
         if(formValue){    
@@ -60,15 +62,7 @@ const AddEdit = () => {
         reset()   
     }
     
-    let fecha=()=>{
-        const creationDate= new Date()
-        let day = creationDate.getDate();
-        let month = creationDate.getMonth() + 1;
-        let year = creationDate.getFullYear();
-        let hour=creationDate.gethour();
-        let si=`${month}/${day}/${year} ${hour}`;
-        return si
-    }
+  
 
     
 
