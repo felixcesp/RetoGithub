@@ -30,7 +30,7 @@ export default function UserAllGitEsta() {
     const [percent, setPercent] = useState('')
 
 
-
+    const [datesIn, setDatesIn] = useState([])
 
 
 
@@ -38,6 +38,7 @@ export default function UserAllGitEsta() {
     //PROCESO PARA LA CREACION DE ESATDISTICAS Y GRAFICAS
     //1 LLAMAMOS AL HOOK QUE CREAMOS USEFORM PARA METER EL OBJETO, USANDO LOS ESTADO 
     //CREADOS ANTERIORMENTE METEREMOS LOS DATOS QUE TENGAMOS
+    
  
 
     const [formValue, handleInputChange, reset]= useForm({
@@ -75,6 +76,13 @@ export default function UserAllGitEsta() {
 
     //creamos funcion nueva para almacenar un objeto con todas las estadisticas
     //aca usaremos el useForm
+  
+    
+    /*let dateSave=[]
+    console.log(dateSave)*/
+
+
+
     const getStadistic=(p)=>{
       //el boton ver envia la data del ususario que esta en el estado showusers
       //creamos una variable que nos va a resivir solo ese array de redux
@@ -153,24 +161,14 @@ setPercent(percentFinal)
 statePercent(pagesOut,seenP);
 console.log(percent +'%')
 
+//ESTA ES UNA PRUEBA DE LA FECHA
 
-const dateya=moment()
-const fecha = new Date();
-console.log(dateya)
-console.log(dateya._d)
-console.log(fecha)
-
-let day = fecha.getDate();
- 
-// `getMonth()` devuelve el mes (de 0 a 11)
-let month = fecha.getMonth() + 1;
- 
-// `getFullYear()` devuelve el año completo
-let year = fecha.getFullYear();
- 
-// muestra la fecha de hoy en formato `MM/DD/YYYY`
-console.log(`${month}/${day}/${year}`);
-
+//let userDate= p.gituser;
+//console.log(userDate)
+/*let creationDateP =moment().format('MMMM Do YYYY, h:mm:ss a')
+console.log(creationDateP)
+dateSave.push([].concat(creationDateP))
+console.log(dateSave)*/
 
           
 
@@ -188,20 +186,6 @@ console.log(dateTimeAgo);*/
      // console.log(difference1)
      // console.log(difference2)
      // console.log(symmetric)
-
-      
-
-
-   
-
-    
-  
-
-
-
-
-      
-  
      
     }
    

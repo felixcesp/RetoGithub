@@ -9,17 +9,16 @@ import { typesAllUser, typesUsergit } from "../types/typesEdit"
 import { listEvaluatorAsync } from "./actionLogPhone";
 
 //----------------Agregar usaurio-------------------------//
-export const addGituserAsync = (gitdata,  creationDate) => {
+export const addGituserAsync = (gitdata) => {
     const auth = getAuth();
     let evalId = auth.currentUser?.uid
     let evalName = auth.currentUser?.displayName
    // let creationDoc=creationDate
-  console.log(creationDate)
-
+  
 let evaNombre={eval:evalName}
 let uidEval = { Euid: evalId };
-let createdDate = { userinitialDate: creationDate};
-Object.assign(gitdata, uidEval, evaNombre, createdDate);
+
+Object.assign(gitdata, uidEval, evaNombre);
 
     return (dispath) => {
  

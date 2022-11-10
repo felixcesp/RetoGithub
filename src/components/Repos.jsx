@@ -16,6 +16,7 @@ import {
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { actionAsyncStadistic } from "../redux/actions/actionStadistic";
+import moment from "moment";
 
 function Repos() {
   //todos los repos llegan al setrepo desde la peticion y se guardan en repos en un array
@@ -140,6 +141,24 @@ function Repos() {
 
 }
 forStadistic()
+//para fechas
+         
+let arrayCheched=[];
+
+const hola =()=>{
+if (arrayCheched.lenght === 0){
+ console.log(arrayCheched)
+}else{
+  let checkedDateIn =moment().format('MMMM Do YYYY, h:mm:ss a');
+  console.log(checkedDateIn)
+ arrayCheched.push([].concat(checkedDateIn))
+}}
+console.log(arrayCheched)
+hola()
+
+
+
+
 
   return (
     <>
@@ -190,7 +209,7 @@ forStadistic()
             return (
               <Pagination.Item
                 onClick={() => {
-                  paginationCurrentPage(i + 1); ;
+                  paginationCurrentPage(i + 1);
                 }}
                 active={currentPagination === i + 1 ? true : false}  
               >

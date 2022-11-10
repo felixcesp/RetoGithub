@@ -16,6 +16,7 @@ import { keepNameAsyncEval, listEvaluatorAsync } from '../redux/actions/actionLo
 import { actionAsyncStadistic } from '../redux/actions/actionStadistic';
 
 
+
 const ListEdit = () => {
     const nombre= useSelector(state => state.keepName);
     //console.log(nombre)
@@ -32,8 +33,11 @@ const ListEdit = () => {
     const showEvaluators= useSelector(state => state.allEvaluators.seeAll)
     const yourUsers= useSelector(state=> state.userEspecific.finalGitGotten)
     //console.log(yourUsers)
-
+    //esatdo de fechas de chequeo
+    
    
+
+
     //para accionar las acciones ya que no resiven parametros y para algunas veces retear el anterio dato
     useEffect(() => {
         dispatch(listGituserAsync()); 
@@ -50,9 +54,16 @@ const ListEdit = () => {
         setDatos(gitdata) 
     }
     const getRepos=(gitUser )=>{
+  
+      
+        //setCheckedDate(checkedDateIn)
+        //setCheckedDate(initialState)
         dispatch(actionRepoSync(gitUser))
         navigation('/repos');
         dispatch(actionAsyncStadistic())
+      
+       // checkedDate.push([].concat(creationDateP))
+       //  dispatch(dateGituserAsync(checkedDate))
       
       }
       const aluser=(gitUser )=>{

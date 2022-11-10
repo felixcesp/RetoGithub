@@ -50,14 +50,13 @@ const AddEdit = () => {
 
      const handleSubmit =(e)=>{
         e.preventDefault()
-      // let creationDate =fecha()
-      
+      // let creationDate =fecha()   
        let creationDate =moment().format('MMMM Do YYYY, h:mm:ss a');
        console.log(creationDate)
         dispatch(addGituserAsync(formValue, creationDate))
+        //dispatch(dateGituserAsync(creationDate))
         if(formValue){    
-            navigation('/editar')
-       
+            navigation('/editar')    
         }
         reset()   
     }
