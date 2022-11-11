@@ -14,6 +14,7 @@ import NavBarUser from '../components/home/NavbarUser'
 import { useNavigate } from 'react-router-dom';
 import { keepNameAsyncEval, listEvaluatorAsync } from '../redux/actions/actionLogPhone';
 import { actionAsyncStadistic } from '../redux/actions/actionStadistic';
+import moment from 'moment';
 
 
 
@@ -53,11 +54,9 @@ const ListEdit = () => {
         setModal(true)
         setDatos(gitdata) 
     }
-    const getRepos=(gitUser )=>{
-  
+    const getRepos=(gitUser)=>{
       
-        //setCheckedDate(checkedDateIn)
-        //setCheckedDate(initialState)
+      //  console.log(arrayCheched)
         dispatch(actionRepoSync(gitUser))
         navigation('/repos');
         dispatch(actionAsyncStadistic())
@@ -70,7 +69,36 @@ const ListEdit = () => {
         //  dispatch(actionRepoSync(gitUser))
           navigation('/all')   
         } 
+        
+       /* let arrayCheched=[]
+          console.log(arrayCheched)
+        const hola =()=>{
+        if (arrayCheched.lenght === 0){
+         console.log(arrayCheched)
+        }else{
+          let checkedDateIn =moment().format('MMMM Do YYYY, h:mm:ss a');
+          console.log(checkedDateIn)
+        arrayCheched.push([].concat(checkedDateIn))
+        }}*/
+       
+       // console.log(arrayCheched)
+     
+      /* const getData = async()=>{
+        let res = await fetch (url);
+        let data= await res.json();
+        console.log(data)
+       }*/
+       let url= '../dataFechas/checkedDates.json'
+       const ala =()=>{
+        fetch(url)
+        .then(function(resolve){
+            console.log(resolve)
 
+        }).catch('NO HAY DATA')
+       }
+
+       ala()
+      
 
     return (
         <>
