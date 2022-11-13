@@ -18,6 +18,7 @@ import moment from 'moment';
 
 
 
+
 const ListEdit = () => {
     const nombre= useSelector(state => state.keepName);
     //console.log(nombre)
@@ -45,6 +46,7 @@ const ListEdit = () => {
         dispatch(listEvaluatorAsync())
         dispatch(evalGituserAsync())
         dispatch(keepNameAsyncEval())
+        getData()
      //   dispatch(actionAsyncStadistic())
     }, [dispatch])
 
@@ -88,17 +90,34 @@ const ListEdit = () => {
         let data= await res.json();
         console.log(data)
        }*/
+  /*
        let url= '../dataFechas/checkedDates.json'
-       const ala =()=>{
+       
         fetch(url)
-        .then(function(resolve){
-            console.log(resolve)
-
-        }).catch('NO HAY DATA')
-       }
-
-       ala()
-      
+        .then((resolve)=>{ 
+            resolve.json()  
+            console.log(resolve)}) 
+        .then(data=> console.log(data))*/
+       // .catch('NO HAY DATA')     
+      // ala()
+      const getData=()=>{
+        fetch('data.json'
+        ,{
+          headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+           }
+        }
+        )
+          .then(function(response){
+            console.log(response)
+            return response.json();
+          })
+          .then(function(myJson) {
+            console.log(myJson);
+          });
+      }
+    
 
     return (
         <>
