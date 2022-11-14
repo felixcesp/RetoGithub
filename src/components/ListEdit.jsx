@@ -47,6 +47,7 @@ const ListEdit = () => {
         dispatch(evalGituserAsync())
         dispatch(keepNameAsyncEval())
         getData()
+  
      //   dispatch(actionAsyncStadistic())
     }, [dispatch])
 
@@ -100,25 +101,37 @@ const ListEdit = () => {
         .then(data=> console.log(data))*/
        // .catch('NO HAY DATA')     
       // ala()
-      const getData=()=>{
-        fetch('data.json'
-        ,{
+    /*  const getData=()=>{
+        fetch('../data.JSON'
+       /* ,{
           headers : { 
             'Content-Type': 'application/json',
             'Accept': 'application/json'
            }
-        }
-        )
+        }*/
+     /*   )
           .then(function(response){
             console.log(response)
+           
             return response.json();
-          })
-          .then(function(myJson) {
-            console.log(myJson);
-          });
+          })     
+         .then(function(myJson) {
+          let siisis = JSON.parse(myJson);
+           console.log(siisis);
+          });*/
+    //  }
+  
+    async function getData(){
+ 
+      try{
+        const response =  await import('../data.json')
+        console.log(response)
+        return response.json();
+       
+      }catch(err){
+        return err
       }
-    
-
+    }
     return (
         <>
              <TableInfo22>
