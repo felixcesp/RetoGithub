@@ -122,12 +122,13 @@ const ListEdit = () => {
     //  }
   
     async function getData(){
- 
+    
       try{
-        const response =  await import('../data.json')
+        const response =  await import('../dataFechas/checkedDates.json')
         console.log(response)
+        response.json()
         return response.json();
-       
+        
       }catch(err){
         return err
       }
