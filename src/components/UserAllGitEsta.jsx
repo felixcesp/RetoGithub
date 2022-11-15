@@ -314,6 +314,21 @@ console.log(dateTimeAgo);*/
     //  console.log(seenPagesMenor2)
    // }
 
+//sebastian codigo 
+/*const tiemposIn=showUsers2.gitUser
+console.log(tiemposIn)  //TODO revisar
+/*
+let tiempos ={
+   tiemposIn:{
+      date1:'',
+      date2:'',
+    }
+  }*/
+
+
+
+
+
 
     useEffect(() => {
 
