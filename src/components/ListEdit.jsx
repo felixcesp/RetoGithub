@@ -125,14 +125,28 @@ const ListEdit = () => {
     
       try{
         const response =  await import('../jsons/checkedDates.json')
-        console.log(response)
-        response.json()
+        console.log(response.checkeddates)
         return response.json();
         
       }catch(err){
         return err
       }
     }
+     
+   
+    fetch( '../jsons/checkedDates.json')  
+.then((response) => {response.json()
+  console.log(response)
+}).catch((reject)=>{
+  console.log(reject)
+}).finally(()=>console.log('peticio terminada'))
+
+
+
+
+        
+
+
     return (
         <>
              <TableInfo22>
