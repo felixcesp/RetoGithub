@@ -5,7 +5,7 @@
     margin: 0 auto;
     background-color: red; 
         display: grid;
-        grid-template-columns: repeat(1);
+        grid-template-columns: auto;
         grid-template-rows: 100px;
         grid-template-areas: "nav"
                           ;
@@ -32,7 +32,7 @@
         z-index: 1;
        
         /*overflow: hidden;*/
-    }
+    }/*
     .navmenu ul{
         height: 100%;
         width: 100%;
@@ -42,7 +42,7 @@
         padding-left: 980px;
         color: beige;
       
-    }
+    }*/
     .navmenu ul li{  
         padding-right: 50px;
         list-style: none;
@@ -128,10 +128,57 @@
     }
     
     /*CONFIGURACION DE ICONO DEL DIV ICON*/
-    .editicon{
+    .editicon22{
         height: 80px;
         width: auto;
-        padding-top: 12px;
-        padding-left: 15px;
+        margin-top: 10px;
+        margin-left: 10px;
+       /* padding-top: 12px;
+        padding-left: 15px;*/
+        border-radius: 50%;
       
     }
+    .evalu{
+        color:whitesmoke;
+        width: 500px;
+        font-size: 25px;
+        font-weight: 500;
+        font-family: Fluro,sans-serif;
+      
+    }
+    .namewith{
+        display:inline;
+        width: auto;
+        height:40px;
+        background-color: transparent;
+        padding-left:140px;
+        margin-top: 30px;
+    }
+    .all22{
+        height: 100px;
+        width: 100vw;
+       /* margin: 0 auto;*/
+        display:flex;
+        flex-direction: column;
+        background-color: aqua;
+        }
+        .nav22{
+            background-color: rgb(89, 0, 255);
+            height: 100%;
+            /*CONFIGURACION PARA DIVS ICON Y NAVMENU CON FLEX*/
+            display: flex;
+            flex-direction: row;   
+            justify-content: space-between;  
+        }
+
+      
+      .ulspace{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            /*justify-content:auto;  */
+            padding-top: 30px;
+            padding-left: 250px;
+            color: beige;
+          
+        }

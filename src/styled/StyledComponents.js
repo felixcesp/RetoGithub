@@ -862,6 +862,8 @@ margin-top:80px;
 margin-bottom:30px;
 
 `
+
+
 //home
 export const Seconddiv33= styled.div`
 height:50%;
@@ -873,20 +875,50 @@ background-repeat:no-repeat;
 background-size:cover;
 background-color: yellowgreen;
 border-radius:1.875rem;
+border: inset 2px #B4789D;
+  border-radius: 30px;
+  box-shadow: 0px 5px 28px -4px #000000;
+:hover{
+    -webkit-transform:scale(1.06);
+  transform:scale(1.06); 
+  transition: 0.3s linear;
+}
 //position:absolute;
 //top:200px;
 `
 export const Firstdiv44= styled.div`
-height:655px;
-width:1280px;
+height:560px;
+width:100vw;
 box-sizing: border-box;
-background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661709975/Retogithub/fondo22_zheuk7.jpg");
-background-size:cover;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793377/Retogithub/fondo30_wreuzb.jpg");
+background-size:contain;
 display:flex;
-align-items: flex-end;
-padding-bottom:50px;
+//padding-top:200px;
+align-items: center;
+//padding-bottom:50px;
 justify-content:center;
 flex-direction:row;
-column-gap:40px
+column-gap:40px;
+
 //position: relative;
+`
+export const IconGit52=styled.img`
+position:absolute;
+width:6.25rem;
+height:6.25rem;
+left:5rem;
+top:60px;
+border-radius:50%;
+`
+export const Frase22=styled.h2`
+position:absolute;
+width:auto;
+height:20px;
+top:150px;
+left:450px;
+color:lightblue;
+font-weight:bold;
+font-size:25px;
+font-weight:1.8px;
+
 `
