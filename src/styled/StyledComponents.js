@@ -920,5 +920,22 @@ color:lightblue;
 font-weight:bold;
 font-size:25px;
 font-weight:1.8px;
+`
+export const EvalOptions=styled.img`
+width:70%;
+height:60%;
+margin-top:30px;
+margin-left:35px;
+border-radius:30px;
+`
+export const Frase10=styled.h2`
+width:auto;
+height:20px;
+color:lightblue;
+font-weight:bold;
+font-size:20px;
+font-weight:1.8px;
+margin-left:28px;
+margin-top:20px;
 
 `
