@@ -23,16 +23,15 @@ import {
   Seconddiv33,
   TitleMain2,
 } from "../styled/StyledComponents";
-import FooterAll from "./home/Pagefeet.JS";
+
 import NavbarHome from "./home/NavbarHome";
-import Pagefeet from "./home/Pagefeet.JS";
+
 
 export default function Home() { 
     
   return (
     <>
-    <NavbarHome/>
-    
+    <NavbarHome/> 
       <Frase22>
         evaluator these are your options
       </Frase22>
