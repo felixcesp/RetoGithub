@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 //import { useSelector } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Landing from '../components/Landing'
+import LandingPage from '../components/LandingPage'
 import Login from '../components/Login'
 import PhoneRegister from '../components/PhoneRegister'
 import ShortRegister from '../components/ShortRegister'
@@ -68,6 +69,7 @@ const AppRoute = () => {
         <BrowserRouter>
           <Routes>
           <Route path="/" element={<PublicRoutes isAuth={isLoggedIn}><Landing/></PublicRoutes>} />
+          <Route path="/landhome" element={<PublicRoutes isAuth={isLoggedIn}><LandingPage/></PublicRoutes>} />
           <Route path="/land" element={<PublicRoutes isAuth={isLoggedIn}><Landing/></PublicRoutes>} />
           <Route path="/phone" element={<PublicRoutes isAuth={isLoggedIn}><PhoneRegister/></PublicRoutes>} />
           <Route path="/pag1" element={<PublicRoutes isAuth={isLoggedIn}><Login/></PublicRoutes>} />

@@ -939,3 +939,45 @@ margin-left:28px;
 margin-top:20px;
 
 `
+//carousel
+export const Carrusel10=styled.div`
+width:80%;
+height:50%;
+margin:auto;
+padding:auto;
+`
+//div completo del carrosuel
+export const CarruselIn=styled.div`
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793377/Retogithub/fondo30_wreuzb.jpg");
+background-repeat:no-repeat;
+background-size:cover;
+background-color: yellowgreen;
+`
+/*export const Textoanimdo=styled.p`
+  color:whitesmoke;
+  font-size:20px;
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 100%
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+`*/
+export const DivTexto=styled.div`
+overflow:hidden;
+width:50%;
+height:60px;
+margin:0px auto 30px auto;
+padding-top:30px;
+background-color:transparent;
+`

@@ -1,31 +1,64 @@
-
-.all2{
+.editicon22{
+    height: 80px;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+   /* padding-top: 12px;
+    padding-left: 15px;*/
+    border-radius: 50%;
+  
+}
+.evalu{
+    color:whitesmoke;
+    width: 500px;
+    font-size: 25px;
+    font-weight: 500;
+    font-family: Fluro,sans-serif;
+  
+}
+.namewith{
+    display:inline;
+    width: auto;
+    height:40px;
+    background-color: transparent;
+    padding-left:140px;
+    margin-top: 30px;
+}
+.all22{
     height: 100px;
-    width: 100%;
-    margin: 0 auto;
-    background-color: red; 
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: 100px;
-        grid-template-areas: "nav"
-                          ;
+    width: 100vw;
+   /* margin: 0 auto;*/
+    display:flex;
+    flex-direction: column;
+    background-color: aqua;
     }
-    /*ASINACION AREA Y CONFIGUARCION INDIVIDUAL DIV GENERALES*/
-    nav{
+    .nav22{
         background-color: rgb(89, 0, 255);
-        grid-area: nav;
+        height: 100%;
         /*CONFIGURACION PARA DIVS ICON Y NAVMENU CON FLEX*/
         display: flex;
-        flex-direction: row;     
+        flex-direction: row;   
+        justify-content: space-between;  
     }
-    /*CONFIGURACION DIVS INTERNOS NAV*/
-    .icon{
+
+  
+  .ulspace{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        /*justify-content:auto;  */
+        padding-top: 30px;
+        padding-left: 250px;
+        color: beige;
+      
+    }
+    .icon22{
         background-color: transparent;
         flex-grow: 0.01;
     
     
-    }/* configuracion del navmenu completo*/
-    .navmenu{
+    }
+    .navmenu22{
         display: flex;
         background-color: transparent;
         flex-grow: 0.99;
@@ -33,24 +66,14 @@
        
         /*overflow: hidden;*/
     }
-    .navmenu ul{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content:auto;  
-        padding-top: 30px;
-        padding-left: 980px;
-        color: beige;
-      
-    }
-    .navmenu ul li{  
+    .navmenu22 ul li{  
         padding-right: 50px;
         list-style: none;
         position: relative; /*para que la linea se posicione en el elmento li que se le hace hover*/ 
         
     }
     
-    .navmenu ul li a{
+    .navmenu22 ul li a{
         font-family: Fluro,sans-serif;
         font-size: 17px;
         line-height: 1.875rem;
@@ -59,7 +82,7 @@
        
     }
     /*LINEA Y ANIMACION DEL MENU NAVBAR*/
-    .navmenu ul li::before{
+    .navmenu22 ul li::before{
         content: "";
         height: 4px; /*esta es la altura de la linea o del content*/
         width: 0%;/*para que la linea se muestre sin ancho, es decir que no se vea hasta el hover*/
@@ -69,13 +92,13 @@
         bottom: 43px; /* se posiciona la linea debajo*/
         transition: 0.3s ease-out;/* el tiempo en que se posicona la linea*/
     }
-    .navmenu ul li:hover::before{
+    .navmenu22 ul li:hover::before{
         width: 60%;/* para que la linea se muestre al ancho deseado*/
     }
     
     /*CONFIGURACION SUBMENUS*/
  
-    .navmenu .submenu2 ul {
+    .navmenu22 .submenu2 ul {
         background-color: transparent;
         display: flex;
         flex-direction: column;
@@ -100,25 +123,25 @@
     }
     /*tamaño de las letras del submenu*/
  
-    .navmenu .submenu2 ul li{
+    .navmenu22 .submenu2 ul li{
         height: 30px;  
         padding-left: 7px;
     }
     /*quitar las lineas del submenu*/
   
-    .navmenu .submenu2 ul li:hover::before{
+    .navmenu22 .submenu2 ul li:hover::before{
         width: 4px;/* para que la linea se muestre al ancho deseado*/
         height: 20px;
         background-color: yellowgreen;
         bottom: 10px;
     }
     /*para aprecer los submenus*/
-    .navmenu li:hover > ul{
+    .navmenu22 li:hover > ul{
     opacity: 1;
     }
     /*efectos del submenu*/
    
-    .navmenu .submenu2 ul li:hover{
+    .navmenu22 .submenu2 ul li:hover{
         background-color: rgba(121, 121, 150, 0.7);
         transform: scale(1.03);
         width: 100%;
@@ -126,15 +149,6 @@
         cursor: pointer;
         transition: 0.5s ease-out;
     }
-    .editicon{
-        height: 80px;
-        width: auto;
-        margin-top: 10px;
-        margin-left: 10px;
-       /* padding-top: 12px;
-        padding-left: 15px;*/
-        border-radius: 50%;
-      
-    }
+    
     /*CONFIGURACION DE ICONO DEL DIV ICON*/
     
