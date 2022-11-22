@@ -45,9 +45,136 @@ body{
     margin-bottom: 5px;
   }
 
-
+/*boostrap corrousel*/
   .textomove{
-    color:whitesmoke;
-    background-color: black;
+    color:white;
+    background-color: transparent;
     font-size: 20px;
   }
+  .textoslide{
+    color: white;
+    font-size: 20px;
+  }
+
+  .changecolor{
+    background-color: #1f104f;
+    border-radius: 30px;
+    width: 350px;
+    margin: auto;
+  }
+  .changecolor2{
+   /* background-color: #1f104f;*/
+   background-color: black;
+    border-radius: 30px;
+    border: 0.001px solid white;
+    width: 350px;
+    margin: auto;
+   
+  }
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon { 
+   /* background-image: none;  */
+    background-color: black;
+    border-radius: 50%;
+   
+  }
+
+
+
+
+  /*book*/
+  
+  .book {
+    display: flex;
+  }
+  #cover {
+    width: 250px;
+    height: 400px;
+    margin-left: 350px;
+    background-color:#302858;
+
+  }
+  .imgbook{
+    margin-left: 25px;
+    margin-top: 50px;
+  }
+  .noseen{
+    opacity:0
+  }
+  
+  .flip-book {
+    width: 250px;
+    height: 400px;
+    position: relative;
+    perspective: 1500px;
+  }
+  .flip {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: .5s;
+    color: #000;
+  }
+  .front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 13px;
+  }
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    background-color: #000;
+  }
+  .next-btn {
+    position: absolute;
+    bottom: 13px;
+    right: 13px;
+    cursor: pointer;
+    color: #000;
+  }
+  .back-btn {
+    position: absolute;
+    bottom: 13px;
+    right: 13px;
+    cursor: pointer;
+    color: #fff;
+  }
+  #p1 {
+    z-index: 3;
+  }
+  #p2 {
+    z-index: 2;
+  }
+  #p3 {
+    z-index: 1;
+  }
+  #c1:checked ~ .flip-book #p1 {
+    transform: rotateY(-180deg);
+    z-index: 1;
+ 
+  }
+  #c2:checked ~ .flip-book #p2 {
+    transform: rotateY(-180deg);
+    z-index: 2;
+  }
+  #c3:checked ~ .flip-book #p3 {
+    transform: rotateY(-180deg);
+    z-index: 3;
+  }
+  

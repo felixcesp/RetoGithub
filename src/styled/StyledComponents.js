@@ -953,6 +953,8 @@ background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793
 background-repeat:no-repeat;
 background-size:cover;
 background-color: yellowgreen;
+//border-bottom:5px solid #1f104f;;
+padding-bottom:40px;
 `
 /*export const Textoanimdo=styled.p`
   color:whitesmoke;
@@ -980,4 +982,55 @@ height:60px;
 margin:0px auto 30px auto;
 padding-top:30px;
 background-color:transparent;
+`
+
+
+
+//div videos
+export const CineHomeIn=styled.div`
+padding:20px auto;
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793377/Retogithub/fondo30_wreuzb.jpg");
+background-repeat:no-repeat;
+background-size:100% 100%;
+
+`
+
+
+
+export const CineHome=styled.div`
+height:500px;
+width:80.3%;
+margin:auto;
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1669063303/Retogithub/cine2_zr1gb4.jpg");
+background-repeat:no-repeat;
+background-size: 100% 500px;
+display:flex;
+flex-direction:row;
+`
+//contenedores videos
+export const VideoHome=styled.div`
+//background-color:white;
+height:200px;
+width:auto;
+//flex-direction:column;
+padding-top:20px;
+background-color:red;
+ margin-top:15px;
+ margin-left:50px;
+ border-radius:10px;
+
+`
+export const VideoHome2=styled.div`
+display:flex;
+margin-top:60px;
+margin-left:130px;
+height:230px;
+background-color:black;
+width:75%;
+border: 1px solid darkblue;
+`
+export const VideoHome3=styled.div`
+background-color:blue;
 `

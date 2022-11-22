@@ -19,7 +19,7 @@ function NavLand() {
 
  </div>
  <div className='namewith'>
- <h1 className='evalu'>Welcome {}</h1>
+ <h1 className='evalu'>Welcome people</h1>
  </div>
  <div className='navmenu22'>
 
