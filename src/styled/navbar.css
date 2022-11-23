@@ -70,7 +70,7 @@
         transition: 0.3s ease-out;/* el tiempo en que se posicona la linea*/
     }
     .navmenu ul li:hover::before{
-        width: 60%;/* para que la linea se muestre al ancho deseado*/
+        width: 70%;/* para que la linea se muestre al ancho deseado*/
     }
     
     /*CONFIGURACION SUBMENUS*/
@@ -81,7 +81,7 @@
         flex-direction: column;
         justify-content: center;
         padding-left: 0px;
-        height: 150px;
+        height: 140px;
         width: 160px;
         padding-top: 0%;
         row-gap: 30px;

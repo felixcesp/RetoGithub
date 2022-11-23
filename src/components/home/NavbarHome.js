@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { actionLogoutAsyn } from '../../redux/actions/actionLogin';
 import { keepNameAsyncEval } from '../../redux/actions/actionLogPhone';
-import { actionAsyncStadistic } from '../../redux/actions/actionStadistic';
 import '../../styled/navbarhome.css'
 
 
 function NavbarHome() {
   const dispatch = useDispatch()
-  const navigation =useNavigate();
+ 
   const nombreHome= useSelector(state => state.keepName);
   console.log(nombreHome)
   useEffect(() => {
@@ -17,28 +16,24 @@ function NavbarHome() {
 }, [dispatch])
 
 
-  const back=()=>{
-    navigation('/login')
-    dispatch(actionAsyncStadistic())
-  }
+ 
   return (
-    <div className='all22'>
-    <nav className='nav22'> 
+    <div className='all18'>
+    <nav className='nav18'> 
      
-  <div className='icon22'>
-<img className='editicon22' src="https://res.cloudinary.com/felixces/image/upload/v1668817046/Retogithub/iconoblue_ls9toh.png" alt=""/>
+  <div className='icon18'>
+<img className='editicon18' src="https://res.cloudinary.com/felixces/image/upload/v1668817046/Retogithub/iconoblue_ls9toh.png" alt=""/>
 
  </div>
- <div className='namewith'>
- <h1 className='evalu'>Welcome {nombreHome.keepName}</h1>
+ <div className='namewith18'>
+ <h1 className='evalu18'>Welcome {nombreHome.keepName}</h1>
  </div>
- <div className='navmenu22'>
+ <div className='navmenu18'>
 
-      <ul className='ulspace'>
-          <li className='submenu2'><a href="##">Evaluador sesion</a>
+      <ul className='ulspace18'>
+          <li className='submenu18'><a href="##">Evaluador sesion</a>
               <ul>
-              <li onClick={() => dispatch(actionLogoutAsyn())}><Link to='/login'>Cerra sesion</Link></li>
-                  <li onClick={()=>{back()}}>Volver</li>
+              <li onClick={() => dispatch(actionLogoutAsyn())}><Link to='/login'>Cerra sesion</Link></li>          
               </ul>
           </li>
         </ul>              

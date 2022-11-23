@@ -2,7 +2,7 @@ import React from 'react'
 import NavLand from './home/NavLand'
 import PiePage from './home/PiePage'
 import Carousel from 'react-bootstrap/Carousel';
-import {Carrusel10, CarruselIn, CineHome, CineHomeIn, DivTexto, VideoHome, VideoHome2, VideoHome3} from '../styled/StyledComponents'
+import {Carrusel10, CarruselIn, CineHome, CineHomeIn, DivTexto, TituloVideo, TituloVideo2, VideoHome, VideoHome2, VideoHome3} from '../styled/StyledComponents'
 import Marquee from "react-fast-marquee";
 
 
@@ -77,12 +77,12 @@ function LandingPage() {
       <VideoHome2>
       <VideoHome>
       <iframe className='embed-responsive-item' src='https://www.youtube.com/embed/tgbNymZ7vqY' title='hola' width='auto' height={'auto'}></iframe> 
-      <h1>APP SAILING</h1>
+      <TituloVideo2>APP SAILING DEMOSTRATION</TituloVideo2>
       </VideoHome>
       
       <VideoHome>
       <iframe className='embed-responsive-item' src='https://www.youtube.com/embed/tgbNymZ7vqY' title='hola'  width='auto' height={'auto'} ></iframe>
-      <h1>MY PITCH</h1>
+      <TituloVideo>APP DEVELOPER PITCH</TituloVideo>
       </VideoHome>
       </VideoHome2>
     </CineHome>
@@ -97,7 +97,7 @@ function LandingPage() {
   <input class='noseen' type="checkbox" id="c3"/>
   
   <div id="cover">
-    <img class='imgbook' src="https://res.cloudinary.com/felixces/image/upload/v1669078481/Retogithub/portada_byjibf.jpg" alt="Cover"/>
+    {/*<img class='imgbook' src="" alt="Cover"/>*/}
   </div>
 
 <div class="flip-book">

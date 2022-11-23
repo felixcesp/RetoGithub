@@ -424,7 +424,7 @@ text-align:center;
 height:40px;
 `
 export const TableT25=styled.td`
-border: solid 1px black;
+border: solid 1px white;
 text-align:center;
 height:40px;
 cursor: pointer;
@@ -511,7 +511,7 @@ margin-top:5px;
 //formulario para llenar datos de la tabla
 export const Firstdiv5= styled.div`
 height:655px;
-width:1250px;
+width:100vw;
 box-sizing: border-box;
 background-image: url("https://res.cloudinary.com/felixces/image/upload/v1661610913/Retogithub/fondo8_j9xsia.jpg");
 background-repeat:no-repeat;
@@ -551,7 +551,7 @@ position:absolute;
 width:auto;
 height:1.25rem;
 top:20px;
-left:330px;
+left:220px;
 color:white;
 font-size:35px;
 font-weight:1.8px;
@@ -774,15 +774,15 @@ padding-bottom:5px;
 
 //listar table 2
 export const Table22=styled.table`
-color:black;
+color: black;
 margin:auto;
 width:90%;
 height:auto;
 font-size:18px;
-border: solid 1px black;
+border: 1.2px solid white;
 border-collapse: collapse;
-background-color:#9f90ea;
-margin-bottom:50px;
+background-color:#5D6D7E;
+margin-bottom:0px;
 `
 export const TableInfo22=styled.div`
 height:auto;
@@ -800,7 +800,7 @@ border-radius:50%;
 
 `
 export const TableTd223=styled.td`
-border: solid 1px black;
+border: solid 1px white;
 text-align:center;
 position:relative;
 width:auto;
@@ -808,8 +808,7 @@ height:50px;
 
 `
 export const TableTd22=styled.td`
-border: solid 1px black;
-
+border: solid 1px white;
 position:relative;
 width:auto;
 height:20px;
@@ -852,9 +851,12 @@ border:none;
 
 `
 export const TableThn=styled.td`
-border: solid 1px black;
+border: solid 1px white;
 height:auto;
+background-color:black;
 `
+
+
 
 //repos title
 export const ReposTitleMain= styled.h1`
@@ -862,6 +864,9 @@ margin-top:80px;
 margin-bottom:30px;
 
 `
+
+
+
 
 
 //home
@@ -882,6 +887,7 @@ border: inset 2px #B4789D;
     -webkit-transform:scale(1.06);
   transform:scale(1.06); 
   transition: 0.3s linear;
+  cursor: pointer;
 }
 //position:absolute;
 //top:200px;
@@ -994,6 +1000,7 @@ background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793
 background-repeat:no-repeat;
 background-size:100% 100%;
 
+
 `
 
 
@@ -1008,6 +1015,7 @@ background-repeat:no-repeat;
 background-size: 100% 500px;
 display:flex;
 flex-direction:row;
+margin-bottom:30px;
 `
 //contenedores videos
 export const VideoHome=styled.div`
@@ -1032,5 +1040,54 @@ width:75%;
 border: 1px solid darkblue;
 `
 export const VideoHome3=styled.div`
-background-color:blue;
+margin:auto;
+height:530px;
+width:93%;
+padding-bottom:300px;
+padding-top:30px;
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1669117238/Retogithub/book_mf6bie.jpg");
+background-repeat:no-repeat;
+background-size: 100% 500px;
+`
+//titulos videos
+export const TituloVideo=styled.h1`
+color:white;
+font-size:20px;
+margin-left:47px;
+`
+export const TituloVideo2=styled.h1`
+color:white;
+font-size:20px;
+margin-left:10px;
+`
+
+
+//para las tablas estilos
+export const TableInfo52=styled.div`
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793377/Retogithub/fondo30_wreuzb.jpg");
+background-repeat:no-repeat;
+height:auto;
+background-size:auto 100%;
+width:1263px;
+box-sizing: border-box;
+text-align:center;
+padding-bottom:60px;
+
+`
+export const TitleTable57= styled.h1`
+margin-top:80px;
+margin-bottom:30px;
+color:white;
+`
+export const TitleMainTr=styled.tr`
+background-color:black;
+color:whitesmoke;
+border: 1px solid white;
+`
+export const TitleMainTh=styled.th`
+background-color:black;
+color:whitesmoke;
+border: 1px solid white;
 `

@@ -1,6 +1,6 @@
 
 import { useDispatch} from "react-redux";
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import useForm from "../hooks/useForm";
 import { actionStatePhoneAsync } from "../redux/actions/actionStatePhone";
 import {
@@ -16,6 +16,20 @@ import PiePage from "./home/PiePage";
 
 
 export default function Home() { 
+  const navigation =useNavigate();
+  const create=()=>{
+    navigation('/editar3')
+   /* dispatch(actionAsyncStadistic())*/
+  }
+  const tusUsers=()=>{
+    navigation('/tus')
+   /* dispatch(actionAsyncStadistic())*/
+  }
+  const tusEvals=()=>{
+    navigation('/tus')
+   /* dispatch(actionAsyncStadistic())*/
+  }
+
     
   return (
     <>
@@ -25,22 +39,23 @@ export default function Home() {
       </Frase22>
 
     <Firstdiv44>  
-      <Seconddiv33> 
+      <Seconddiv33 onClick={()=>{create()}}> 
     
-        <EvalOptions src="https://res.cloudinary.com/felixces/image/upload/v1668864882/Retogithub/registrar_tgboot.jpg" alt="" />
+        <EvalOptions src="https://res.cloudinary.com/felixces/image/upload/v1668864882/Retogithub/registrar_tgboot.jpg" alt=""
+                           />
         <Frase10>
         Create Gituser
       </Frase10>
       </Seconddiv33>
 
-      <Seconddiv33>      
+      <Seconddiv33 onClick={()=>{tusUsers()}}>      
        <EvalOptions src="https://res.cloudinary.com/felixces/image/upload/v1668864896/Retogithub/tususers_jt4teq.jpg" alt="" />
        <Frase10>
         These are your users
       </Frase10>
       </Seconddiv33>
 
-      <Seconddiv33> 
+      <Seconddiv33 onClick={()=>{tusEvals()}}> 
       <EvalOptions src="https://res.cloudinary.com/felixces/image/upload/v1668864890/Retogithub/todosusers_tiqd71.jpg" alt="" />
       <Frase10>
         these are all app evaluators

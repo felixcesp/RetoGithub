@@ -1,4 +1,4 @@
-.editicon22{
+.editicon18{
     height: 80px;
     width: auto;
     margin-top: 10px;
@@ -8,7 +8,7 @@
     border-radius: 50%;
   
 }
-.evalu{
+.evalu18{
     color:whitesmoke;
     width: 500px;
     font-size: 25px;
@@ -16,7 +16,7 @@
     font-family: Fluro,sans-serif;
   
 }
-.namewith{
+.namewith18{
     display:inline;
     width: auto;
     height:40px;
@@ -24,7 +24,7 @@
     padding-left:140px;
     margin-top: 30px;
 }
-.all22{
+.all18{
     height: 100px;
     width: 100vw;
    /* margin: 0 auto;*/
@@ -32,7 +32,7 @@
     flex-direction: column;
     background-color: aqua;
     }
-    .nav22{
+    .nav18{
         background-color: rgb(89, 0, 255);
         height: 100%;
         /*CONFIGURACION PARA DIVS ICON Y NAVMENU CON FLEX*/
@@ -42,7 +42,7 @@
     }
 
   
-  .ulspace{
+  .ulspace18{
         height: 100%;
         width: 100%;
         display: flex;
@@ -52,13 +52,13 @@
         color: beige;
       
     }
-    .icon22{
+    .icon18{
         background-color: transparent;
         flex-grow: 0.01;
     
     
     }
-    .navmenu22{
+    .navmenu18{
         display: flex;
         background-color: transparent;
         flex-grow: 0.99;
@@ -66,14 +66,14 @@
        
         /*overflow: hidden;*/
     }
-    .navmenu22 ul li{  
+    .navmenu18 ul li{  
         padding-right: 50px;
         list-style: none;
         position: relative; /*para que la linea se posicione en el elmento li que se le hace hover*/ 
         
     }
     
-    .navmenu22 ul li a{
+    .navmenu18 ul li a{
         font-family: Fluro,sans-serif;
         font-size: 17px;
         line-height: 1.875rem;
@@ -82,7 +82,7 @@
        
     }
     /*LINEA Y ANIMACION DEL MENU NAVBAR*/
-    .navmenu22 ul li::before{
+    .navmenu18 ul li::before{
         content: "";
         height: 4px; /*esta es la altura de la linea o del content*/
         width: 0%;/*para que la linea se muestre sin ancho, es decir que no se vea hasta el hover*/
@@ -92,19 +92,19 @@
         bottom: 43px; /* se posiciona la linea debajo*/
         transition: 0.3s ease-out;/* el tiempo en que se posicona la linea*/
     }
-    .navmenu22 ul li:hover::before{
-        width: 60%;/* para que la linea se muestre al ancho deseado*/
+    .navmenu18 ul li:hover::before{
+        width: 69%;/* para que la linea se muestre al ancho deseado*/
     }
     
     /*CONFIGURACION SUBMENUS*/
  
-    .navmenu22 .submenu2 ul {
+    .navmenu18 .submenu18 ul {
         background-color: transparent;
         display: flex;
         flex-direction: column;
         justify-content: center;
         padding-left: 0px;
-        height: 150px;
+        height: 100px;
         width: 160px;
         padding-top: 0%;
         row-gap: 30px;
@@ -123,25 +123,25 @@
     }
     /*tamaño de las letras del submenu*/
  
-    .navmenu22 .submenu2 ul li{
+    .navmenu18 .submenu18 ul li{
         height: 30px;  
         padding-left: 7px;
     }
     /*quitar las lineas del submenu*/
   
-    .navmenu22 .submenu2 ul li:hover::before{
+    .navmenu18 .submenu18 ul li:hover::before{
         width: 4px;/* para que la linea se muestre al ancho deseado*/
         height: 20px;
         background-color: yellowgreen;
         bottom: 10px;
     }
     /*para aprecer los submenus*/
-    .navmenu22 li:hover > ul{
+    .navmenu18 li:hover > ul{
     opacity: 1;
     }
     /*efectos del submenu*/
    
-    .navmenu22 .submenu2 ul li:hover{
+    .navmenu18 .submenu18 ul li:hover{
         background-color: rgba(121, 121, 150, 0.7);
         transform: scale(1.03);
         width: 100%;

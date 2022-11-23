@@ -4,7 +4,7 @@ import { Firstdiv3, ImgLand, Mediumdiv, TitleLand } from "../styled/StyledCompon
 const Landing=()=>{
 const navigation = useNavigate()
 
-  setTimeout(() => navigation('/phone'), 6000)
+  setTimeout(() => navigation('/landhome'), 6000)
 
   return (
     < Firstdiv3>

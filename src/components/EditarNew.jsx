@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, Form, Modal } from 'react-bootstrap';
 
 import { useDispatch } from 'react-redux';
@@ -8,15 +8,16 @@ import useForm from '../hooks/useForm';
 import { editGituserAsync} from '../redux/actions/actionEdit';
 
 const EditNew = ({datos, setModal}) => {
-   
-
+  
     const dispatch = useDispatch()
+
 //--------------Manejo del Modal--------------------//
 //para el activar el modal
     const [show, setShow] = useState(true);
 
     //viene de react-boostrap y es para cerrar
     const handleClose = () => setShow(false);
+
    
 
 //-------------------Manejo del formulario para editar---------------------------//
@@ -40,8 +41,7 @@ const handleSubmit =(e)=>{
     e.preventDefault();
     console.log(formValue)
     dispatch(editGituserAsync(idcard, formValue))
-    handleClose()
-   
+    handleClose()  
 }
 
     return (
@@ -49,7 +49,7 @@ const handleSubmit =(e)=>{
             <>
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Editar Planta</Modal.Title>
+                        <Modal.Title>User Edit</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                     <Form onSubmit={handleSubmit} margin={50}>

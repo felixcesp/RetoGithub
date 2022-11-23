@@ -1,37 +1,39 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,} from 'react-router-dom';
+import '../../styled/navland.css'
+
 
 function NavLand() {
 
-    const dispatch = useDispatch()
-    const navigation =useNavigate();
-    const back=()=>{
-        navigation('/login')
-        dispatch()
-      }
+
+ 
   return (
-    <div className='all22'>
-    <nav className='nav22'> 
+    <div className='all88'>
+    <nav className='nav88'> 
      
-  <div className='icon22'>
-<img className='editicon22' src="https://res.cloudinary.com/felixces/image/upload/v1668817046/Retogithub/iconoblue_ls9toh.png" alt=""/>
+  <div className='icon88'>
+<img className='editicon88' src="https://res.cloudinary.com/felixces/image/upload/v1668817046/Retogithub/iconoblue_ls9toh.png" alt=""/>
 
  </div>
- <div className='namewith'>
- <h1 className='evalu'>Welcome people</h1>
+ <div className='namewith88'>
+ <h1 className='evalu88'>Welcome people</h1>
  </div>
- <div className='navmenu22'>
+ <div className='navmenu88'>
 
-      <ul className='ulspace'>
-          <li className='submenu2'><a href="##">Evaluador sesion</a>
+      <ul className='ulspace88'>
+          <li className='submenu88'><Link to='/register'>Create account</Link>
+          </li>
+        </ul>  
+
+
+      <ul className='ulspace87'>
+          <li className='submenu87'><a href="##">Logged actions</a>
               <ul>
-              <li onClick={() => dispatch()}><Link to='/login'>Cerra sesion</Link></li>
-                  <li onClick={()=>{back()}}>Volver</li>
+              <li><Link to='/pag1'>&nbsp;Login</Link></li>
+              <li ><Link to='/phone'>Phone login</Link></li>   
               </ul>
           </li>
-        </ul>              
-
+        </ul>    
   </div>
 </nav>
 </div>

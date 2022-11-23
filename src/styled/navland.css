@@ -1,4 +1,4 @@
-.editicon22{
+.editicon88{
     height: 80px;
     width: auto;
     margin-top: 10px;
@@ -8,7 +8,7 @@
     border-radius: 50%;
   
 }
-.evalu{
+.evalu88{
     color:whitesmoke;
     width: 500px;
     font-size: 25px;
@@ -16,64 +16,88 @@
     font-family: Fluro,sans-serif;
   
 }
-.namewith{
+.namewith88{
     display:inline;
-    width: auto;
+    width: 450px;
     height:40px;
     background-color: transparent;
     padding-left:140px;
     margin-top: 30px;
 }
-.all22{
+.all88{
     height: 100px;
-    width: 100vw;
+    width: 98.7vw;
    /* margin: 0 auto;*/
     display:flex;
     flex-direction: column;
     background-color: aqua;
+ 
     }
-    .nav22{
+    .nav88{
         background-color: rgb(89, 0, 255);
         height: 100%;
         /*CONFIGURACION PARA DIVS ICON Y NAVMENU CON FLEX*/
         display: flex;
         flex-direction: row;   
-        justify-content: space-between;  
+        justify-content: space-between; 
+        width: 98.7vw; 
+        z-index: 5;
+      
+       /* overflow: hidden;*/
     }
 
   
-  .ulspace{
+  .ulspace88{
         height: 100%;
-        width: 100%;
+        width: 200px;
+        display: flex;
+        padding-top: 30px;
+        margin-left: 330px;
+        color: beige;
+        background-color: transparent;
+      
+    }
+
+    .ulspace87{
+        height: 100%;
+        width: 170px;
         display: flex;
         /*justify-content:auto;  */
         padding-top: 30px;
-        padding-left: 250px;
+        padding-left: 0px;
         color: beige;
+        background-color: transparent;
+        margin-left: 0px;
+       
       
     }
-    .icon22{
+
+
+
+
+
+
+    .icon88{
         background-color: transparent;
         flex-grow: 0.01;
     
     
     }
-    .navmenu22{
+    .navmenu88{
         display: flex;
         background-color: transparent;
         flex-grow: 0.99;
         z-index: 1;
-       
-        /*overflow: hidden;*/
     }
-    .navmenu22 ul li{  
+ 
+    .navmenu88 ul li{  
         padding-right: 50px;
         list-style: none;
         position: relative; /*para que la linea se posicione en el elmento li que se le hace hover*/ 
         
     }
     
-    .navmenu22 ul li a{
+    .navmenu88 ul li a{
         font-family: Fluro,sans-serif;
         font-size: 17px;
         line-height: 1.875rem;
@@ -81,8 +105,11 @@
         color: antiquewhite;
        
     }
+
+
+
     /*LINEA Y ANIMACION DEL MENU NAVBAR*/
-    .navmenu22 ul li::before{
+    .navmenu88 ul li::before{
         content: "";
         height: 4px; /*esta es la altura de la linea o del content*/
         width: 0%;/*para que la linea se muestre sin ancho, es decir que no se vea hasta el hover*/
@@ -92,13 +119,17 @@
         bottom: 43px; /* se posiciona la linea debajo*/
         transition: 0.3s ease-out;/* el tiempo en que se posicona la linea*/
     }
-    .navmenu22 ul li:hover::before{
-        width: 60%;/* para que la linea se muestre al ancho deseado*/
+    .navmenu88 ul li:hover::before{
+        width: 67%;/* para que la linea se muestre al ancho deseado*/
     }
     
     /*CONFIGURACION SUBMENUS*/
  
-    .navmenu22 .submenu2 ul {
+
+
+
+
+    .navmenu88 .submenu88 ul {
         background-color: transparent;
         display: flex;
         flex-direction: column;
@@ -121,27 +152,84 @@
         background-color:rgba(89, 0, 255, 1);
           border-radius: 5px; 
     }
+    .navmenu88 .submenu87 ul {
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 0px;
+        height: 150px;
+        width: 160px;
+        padding-top: 0%;
+        row-gap: 30px;
+        margin-top: 20px;
+        list-style: none;
+        text-decoration: none; 
+        position: absolute;
+        /*display: none;*/
+        opacity: 0;
+        transition: 2s ease-out;
+        font-size: 16px;
+        font-family: Fluro,sans-serif;
+        transition: 1.5s ease-out;
+        background-color:rgba(89, 0, 255, 1);
+          border-radius: 5px; 
+          z-index: 500;
+    }
     /*tamaño de las letras del submenu*/
  
-    .navmenu22 .submenu2 ul li{
+    .navmenu88 .submenu88 ul li{
         height: 30px;  
         padding-left: 7px;
     }
+
+    /*otra*/
+    .navmenu88 .submenu87 ul li{
+        height: 30px;  
+        padding-left: 7px;
+    }
+
+
+
+
     /*quitar las lineas del submenu*/
   
-    .navmenu22 .submenu2 ul li:hover::before{
+    .navmenu88 .submenu88 ul li:hover::before{
         width: 4px;/* para que la linea se muestre al ancho deseado*/
         height: 20px;
         background-color: yellowgreen;
         bottom: 10px;
     }
-    /*para aprecer los submenus*/
-    .navmenu22 li:hover > ul{
-    opacity: 1;
+    /*otra*/
+    .navmenu88 .submenu87 ul li:hover::before{
+        width: 4px;/* para que la linea se muestre al ancho deseado*/
+        height: 20px;
+        background-color: yellowgreen;
+        bottom: 10px;
+        
     }
+
+
+    /*para aprecer los submenus*/
+    .navmenu88 li:hover > ul{
+    opacity: 1;
+    z-index: 8;
+    }
+    .navmenu88 .submenu87 li:hover > ul{
+        opacity: 1;
+        z-index: 8;
+        }
+
+    .navmenu88 li:hover > ul{
+        opacity: 1;
+        z-index: 8;
+        }
+  
+
+
     /*efectos del submenu*/
    
-    .navmenu22 .submenu2 ul li:hover{
+    .navmenu88 .submenu88 ul li:hover{
         background-color: rgba(121, 121, 150, 0.7);
         transform: scale(1.03);
         width: 100%;
@@ -149,6 +237,17 @@
         cursor: pointer;
         transition: 0.5s ease-out;
     }
+    /*otra*/
+    .navmenu88 .submenu87 ul li:hover{
+        background-color: rgba(121, 121, 150, 0.7);
+        transform: scale(1.03);
+        width: 100%;
+        /*translate: 0 10;*/
+        cursor: pointer;
+        transition: 0.5s ease-out;
+        
+    }
+    
     
     /*CONFIGURACION DE ICONO DEL DIV ICON*/
     

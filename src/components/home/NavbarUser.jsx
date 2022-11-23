@@ -10,7 +10,7 @@ function NavbarUser() {
   const navigation =useNavigate();
   
   const back=()=>{
-    navigation('/login')
+    navigation('/home')
     dispatch(actionAsyncStadistic())
   }
   return (
@@ -21,10 +21,10 @@ function NavbarUser() {
  </div>
  <div className='navmenu'>
       <ul>
-          <li className='submenu2'><a href="##">Usuario</a>
+          <li className='submenu2'><a href="##">Evaluator session</a>
               <ul>
-              <li onClick={() => dispatch(actionLogoutAsyn())}><Link to='/login'>Cerra sesion</Link></li>
-                  <li onClick={()=>{back()}}>Volver</li>
+              <li onClick={() => dispatch(actionLogoutAsyn())}><Link to='/login'>Log out</Link></li>
+                  <li onClick={()=>{back()}}>Home</li>
               </ul>
           </li>
         </ul>              

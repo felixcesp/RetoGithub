@@ -4,13 +4,15 @@ import useForm from '../hooks/useForm';
 import { Firstdiv5, FormAllH, FormIn6,Frase6, IconGit5, LabeName6, RegisterButton60, Seconddiv6, TitleMain6 } from '../styled/StyledComponents';
 import '../styled/main.css'
 import { FormControl } from 'react-bootstrap';
-import { addGituserAsync, listGituserAsync } from '../redux/actions/actionEdit';
+import { addGituserAsync} from '../redux/actions/actionEdit';
 
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { keepNameAsyncEval } from '../redux/actions/actionLogPhone';
 import { actionAsyncStadistic } from '../redux/actions/actionStadistic';
 import moment from 'moment/moment';
+import PiePage from './home/PiePage';
+import NavbarUser from './home/NavbarUser';
 
 
 
@@ -88,8 +90,9 @@ const AddEdit = () => {
     return (
 
      <>
+     <NavbarUser/>
       <Firstdiv5>
-      <IconGit5 src="https://res.cloudinary.com/felixces/image/upload/v1661614263/Retogithub/icono2_ubwqaw.png" alt="" />
+      {/*<IconGit5 src="https://res.cloudinary.com/felixces/image/upload/v1661614263/Retogithub/icono2_ubwqaw.png" alt="" />*/}
         <Frase6>{usuarioName.keepName}&nbsp;&nbsp; fill the blanks with the git user info</Frase6>
         <Seconddiv6>
 
@@ -151,7 +154,7 @@ const AddEdit = () => {
             </Seconddiv6>
 
         </Firstdiv5>
-
+        <PiePage/>
         </>
     );
 };
