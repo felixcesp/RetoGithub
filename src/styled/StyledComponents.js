@@ -1091,3 +1091,57 @@ background-color:black;
 color:whitesmoke;
 border: 1px solid white;
 `
+//alevals
+export const TableInfo72=styled.div`
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793377/Retogithub/fondo30_wreuzb.jpg");
+background-repeat:no-repeat;
+height:auto;
+background-size:auto 100%;
+width:100vw;
+box-sizing: border-box;
+text-align:center;
+padding-bottom:60px;
+
+`
+export const TitleTable87= styled.h1`
+margin-top:110px;
+margin-bottom:40px;
+color:white;
+`
+//allusers
+export const EstadisBoton=styled.h1`
+font-size:18px;
+font-weight:bolder;
+-webkit-text-stroke: 1px red;
+color:white;
+position:absolute;
+left:570px;
+top:160px;
+padding:2px;
+border-radius:30px;
+cursor: pointer;
+
+
+`
+export const EstatisTics=styled.img`
+width:160px;
+height:60px;
+margin-top:40px;
+border-radius:40px;
+border:1px solid white;
+box-shadow: 0px 4px 10px -4px white;
+:hover{
+    -webkit-transform:scale(1.06);
+  transform:scale(1.06); 
+  transition: 0.3s linear;
+    cursor: pointer;
+
+}
+`
+export const TitleTable97= styled.h1`
+margin-top:20px;
+margin-bottom:40px;
+color:white;
+//text-shadow: 50px solid white;
+`

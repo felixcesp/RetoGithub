@@ -2,6 +2,7 @@
 import { useDispatch} from "react-redux";
 import { Link, useNavigate} from "react-router-dom";
 import useForm from "../hooks/useForm";
+import { evalGituserAsync } from "../redux/actions/actionEdit";
 import { actionStatePhoneAsync } from "../redux/actions/actionStatePhone";
 import {
   EvalOptions,
@@ -16,6 +17,10 @@ import PiePage from "./home/PiePage";
 
 
 export default function Home() { 
+const dispatch =useDispatch;
+
+
+
   const navigation =useNavigate();
   const create=()=>{
     navigation('/editar3')
@@ -26,11 +31,15 @@ export default function Home() {
    /* dispatch(actionAsyncStadistic())*/
   }
   const tusEvals=()=>{
-    navigation('/tus')
+    navigation('/evals')
+   /* dispatch(actionAsyncStadistic())*/
+  }
+  const allUsers=()=>{
+    navigation('/allusers')
+    dispatch(evalGituserAsync())
    /* dispatch(actionAsyncStadistic())*/
   }
 
-    
   return (
     <>
     <NavbarHome/> 
@@ -62,10 +71,10 @@ export default function Home() {
       </Frase10>
       </Seconddiv33>
 
-      <Seconddiv33> 
+      <Seconddiv33 onClick={()=>{allUsers()}}> 
       <EvalOptions src="https://res.cloudinary.com/felixces/image/upload/v1668864857/Retogithub/alluserestadis_rmaqlg.jpg" alt="" />
       <Frase10>
-      these are all gituser stadistics
+      these are all gituser statistics
       </Frase10>
       </Seconddiv33>
       

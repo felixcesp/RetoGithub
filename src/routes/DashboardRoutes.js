@@ -1,6 +1,8 @@
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import AddEdit from '../components/AddEdit'
+import AllEval from '../components/AllEval'
+import AlluserAll from '../components/AlluserAll'
 import Home from '../components/Home'
 
 
@@ -21,9 +23,11 @@ const DashboardRoutes = () => {
         <Route path="/repos" element={<Repos/>} />
         <Route path="/all" element={<UserAllGitEsta/>} />
         <Route path="/home" element={<Home/>} />
-        <Route path="/tus" element={<YourUsers/>} />
+        <Route path="/tus" element={<YourUsers/>}/>
+        <Route path="/evals" element={<AllEval/>}/>
+        <Route path="/allusers" element={<AlluserAll/>}/>
         <Route path="*" element={<Navigate to="/home"/>} />
-  
+        
     </Routes>
     </>
   );
