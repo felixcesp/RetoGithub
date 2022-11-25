@@ -58,7 +58,7 @@ const AddEdit = () => {
         dispatch(addGituserAsync(formValue, creationDate))
         //dispatch(dateGituserAsync(creationDate))
         if(formValue){    
-            navigation('/editar')    
+            navigation('/antesrepo')    
         }
         reset()   
     }

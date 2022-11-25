@@ -44,9 +44,9 @@ const AlluserAll = () => {
 
 
 
-    const eliminarData =(idcard)=>{
+    const eliminarData =(idcard)=>{}
    
-        let idsAll=[]
+   /*     let idsAll=[]
         console.log(idsAll)
      yourUsers.forEach((element)=>{
         let idcard =element.idcard
@@ -72,7 +72,7 @@ const AlluserAll = () => {
             
 
     }
-
+*/
 
 
 

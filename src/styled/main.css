@@ -178,3 +178,11 @@ body{
     z-index: 3;
   }
   
+  .hidediv{
+    display:none;
+  }
+  .showdiv{
+    display:flex;
+    justify-content: center;
+  }
+  

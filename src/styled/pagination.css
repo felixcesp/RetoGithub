@@ -1,0 +1,142 @@
+
+.all845{
+    height: 100px;
+    width: auto;
+    margin: 0 auto;
+    background-color: red; 
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 100px;
+        grid-template-areas: "nav"
+                          ;
+    }
+    /*ASINACION AREA Y CONFIGUARCION INDIVIDUAL DIV GENERALES*/
+    .nav845{
+        background-color: rgb(89, 0, 255);
+        grid-area: nav;
+        /*CONFIGURACION PARA DIVS ICON Y NAVMENU CON FLEX*/
+        display: flex;
+        flex-direction: row;     
+    }
+    /*CONFIGURACION DIVS INTERNOS NAV*/
+    .icon845{
+        background-color: transparent;
+        flex-grow: 0.01;
+    
+    
+    }/* configuracion del navmenu completo*/
+    .navmenu845{
+        display: flex;
+        background-color: transparent;
+        flex-grow: 0.99;
+        z-index: 1;
+       
+        /*overflow: hidden;*/
+    }
+    .navmenu845 ul{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content:auto;  
+        padding-top: 30px;
+        padding-left: 980px;
+        color: beige;
+      
+    }
+    .navmenu845 ul li{  
+        padding-right: 50px;
+        list-style: none;
+        position: relative; /*para que la linea se posicione en el elmento li que se le hace hover*/ 
+        
+    }
+    
+    .navmenu845 ul li a{
+        font-family: Fluro,sans-serif;
+        font-size: 17px;
+        line-height: 1.875rem;
+        text-decoration: none;
+        color: antiquewhite;
+       
+    }
+    /*LINEA Y ANIMACION DEL MENU NAVBAR*/
+    .navmenu845 ul li::before{
+        content: "";
+        height: 4px; /*esta es la altura de la linea o del content*/
+        width: 0%;/*para que la linea se muestre sin ancho, es decir que no se vea hasta el hover*/
+        background-color: yellowgreen;/*color de la linea o el div content*/
+        position: absolute; /*se posiciona en la etiqueta li que necesita el hover*/
+        left: 4px;/*para que la linea salga desde el inicio de la palabra*/
+        bottom: 43px; /* se posiciona la linea debajo*/
+        transition: 0.3s ease-out;/* el tiempo en que se posicona la linea*/
+    }
+    .navmenu845 ul li:hover::before{
+        width: 70%;/* para que la linea se muestre al ancho deseado*/
+    }
+    
+    /*CONFIGURACION SUBMENUS*/
+ 
+    .navmenu845 .submenu845 ul {
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 0px;
+        height: 140px;
+        width: 160px;
+        padding-top: 0%;
+        row-gap: 30px;
+        margin-top: 20px;
+        list-style: none;
+        text-decoration: none; 
+        position: absolute;
+        /*display: none;*/
+        opacity: 0;
+        transition: 2s ease-out;
+        font-size: 16px;
+        font-family: Fluro,sans-serif;
+        transition: 1.5s ease-out;
+        background-color:rgba(89, 0, 255, 1);
+          border-radius: 5px; 
+    }
+    /*tamaño de las letras del submenu*/
+ 
+    .navmenu845 .submenu845 ul li{
+        height: 10px;  
+        padding-left: 7px;
+    }
+    /*quitar las lineas del submenu*/
+  
+    .navmenu845 .submenu845 ul li:hover::before{
+        width: 4px;/* para que la linea se muestre al ancho deseado*/
+        height: 20px;
+        background-color: yellowgreen;
+        bottom: -10px;
+    }
+    /*para aprecer los submenus*/
+    .navmenu845 li:hover > ul{
+    opacity: 1;
+    }
+    /*efectos del submenu*/
+   
+    .navmenu845 .submenu845 ul li:hover{
+        background-color: rgba(121, 121, 150, 0.7);
+        transform: scale(1.03);
+        width: 100%;
+   
+        /*translate: 0 10;*/
+        cursor: pointer;
+        transition: 0.5s ease-out;
+        padding-bottom: 1px;
+    }
+    .editicon845{
+        height: 80px;
+        width: auto;
+        margin-top: 10px;
+        margin-left: 10px;
+       /* padding-top: 12px;
+        padding-left: 15px;*/
+        border-radius: 50%;
+      
+    }
+    /*CONFIGURACION DE ICONO DEL DIV ICON*/
+    

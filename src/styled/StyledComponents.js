@@ -427,6 +427,8 @@ export const TableT25=styled.td`
 border: solid 1px white;
 text-align:center;
 height:40px;
+color:#102c54;
+font-weight:600;
 cursor: pointer;
 `
 
@@ -719,8 +721,10 @@ font-weight:bold;
 //paginacion
 
 export const PaginationConte= styled.div`
+margin-top:100px;
 background:transparent;
 display:flex;
+
 justify-content:center;
 `
 //titulo tabla
@@ -1102,7 +1106,6 @@ width:100vw;
 box-sizing: border-box;
 text-align:center;
 padding-bottom:60px;
-
 `
 export const TitleTable87= styled.h1`
 margin-top:110px;
@@ -1121,8 +1124,6 @@ top:160px;
 padding:2px;
 border-radius:30px;
 cursor: pointer;
-
-
 `
 export const EstatisTics=styled.img`
 width:160px;
@@ -1144,4 +1145,80 @@ margin-top:20px;
 margin-bottom:40px;
 color:white;
 //text-shadow: 50px solid white;
+`
+
+//para las tablas estilos
+export const TableInfo59=styled.div`
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793377/Retogithub/fondo30_wreuzb.jpg");
+background-repeat:no-repeat;
+height:auto;
+background-size:auto 100%;
+width:1263px;
+box-sizing: border-box;
+text-align:center;
+padding-bottom:60px;
+padding-top:1px;
+
+`
+export const TitleTable27= styled.h1`
+margin-top:0px;
+margin-bottom:40px;
+color:white;
+`
+//footer
+export const PieBorder=styled.div`
+border-top:1px solid #4B4B4B;
+`
+//botones mostrar y ocultar
+export const HideDive25=styled.div`
+margin-top:40px;
+display:flex;
+flex-direction:row;
+justify-content:center;
+column-gap:20px;
+position:relative;
+`
+export const EstatisTics25=styled.img`
+width:80px;
+height:30px;
+margin-top:40px;
+border-radius:40px;
+border:1px solid white;
+box-shadow: 0px 4px 10px -4px white;
+:hover{
+    -webkit-transform:scale(1.06);
+  transform:scale(1.06); 
+  transition: 0.3s linear;
+    cursor: pointer;
+
+}
+`
+export const EstadisBoton46=styled.h1`
+font-size:15px;
+font-weight:bolder;
+-webkit-text-stroke: 1px red;
+color:white;
+position:absolute;
+left:580px;
+top:10px;
+padding:2px;
+border-radius:30px;
+cursor: pointer;
+`
+//div pagination
+export const TableInfo720=styled.div`
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793377/Retogithub/fondo30_wreuzb.jpg");
+background-repeat:no-repeat;
+height:auto;
+background-size:auto 100%;
+width:auto;
+box-sizing: border-box;
+text-align:center;
+padding-bottom:60px;
+`
+export const PieBorder2=styled.div`
+border-top:1px solid #4B4B4B;
+width:auto;
 `

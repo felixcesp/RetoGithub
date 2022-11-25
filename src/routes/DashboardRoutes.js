@@ -3,6 +3,7 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import AddEdit from '../components/AddEdit'
 import AllEval from '../components/AllEval'
 import AlluserAll from '../components/AlluserAll'
+import CheckRepos from '../components/CheckRepos'
 import Home from '../components/Home'
 
 
@@ -26,6 +27,7 @@ const DashboardRoutes = () => {
         <Route path="/tus" element={<YourUsers/>}/>
         <Route path="/evals" element={<AllEval/>}/>
         <Route path="/allusers" element={<AlluserAll/>}/>
+        <Route path="/antesrepo" element={<CheckRepos/>}/>
         <Route path="*" element={<Navigate to="/home"/>} />
         
     </Routes>

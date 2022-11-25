@@ -10,9 +10,12 @@ import { deletGituserAsync, listGituserAsync } from "../redux/actions/actionEdit
 import { keepNameAsyncEval } from "../redux/actions/actionLogPhone";
 import { actionRepoSync } from "../redux/actions/actionRepo";
 //import { actionAsyncStadistic } from "../redux/actions/actionStadistic";
-import { ImgTables, ImgTables2, LisitImg, Table22, TableInfo22, TableT25, TableTd22, TableTd223, TableThn, TitleTable55 } from "../styled/StyledComponents";
+import { ImgTables, ImgTables2, LisitImg, Table22, TableInfo22, TableInfo52, TableT25, TableTd22, TableTd223, TableThn, TitleMainTh, TitleMainTr, TitleTable55, TitleTable57, TitleTable87 } from "../styled/StyledComponents";
 import EditNew from "./EditarNew";
 import moment from 'moment';
+import NavBarEsta from './home/NavBarEsta';
+import PiePage from './home/PiePage';
+import NavbarUser from './home/NavbarUser';
 
 export default function UserAllGitEsta() {
 
@@ -28,6 +31,7 @@ export default function UserAllGitEsta() {
     const [checked, setChecked] = useState('')
     //ESTADO DE PORCENTAJE CHEQUEADO
     const [percent, setPercent] = useState('')
+    //DIV PARA OCULTAR
 
 
     const [datesIn, setDatesIn] = useState([])
@@ -351,29 +355,32 @@ let tiempos ={
      
       const aluser=(gitUser )=>{
       //  dispatch(actionRepoSync(gitUser))
-        navigation('/editar')   
+        navigation('/repos')   
       }
      
 
   return (
     <div>
-      <TableInfo22>
+      <TableInfo52>
+        <NavbarUser/>
         <>
-          <TitleTable55>
-            Evaluator {nombre.keepName} these all the register users
-          </TitleTable55>
+          <TitleTable87>
+            Evaluator {nombre.keepName} Check all statistics
+          </TitleTable87>
         </>
         <Table22>
           <thead>
-            <tr>
-              <th>User Name</th>
-              <th>Revition state</th>
-              <th>Evaluator Name</th>
-              <th>Global Stadestics</th>
-              <th>Individual stadistic</th>
-              <th>Repos number</th>
+            <TitleMainTr>
+              <TitleMainTh>User Name</TitleMainTh>
+              <TitleMainTh>Revition state</TitleMainTh>
+              <TitleMainTh>Evaluator Name</TitleMainTh>
+              <TitleMainTh>Repos number</TitleMainTh>
+              <TitleMainTh>Ind Statis</TitleMainTh>
+              <TitleMainTh>Gl statis</TitleMainTh>
+              <TitleMainTh>Photo</TitleMainTh>
+
            
-            </tr>
+            </TitleMainTr>
           </thead>
           <tbody>
             {showUsers2?.map((p, index) => (
@@ -383,43 +390,20 @@ let tiempos ={
                 <TableTd22>{p?.eval}</TableTd22>
                 <TableTd22>{p?.phone}</TableTd22>
                 <TableT25  onClick={()=>{getStadistic(p)}}>ver</TableT25>
-                <TableT25
-                  onClick={() => {getRepos(p?.gituser); }}>{p?.gituser}
-                </TableT25>
-                <TableTd22  onClick={() => {aluser(); }}>{p?.idcard}</TableTd22>
-                <TableTd22>{p?.date}</TableTd22>
+                <TableT25  onClick={()=>{getStadistic(p); aluser(p.gituser);}}>ver</TableT25>
                 <TableTd223>
                   <LisitImg src={p.foto} alt="" />
                 </TableTd223>
-
-                <TableThn>
-                  <ImgTables onClick={() => editar(p)}>
-                    <AiOutlineEdit />
-                  </ImgTables>
-                  <br />
-                  <ImgTables2
-                    onClick={() => dispatch(deletGituserAsync(p.idcard))}
-                  >
-                    <BsFillTrashFill />
-                  </ImgTables2>
-                </TableThn>
               </tr>
             ))}
           </tbody>
         </Table22>
         <div>
-          
-
-
-
-
-
-
-
         </div>
 
         {modal === true ? <EditNew datos={datos} setModal={setModal} /> : ""}
-      </TableInfo22>
+      </TableInfo52>
+      <PiePage/>
     </div>
   );
 }

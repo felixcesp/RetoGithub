@@ -9,14 +9,27 @@ import {
   PaginationConte,
   ReposTitleMain,
   Table2,
+  Table22,
   TableInfo,
+  TableInfo52,
+  TableInfo72,
+  TableInfo720,
   TableTd,
+  TableTd22,
+  TitleMainTh,
+  TitleMainTr,
+  TitleTable87,
 } from "../styled/StyledComponents";
 //import { useSelector } from 'react-redux';
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { actionAsyncStadistic } from "../redux/actions/actionStadistic";
 import moment from "moment";
+import NavBarEsta from "./home/NavBarEsta";
+import PiePage from "./home/PiePage";
+import '../styled/pagination.css'
+import PiePagePagi from "./home/PiePagePagi";
+import NavPagination from "./home/NavPagination";
 
 
 
@@ -155,24 +168,24 @@ forStadistic()
 
   return (
     <>
-      <TableInfo>
-        <Navbar />
-        <ReposTitleMain>Repositorios de {gitUser}</ReposTitleMain>
+      <TableInfo720>
+      <NavPagination/>
+        <TitleTable87>Repositorios de {gitUser}</TitleTable87>
         <InsearchR type="text" name="search" onChange={searching} />
         <LapaSearch>
           <BsSearch  />
         </LapaSearch>
 
-        <Table2>
+        <Table22>
           {/* <!-- head --> */}
           <thead>
-            <tr>
-              <th>Nombre repo</th>
-              <th>Descripcion</th>
-              <th>Url git</th>
-              <th>Branch</th>
-              <th>Lenguaje</th>
-            </tr>
+            <TitleMainTr>
+              <TitleMainTh>Nombre repo</TitleMainTh>
+              <TitleMainTh>Descripcion</TitleMainTh>
+              <TitleMainTh>Url git</TitleMainTh>
+              <TitleMainTh>Branch</TitleMainTh>
+              <TitleMainTh>Lenguaje</TitleMainTh>
+            </TitleMainTr>
           </thead>
           <tbody>
             {currentPage.map(
@@ -181,20 +194,17 @@ forStadistic()
                 idx
               ) => (
                 <tr key={idx}>
-                  <TableTd>{name}</TableTd>
-                  <TableTd>{description}</TableTd>
-                  <TableTd>{html_url}</TableTd>
-                  <TableTd>{default_branch}</TableTd>
-                  <TableTd>{language}</TableTd>
+                  <TableTd22>{name}</TableTd22>
+                  <TableTd22>{description}</TableTd22>
+                  <TableTd22>{html_url}</TableTd22>
+                  <TableTd22>{default_branch}</TableTd22>
+                  <TableTd22>{language}</TableTd22>
                 </tr>
               )
             )}
           </tbody>
-        </Table2>
-      </TableInfo>
-
-   
-
+        </Table22>
+        
      <PaginationConte>
         <Pagination size="lg">
           <Pagination.Prev onClick={paginationCurrentPrev} />
@@ -214,7 +224,11 @@ forStadistic()
           <Pagination.Next onClick={paginationCurrentNext} />
         </Pagination>
       </PaginationConte>
-     
+      </TableInfo720>
+
+   
+
+      <PiePagePagi/>
     </>
   );
 }

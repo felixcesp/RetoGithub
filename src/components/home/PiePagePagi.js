@@ -1,10 +1,10 @@
 import React from 'react';
 import { CDBFooter,CDBBox, CDBBtn, CDBIcon} from 'cdbreact';
-import { PieBorder } from '../../styled/StyledComponents';
+import { PieBorder, PieBorder2 } from '../../styled/StyledComponents';
 
-const PiePage = () => {
+const PiePagePagi = () => {
     return (
-        <PieBorder>
+        <PieBorder2>
           <CDBFooter className="shadow bg-black">
       <CDBBox
         display="flex"
@@ -40,8 +40,8 @@ const PiePage = () => {
       </CDBBox>
     </CDBFooter>
             
-        </PieBorder>
+        </PieBorder2>
     );
 };
 
-export default PiePage;
+export default PiePagePagi;
