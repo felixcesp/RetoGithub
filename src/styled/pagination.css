@@ -138,5 +138,15 @@
         border-radius: 50%;
       
     }
-    /*CONFIGURACION DE ICONO DEL DIV ICON*/
-    
+    /*pagination*/
+
+      
+
+
+
+.pagination > li > a
+{
+background-color: #5D6D7E;
+color: white;
+border: 1px solid black;
+}

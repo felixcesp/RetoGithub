@@ -353,9 +353,9 @@ let tiempos ={
         navigation('/repos')   
       }
      
-      const aluser=(gitUser )=>{
+      const tortas=()=>{
       //  dispatch(actionRepoSync(gitUser))
-        navigation('/repos')   
+        navigation('/tortas')   
       }
      
 
@@ -389,8 +389,8 @@ let tiempos ={
                 <TableTd22>{p?.lastname}</TableTd22>
                 <TableTd22>{p?.eval}</TableTd22>
                 <TableTd22>{p?.phone}</TableTd22>
-                <TableT25  onClick={()=>{getStadistic(p)}}>ver</TableT25>
-                <TableT25  onClick={()=>{getStadistic(p); aluser(p.gituser);}}>ver</TableT25>
+                <TableT25  onClick={()=>{tortas()}}>ver</TableT25>
+                <TableT25  onClick={()=>{getStadistic(p); tortas()}}>ver</TableT25>
                 <TableTd223>
                   <LisitImg src={p.foto} alt="" />
                 </TableTd223>

@@ -16,7 +16,8 @@ const EditNew = ({datos, setModal}) => {
     const [show, setShow] = useState(true);
 
     //viene de react-boostrap y es para cerrar
-    const handleClose = () => setShow(false);
+    const handleClose = () => setShow(false)  
+ 
 
    
 
@@ -42,6 +43,7 @@ const handleSubmit =(e)=>{
     console.log(formValue)
     dispatch(editGituserAsync(idcard, formValue))
     handleClose()  
+   
 }
 
     return (

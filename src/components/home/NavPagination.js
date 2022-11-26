@@ -1,11 +1,15 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { actionLogoutAsyn } from '../../redux/actions/actionLogin';
 import { actionAsyncStadistic } from '../../redux/actions/actionStadistic';
+import { actionRepoSync } from '../../redux/actions/actionRepo';
 import '../../styled/pagination.css'
+import { evalGituserAsync, listGituserAsync } from '../../redux/actions/actionEdit';
+import { keepNameAsyncEval, listEvaluatorAsync } from '../../redux/actions/actionLogPhone';
 
 function NavPagination() {
+  const  currentUser  = useSelector(store => store.listaUsers.listUsers)
   const dispatch = useDispatch()
   const navigation =useNavigate();
   
@@ -14,8 +18,9 @@ function NavPagination() {
     dispatch(actionAsyncStadistic())
   }
   const form=()=>{
-    navigation('/editar3')
+    navigation('/antesrepo')
     dispatch(actionAsyncStadistic())
+    dispatch(actionRepoSync())
   }
 
 

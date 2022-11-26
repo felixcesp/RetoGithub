@@ -30,6 +30,8 @@ import PiePage from "./home/PiePage";
 import '../styled/pagination.css'
 import PiePagePagi from "./home/PiePagePagi";
 import NavPagination from "./home/NavPagination";
+import { addGituserAsync, evalGituserAsync, listGituserAsync } from "../redux/actions/actionEdit";
+import { keepNameAsyncEval, listEvaluatorAsync } from "../redux/actions/actionLogPhone";
 
 
 
@@ -106,6 +108,11 @@ function Repos() {
       setCurrentPage(
         data.slice(currentPagination * 5 - 5, currentPagination * 5)
       );
+      //probando cuando se reinicie la pagina no borre el usuario actual
+ 
+
+
+
     });
     
   
@@ -117,7 +124,7 @@ function Repos() {
     currentPagination,
     setPageNumber,
     setFilterRepos,
-    setReposAll
+    setReposAll,
   ]);
 
 
@@ -206,7 +213,7 @@ forStadistic()
         </Table22>
         
      <PaginationConte>
-        <Pagination size="lg">
+        <Pagination size="medium" className="colorinpage" >
           <Pagination.Prev onClick={paginationCurrentPrev} />
           {[...Array(pageNumber)].map((_, i) => {
             return (

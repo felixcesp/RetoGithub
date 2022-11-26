@@ -9,6 +9,7 @@ import Home from '../components/Home'
 
 import ListEdit from '../components/ListEdit'
 import Repos from '../components/Repos'
+import TableEstatis from '../components/TableEstatis'
 import UserAllGitEsta from '../components/UserAllGitEsta'
 import YourUsers from '../components/YourUsers'
 
@@ -28,6 +29,7 @@ const DashboardRoutes = () => {
         <Route path="/evals" element={<AllEval/>}/>
         <Route path="/allusers" element={<AlluserAll/>}/>
         <Route path="/antesrepo" element={<CheckRepos/>}/>
+        <Route path="/tortas" element={<TableEstatis/>}/> 
         <Route path="*" element={<Navigate to="/home"/>} />
         
     </Routes>

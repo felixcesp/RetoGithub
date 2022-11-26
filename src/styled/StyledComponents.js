@@ -724,8 +724,8 @@ export const PaginationConte= styled.div`
 margin-top:100px;
 background:transparent;
 display:flex;
-
 justify-content:center;
+overflow:auto;
 `
 //titulo tabla
 //tabla titulo nueva edicion
@@ -742,7 +742,7 @@ width:20px;
 height:20px;
 position:absolute;
 left:704px;
-top:275px;
+top:315px;
 background-color:transparent;
 `
 
@@ -1073,12 +1073,11 @@ box-sizing: border-box;
 background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793377/Retogithub/fondo30_wreuzb.jpg");
 background-repeat:no-repeat;
 height:auto;
-background-size:auto 100%;
-width:1263px;
+background-size:auto 146.8%;
+width:auto;
 box-sizing: border-box;
 text-align:center;
 padding-bottom:60px;
-
 `
 export const TitleTable57= styled.h1`
 margin-top:80px;
@@ -1153,8 +1152,8 @@ box-sizing: border-box;
 background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793377/Retogithub/fondo30_wreuzb.jpg");
 background-repeat:no-repeat;
 height:auto;
-background-size:auto 100%;
-width:1263px;
+background-size: auto 180%;
+width:100vw;
 box-sizing: border-box;
 text-align:center;
 padding-bottom:60px;
@@ -1197,7 +1196,7 @@ box-shadow: 0px 4px 10px -4px white;
 export const EstadisBoton46=styled.h1`
 font-size:15px;
 font-weight:bolder;
--webkit-text-stroke: 1px red;
+-webkit-text-stroke: 1px blue;
 color:white;
 position:absolute;
 left:580px;
