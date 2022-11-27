@@ -33,7 +33,7 @@ const PiePage = () => {
           <CDBBtn flat color="primary" className="mx-3 p-2" href='https://www.linkedin.com/in/felix-c-930614174/#' target='_blank'>
             <CDBIcon fab icon="linkedin" />
           </CDBBtn>
-          <CDBBtn flat color="primary" className="p-2"  href='https://github.com/felixcesp/RetoGithub' target='_blank'>
+          <CDBBtn flat color="primary" className="p-2"  href='https://github.com/felixcesp' target='_blank'>
             <CDBIcon fab icon="github" />
           </CDBBtn>
         </CDBBox>

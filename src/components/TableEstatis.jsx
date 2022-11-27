@@ -1,38 +1,114 @@
-import React from "react";
+import React, { Component }  from "react";
 import {
+  BotonTorta,
   TableInfo52,
+  TableInfo72,
+  TableInfo720,
+  TableTorta,
   TitleTable57,
+  TitleTorta,
+  TitleTorta1,
+  Torta1,
+  Torta2,
+  Torta3,
+  Torta4,
+  Torta5,
+  Torta6,
+  Torta7,
+  TortaName3,
+  TortaNames,
 } from "../styled/StyledComponents";
 import NavBarUser from "../components/home/NavbarUser";
 import PiePage from "../components/home/PiePage";
 import NavBarEsta from "./home/NavBarEsta";
+import { Chart } from "chart.js";
+
+
+
+
 
 const TableEstatis = () => {
+  new Chart(document.querySelector(".pie-chart"), {
+    type: 'pie',
+    data: {
+      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+      datasets: [{
+        label: "Population (millions)",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+        data: [2478,5267,734,784,433]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Predicted world population (millions) in 2050'
+      }
+    }
+});
+
+
+
+
   return (
     <>
-      <TableInfo52>
+      <TableTorta>
         <NavBarEsta />
         <>
-          <TitleTable57>Evaluator {} these are your users</TitleTable57>
+          <TitleTorta>Evaluator {} Check all stadististic</TitleTorta>
         </>
-        <div>
+        <Torta1>
 
             
-            <div>nombre</div>
+            <Torta2>
+            <TitleTorta1>ACTIONS</TitleTorta1>
+            <BotonTorta><TortaNames>User Data</TortaNames></BotonTorta>
+            <BotonTorta><TortaNames>Check State</TortaNames></BotonTorta>
+            <BotonTorta><TortaNames>Repositories</TortaNames></BotonTorta>
+            <BotonTorta><TortaNames>check times</TortaNames></BotonTorta>
+            </Torta2>
+          
 
 
-            <div>estadisticas pricipal
 
-             <div>botones</div>
-             <div>cuerpo</div>
-             <div>footer</div>
-             <div>referencias</div>
+            
+            <Torta3>
+               <TortaName3>Felix Cespedes Valencia</TortaName3>
+
+            </Torta3>
+
+             <div>
+            <canvas className="pie-chart" width="800" height="450"></canvas>
 
             </div>
 
 
-        </div>
-      </TableInfo52>
+
+            <Torta4>
+			
+		
+
+		
+	    
+
+            </Torta4>
+
+
+
+
+
+
+            <Torta5>footer</Torta5>
+            <Torta6>foto</Torta6>
+            <Torta7>referencias</Torta7>
+
+
+
+
+        </Torta1>
+
+
+
+      </TableTorta>
       <PiePage />
     </>
   );

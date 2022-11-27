@@ -1221,3 +1221,177 @@ export const PieBorder2=styled.div`
 border-top:1px solid #4B4B4B;
 width:auto;
 `
+
+
+//tortas todo
+export const TableTorta=styled.div`
+box-sizing: border-box;
+background-image: url("https://res.cloudinary.com/felixces/image/upload/v1668793377/Retogithub/fondo30_wreuzb.jpg");
+background-repeat:no-repeat;
+height:auto;
+background-size:100% 100%;
+width:auto;
+box-sizing: border-box;
+text-align:center;
+padding-bottom:60px;
+`
+//titulo principal
+export const TitleTorta= styled.h1`
+margin-top:10px;
+margin-bottom:30px;
+color:white;
+font-size:20px;
+`
+
+export const Torta1=styled.div`
+background-color:#5D6D7E;
+width:75%;
+height:70vh;
+margin:auto;
+padding-top:6.5px;
+padding-left:6.5px;
+position:relative;
+`
+
+//div botones
+export const Torta2=styled.div`
+width:15%;
+height:68vh;
+background-color:whitesmoke;
+border-radius:20px;
+box-shadow: 0px -2px 25px -4px white;
+position:absolute;
+display:flex;
+flex-wrap:wrap;
+`
+//titulo botones
+export const TitleTorta1= styled.h1`
+margin-top:15px;
+color:#5D6D7E;
+font-size:15px;
+margin-left:auto;
+margin-right:auto;
+height:20px;
+margin-bottom:-80px;
+text-shadow:  0px -2.2px 4px #5D6D7E ;
+`
+//botones de botones
+export const BotonTorta=styled.div`
+width:130px;
+height:50px;
+margin:auto;
+border-radius:40px;
+color: #fff !important;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0.5em 1.2em;
+  background: #318aac;
+  border: 2px solid;
+  border-color: #318aac;
+  position: relative;
+  :before {
+  content:"";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 1s ease;}
+  :hover:before {
+width: 100%;
+cursor: pointer;
+}
+box-shadow: 0px -2px 20px -4px black;
+
+`
+//titulo boton
+export const TortaNames=styled.h2`
+font-family: Arial, Helvetica, sans-serif;
+font-size: 14.3px;
+color: white;
+padding-top:4px;
+`
+
+
+
+
+
+
+
+
+//nombrediv
+
+export const Torta3=styled.div`
+position:absolute;
+width:55%;
+height:15vh;
+background-color:whitesmoke;
+border-radius:20px;
+box-shadow: 0px -2px 25px -4px white;
+top:6.5px;
+left:155px;
+`
+//texto nombre h2
+export const TortaName3=styled.h1`
+color:#5D6D7E;
+margin-top:22px;
+font-size:36px;
+//-webkit-text-stroke: 0.5px blue;
+text-shadow:  0px -2.1px 4px #5D6D7E ;
+
+`
+
+
+
+
+
+
+
+
+
+
+//div contenedor torta y estadisticas 
+export const Torta4=styled.div`
+position:absolute;
+width:55%;
+height:37vh;
+background-color:yellow;
+border-radius:20px;
+box-shadow: 0px -2px 25px -4px white;
+top:113px;
+left:158px;
+`
+//total estado
+export const Torta5=styled.div`
+position:absolute;
+width:55%;
+height:13.5vh;
+background-color:green;
+border-radius:20px;
+box-shadow: 0px -2px 25px -4px white;
+top:364px;
+left:158px;
+`
+//foto
+export const Torta6=styled.div`
+position:absolute;
+width:26.3%;
+height:25vh;
+background-color:brown;
+border-radius:20px;
+box-shadow: 0px -2px 25px -4px white;
+top:6.5px;
+left:688px;
+`
+//referencias
+export const Torta7=styled.div`
+position:absolute;
+width:26.3%;
+height:41.8vh;
+background-color:black;
+border-radius:20px;
+box-shadow: 0px -2px 25px -4px white;
+top:178px;
+left:688px;
+`
