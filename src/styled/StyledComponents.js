@@ -1339,7 +1339,6 @@ margin-top:22px;
 font-size:36px;
 //-webkit-text-stroke: 0.5px blue;
 text-shadow:  0px -2.1px 4px #5D6D7E ;
-
 `
 
 
@@ -1356,42 +1355,85 @@ export const Torta4=styled.div`
 position:absolute;
 width:55%;
 height:37vh;
-background-color:yellow;
+background-color:white;
 border-radius:20px;
 box-shadow: 0px -2px 25px -4px white;
 top:113px;
 left:158px;
 `
+
+
+
+
 //total estado
 export const Torta5=styled.div`
 position:absolute;
 width:55%;
 height:13.5vh;
-background-color:green;
+background-color:white;
 border-radius:20px;
 box-shadow: 0px -2px 25px -4px white;
 top:364px;
 left:158px;
 `
+//texto estado
+
+export const TortaName4=styled.h1`
+color:#5D6D7E;
+margin-top:23px;
+font-size:36px;
+//-webkit-text-stroke: 0.5px blue;
+text-shadow:  0px 1px 1px #5D6D7E ;
+`
+
+
+
 //foto
 export const Torta6=styled.div`
 position:absolute;
 width:26.3%;
 height:25vh;
-background-color:brown;
+background-color:white;
 border-radius:20px;
 box-shadow: 0px -2px 25px -4px white;
 top:6.5px;
 left:688px;
+
 `
+//foto img
+export const TotaImg1=styled.img`
+width:220px;
+height:auto;
+margin-top:13px;
+//box-shadow: 0px -2px 25px -4px black;
+`
+
+
+
+
+
+
 //referencias
 export const Torta7=styled.div`
 position:absolute;
 width:26.3%;
 height:41.8vh;
-background-color:black;
+background-color:white;
 border-radius:20px;
 box-shadow: 0px -2px 25px -4px white;
 top:178px;
 left:688px;
+
+`
+export const TortaName5=styled.h1`
+color:#5D6D7E;
+margin-top:30px;
+margin-left:10px;
+font-size:15px;
+text-align:left;
+//-webkit-text-stroke: 0.5px blue;
+text-shadow:  0px 1px 1px #5D6D7E ;
+padding-left:0px;
+padding-top:10px;
+width:auto;
 `

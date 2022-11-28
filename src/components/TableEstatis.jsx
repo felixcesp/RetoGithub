@@ -1,11 +1,9 @@
-import React, { Component }  from "react";
+import React from "react";
 import {
   BotonTorta,
-  TableInfo52,
-  TableInfo72,
-  TableInfo720,
+
   TableTorta,
-  TitleTable57,
+
   TitleTorta,
   TitleTorta1,
   Torta1,
@@ -16,37 +14,29 @@ import {
   Torta6,
   Torta7,
   TortaName3,
+  TortaName5,
   TortaNames,
+  TotaImg1,
 } from "../styled/StyledComponents";
-import NavBarUser from "../components/home/NavbarUser";
+
 import PiePage from "../components/home/PiePage";
 import NavBarEsta from "./home/NavBarEsta";
-import { Chart } from "chart.js";
+
+import { Doughnut, Pie } from "react-chartjs-2";
 
 
 
 
 
 const TableEstatis = () => {
-  new Chart(document.querySelector(".pie-chart"), {
-    type: 'pie',
-    data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
-      datasets: [{
-        label: "Population (millions)",
-        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-        data: [2478,5267,734,784,433]
-      }]
-    },
-    options: {
-      title: {
-        display: true,
-        text: 'Predicted world population (millions) in 2050'
-      }
-    }
-});
+ 
 
+  
 
+      
+  
+    
+  
 
 
   return (
@@ -67,28 +57,15 @@ const TableEstatis = () => {
             <BotonTorta><TortaNames>check times</TortaNames></BotonTorta>
             </Torta2>
           
-
-
-
-            
+        
             <Torta3>
                <TortaName3>Felix Cespedes Valencia</TortaName3>
-
             </Torta3>
 
-             <div>
-            <canvas className="pie-chart" width="800" height="450"></canvas>
-
-            </div>
-
-
-
+         
             <Torta4>
-			
-		
-
-		
-	    
+    
+      
 
             </Torta4>
 
@@ -97,9 +74,21 @@ const TableEstatis = () => {
 
 
 
-            <Torta5>footer</Torta5>
-            <Torta6>foto</Torta6>
-            <Torta7>referencias</Torta7>
+            <Torta5>
+            <TortaName3> ESTADO: COMPLETED</TortaName3> 
+            </Torta5>
+
+            <Torta6>
+              <TotaImg1 src="https://res.cloudinary.com/felixces/image/upload/v1668890749/Retogithub/logo_retocar_copia_oibp2j.png" alt="" />
+            </Torta6>
+
+
+            <Torta7>
+            <TortaName5><strong>Eval name :</strong> Felix Cespedes</TortaName5>
+            <TortaName5><strong>Age :</strong> 54</TortaName5>
+            <TortaName5><strong>Birth day :</strong> Abril 14th</TortaName5>
+            <TortaName5><strong>Creation Date :</strong> 25/04/2022 </TortaName5>
+            </Torta7>
 
 
 
