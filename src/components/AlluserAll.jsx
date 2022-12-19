@@ -128,7 +128,7 @@ const AlluserAll = (setShow) => {
 
         
     const veryRepos =(gitUser,idcardo)=>{
-      console.log(idcardo)
+      //console.log(idcardo)
       let idsAllo=[]
       let confirmedo
       yourUsers.forEach((element)=>{
@@ -136,18 +136,18 @@ const AlluserAll = (setShow) => {
       idsAllo.push({
         idcardo
         })})  
-        console.log(idsAllo)  
+        //console.log(idsAllo)  
       idsAllo.forEach((element)=>{ 
           let comapreo=element.idcardo
-          console.log(comapreo)
+         // console.log(comapreo)
            if(comapreo===idcardo){    
          /*  confirmed.push(idcard) */
          confirmedo=idcardo
-           console.log(confirmedo) 
+          // console.log(confirmedo) 
            }     })
            if( confirmedo=== idcardo){
-            let lasto=confirmedo
-            console.log(lasto) 
+          //  let lasto=confirmedo
+          //  console.log(lasto) 
              alert('Success action')
              dispatch(actionRepoSync(gitUser))
              navigation('/repos');

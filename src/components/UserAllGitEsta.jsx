@@ -91,7 +91,7 @@ export default function UserAllGitEsta() {
       //el boton ver envia la data del ususario que esta en el estado showusers
       //creamos una variable que nos va a resivir solo ese array de redux
       let pagesIn=p.estadistic
-      console.log(pagesIn)
+    //  console.log(pagesIn)
      //EXTRAER VALOR VARIABLES 1 CATIDAD DE PAGINAS
      let pagesOut= pagesIn.map((elemnt)=>{  
        let allPages=elemnt.totapages
@@ -99,7 +99,7 @@ export default function UserAllGitEsta() {
         allPages
        )
       })
-      console.log(pagesOut);
+      console.log('total paginas: ' + pagesOut);
        //EXTRAER VALOR VARIABLES 2 CATIDAD DE REPOS
      let reposOut= pagesIn.map((elemnt)=>{  
       let allRepos=elemnt.totarepso
@@ -107,7 +107,7 @@ export default function UserAllGitEsta() {
        allRepos  
       )
      })
-     console.log(reposOut);
+     console.log('total repos: ' + reposOut);
    
 
   //VARIABLES DE PAGINAS VISTAS Y FALTANTES
@@ -123,11 +123,11 @@ export default function UserAllGitEsta() {
       let seenP= pagesCurrentin.length
       //variables pagina cantidad faltantes
       let leftPages= pagesOut-seenP; 
-      console.log(pagesCurrentin)
-      console.log(seenP)
-      console.log(leftPages)
+     // console.log('cuales son las paginas vistas : ' + pagesCurrentin)
+      console.log('cuantas son las paginas vistas : ' + seenP)
+      console.log('total paginas faltantes : ' + leftPages)
     //CONSOLE PARA VER LAS PAGINA QUE HA VISTO ES DECIR ARREGLO CON LAS PAGINAS
-    console.log(runPages)
+    console.log('cuales son las paginas vistas : ' + runPages)
 
     //variable paginas que no han visto
     //PRIMERO CREAMOS ARRAY CON EL NUMERO DE PAGINAS TOTALES DEL USUSARIO
@@ -136,12 +136,12 @@ export default function UserAllGitEsta() {
         i+1
       )
     })
-   console.log(pagesTotal)
+   //console.log(pagesTotal)
         //tenemos ya dos arreglos con todas las paginas y las paginas vistas
      //para hallar las paginas que nos han visto se debe hacer la diferencias
      //de conjuntos en este caso de array
    let difference = pagesTotal.filter(x => !runPages.includes(x))
-   console.log(difference)
+   console.log('cuales son las paginas faltantes : ' + difference)
      
 //estado de paginas chequeadas variable
 //se hace una funcion con regla de tres resive solo las paginas que quedan
@@ -163,7 +163,7 @@ let percentFinal= (seenP*100)/pagesOut;
 setPercent(percentFinal)
 }
 statePercent(pagesOut,seenP);
-console.log(percent +'%')
+console.log('porcentaje de chequeo  : ' +percent +'%')
 
 //ESTA ES UNA PRUEBA DE LA FECHA
 
@@ -389,7 +389,7 @@ let tiempos ={
                 <TableTd22>{p?.lastname}</TableTd22>
                 <TableTd22>{p?.eval}</TableTd22>
                 <TableTd22>{p?.phone}</TableTd22>
-                <TableT25  onClick={()=>{tortas()}}>ver</TableT25>
+                <TableT25  onClick={()=>{getStadistic(p)}}>ver</TableT25>
                 <TableT25  onClick={()=>{getStadistic(p); tortas()}}>ver</TableT25>
                 <TableTd223>
                   <LisitImg src={p.foto} alt="" />

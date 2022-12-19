@@ -15,7 +15,8 @@ function NavBarEsta() {
   }
   const form=()=>{
    /* navigation('/editar3')*/
-   window.history.back();
+ //  window.history.back();
+ window.history.go(-1)
     dispatch(actionAsyncStadistic())
   }
 

@@ -21,8 +21,8 @@ const AddEdit = () => {
 
     const dispatch = useDispatch();
    const usuarioName= useSelector(state => state.keepName);
-   const verfechs= useSelector(state => state.listaUsers.listUsers);
-   console.log(verfechs)
+  // const verfechs= useSelector(state => state.listaUsers.listUsers);
+ //  console.log(verfechs)
 
    //localStorage.setItem("evaname",JSON.stringify(usuarioName.nombre) );
    //para sacar un elemnto de un objeto

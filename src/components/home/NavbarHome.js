@@ -10,7 +10,7 @@ function NavbarHome() {
   const dispatch = useDispatch()
  
   const nombreHome= useSelector(state => state.keepName);
-  console.log(nombreHome)
+  //console.log(nombreHome)
   useEffect(() => {
     dispatch(keepNameAsyncEval())
 }, [dispatch])

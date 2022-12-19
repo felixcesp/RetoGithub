@@ -26,7 +26,7 @@ const CheckRepos = () => {
     const navigation =useNavigate();
     const yourUsers= useSelector(state=> state.userEspecific.finalGitGotten)
     const actualUser= useSelector(actual=> actual.newGitUser.showUsers)
-    console.log(actualUser)
+   // console.log(actualUser)
 
     //PARA OCULTAR EL DIV
     const [hideWithCss, setHideWithCss] = useState('hidediv')

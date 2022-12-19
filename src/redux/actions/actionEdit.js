@@ -26,7 +26,7 @@ Object.assign(gitdata, uidEval, evaNombre);
    
           .then(resp => {   
              dispath(addGituserSync(gitdata))
-             console.log(gitdata)  
+            // console.log(gitdata)  
              dispath(listGituserAsync()) 
           })
 
